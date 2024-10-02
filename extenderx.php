@@ -5,7 +5,7 @@
  * Description:       ExtenderX is a plugin that extends the functionality of the WordPress block editor.
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * License:           GPL v2 or later
@@ -91,13 +91,7 @@ class XERO_EXTENDERX {
     public function init_hooks() {
         $this->load_files();
         add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
-
-
-
-        if (!is_admin()) {
-            add_action('wp_enqueue_scripts', array($this, 'enqueue_front_scripts'));
-            add_action('enqueue_block_assets', array($this, 'enqueue_front_scripts'));
-        }
+        add_action('enqueue_block_assets', array($this, 'enqueue_front_scripts'));
     }
 
     /**
@@ -106,7 +100,7 @@ class XERO_EXTENDERX {
     public function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.0.0');
+        define('XERO_EXTENDERX_VERSION', '1.1.0');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
@@ -116,7 +110,7 @@ class XERO_EXTENDERX {
     public function load_files() {
         require_once XERO_EXTENDERX_DIR_PATH . 'includes/Utils.php';
         require_once XERO_EXTENDERX_DIR_PATH . 'includes/Register.php';
-        require_once XERO_EXTENDERX_DIR_PATH . 'includes/FrontendAttributes.php';
+        require_once XERO_EXTENDERX_DIR_PATH . 'includes/Attributes.php';
     }
 
 
@@ -131,7 +125,9 @@ class XERO_EXTENDERX {
 
 
     public function enqueue_front_scripts() {
-
+        if (is_admin()) {
+            return;
+        }
         $extensions_dir =  new XERO\EXTENDERX\Register();
         $extensions_dir->add_frontend_assets();
     }

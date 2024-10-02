@@ -9,7 +9,7 @@ defined('ABSPATH') || exit;
 /**
  * Handles frontend attributes for blocks
  */
-class FrontendAttributes {
+class Attributes {
 
     public function __construct() {
         add_filter('render_block', [$this, 'process_block_content'], 10, 3);
@@ -90,4 +90,4 @@ class FrontendAttributes {
     }
 }
 
-new FrontendAttributes();
+new Attributes();
