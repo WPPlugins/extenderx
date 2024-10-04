@@ -1,3 +1,14 @@
+### 1.1.1 [October 04, 2024]
+
+### Added
+
+- Easing features added to Entrance animation
+- Value Reset features added to Tilt animation
+
+### Improved
+
+- Controls UI Improved
+
 ### 1.1.0 [October 03, 2024]
 
 ### Added

@@ -2,16 +2,18 @@
 
 /**
  * Plugin Name:       ExtenderX
- * Description:       ExtenderX is a plugin that extends the functionality of the WordPress block editor.
- * Requires at least: 6.0
- * Requires PHP:      7.4
- * Version:           1.1.0
+ * Plugin URI:        https://wpxero.com/extenderx
+ * Description:       Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dynamic effects, and responsive controls for stunning interactivity!
+ * Version:           1.1.1
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
+ * Requires at least: 6.0
+ * Requires PHP:      7.4
  * License:           GPL v2 or later
- * License URI:      https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:      extenderx
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       extenderx
  */
+
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -100,7 +102,7 @@ class XERO_EXTENDERX {
     public function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.1.0');
+        define('XERO_EXTENDERX_VERSION', '1.1.1');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
@@ -119,6 +121,14 @@ class XERO_EXTENDERX {
         if (!is_admin()) {
             return;
         }
+
+        //library
+        $asset_path = __DIR__ . '/dist/extenderx.asset.php';
+        $args = require $asset_path;
+        wp_enqueue_script('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.js', $args['dependencies'], $args['version'], true);
+        wp_enqueue_style('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.css', array(), $args['version']);
+        wp_enqueue_style('style-extenderx', plugins_url('dist/style-extenderx.css', __FILE__));
+
         $extensions_dir =  new XERO\EXTENDERX\Register();
         $extensions_dir->add_extensions();
     }

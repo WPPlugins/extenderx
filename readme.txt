@@ -1,18 +1,17 @@
 === ExtenderX | Add Powerful Animations and Effects to Core and Third-Party Blocks ===
-Version: 1.1.0
+Version: 1.1.1
 Author: WPXERO
 Author URI: https://wpxero.com/
 Contributors: wpxero
 Tags: animation, animate, motion, visibility, gutenberg
 Requires at least: 6.0
 Tested up to: 6.6.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-**Supercharge your Gutenberg blocks with ExtenderX!**
-Unlock a world of design possibilities with **Tilt Effects**, **Responsive Visibility Controls**, **Entrance Animations**, and more across all core and third-party blocks!
+Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dynamic effects, and responsive controls for stunning interactivity!
 
 == Description ==
 
@@ -73,6 +72,12 @@ Absolutely! With an intuitive interface, even WordPress beginners can easily enh
 3. **Entrance Animations** - Example of entrance animations as blocks appear on scroll.
 
 == Changelog ==
+
+= 1.1.1 [October 04, 2024] =
+
+* Added: Easing features to Entrance animation
+* Added: Value Reset features to Tilt animation
+* Improve: Controls UI
 
 = 1.1.0 [October 03, 2024] =
 
