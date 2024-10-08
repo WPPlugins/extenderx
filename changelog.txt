@@ -1,3 +1,9 @@
+### 1.1.2 [October 08, 2024]
+
+### Fixed
+
+- Spectra and Gutenkit compatibility issue fixed.
+
 ### 1.1.1 [October 04, 2024]
 
 ### Added

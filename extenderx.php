@@ -4,7 +4,7 @@
  * Plugin Name:       ExtenderX
  * Plugin URI:        https://wpxero.com/extenderx
  * Description:       Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dynamic effects, and responsive controls for stunning interactivity!
- * Version:           1.1.1
+ * Version:           1.1.2
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -70,6 +70,13 @@ class XERO_EXTENDERX {
     public $plugin_name_sanitized;
 
     /**
+     * Freemius instance
+     *
+     * @var $freemius
+     */
+    private $freemius;
+
+    /**
      * XERO\EXTENDERX constructor.
      */
     public function __construct() {
@@ -79,13 +86,14 @@ class XERO_EXTENDERX {
     /**
      * Get the single class instance.
      *
-     * @return EXTENDERX
+     * @return XERO_EXTENDERX
      */
     public static function instance() {
         if (is_null(self::$instance)) {
             self::$instance = new self();
             self::$instance->define_constants();
             self::$instance->init_hooks();
+            // self::$instance->init_freemius();
         }
         return self::$instance;
     }
@@ -102,7 +110,7 @@ class XERO_EXTENDERX {
     public function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.1.1');
+        define('XERO_EXTENDERX_VERSION', '1.1.2');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
@@ -141,14 +149,62 @@ class XERO_EXTENDERX {
         $extensions_dir =  new XERO\EXTENDERX\Register();
         $extensions_dir->add_frontend_assets();
     }
-}
 
+    /**
+     * Initialize Freemius SDK within the class.
+     */
+    public function init_freemius() {
+        if (!isset($this->freemius)) {
+            // Activate multisite integration
+            if (!defined('WP_FS__PRODUCT_16610_MULTISITE')) {
+                define('WP_FS__PRODUCT_16610_MULTISITE', true);
+            }
+
+            // Include the Freemius SDK
+            require_once dirname(__FILE__) . '/freemius/start.php';
+
+            $this->freemius = fs_dynamic_init([
+                'id'                  => '16610',
+                'slug'                => 'extenderx',
+                'premium_slug'        => 'extenderx-pro',
+                'type'                => 'plugin',
+                'public_key'          => 'pk_a10c1ad159e0b69299a18d65aa9b6',
+                'is_premium'          => true,
+                'has_premium_version' => true,
+                'has_paid_plans'      => true,
+                'trial'               => [
+                    'days'               => 14,
+                    'is_require_payment' => true,
+                ],
+                'menu'                => [
+                    'first-path' => 'extenderx.php',
+                    'contact'    => false,
+                    'support'    => false,
+                ],
+            ]);
+        }
+
+        // Pass the Freemius instance to your Pro plugin
+        if (is_plugin_active('extenderx-pro/extenderx-pro.php')) {
+            $this->freemius->add_filter('is_premium', '__return_true');
+        }
+
+        return $this->freemius;
+    }
+
+    /**
+     * Check if Freemius is initialized and available.
+     */
+    public function is_freemius_active() {
+        return isset($this->freemius);
+    }
+}
 
 
 /**
  * Function works with the XERO\EXTENDERX class instance.
  *
- * @return object XERO\EXTENDERX
+ * @return object XERO_EXTENDERX
  */
 function xero_extenderx() {
     return XERO_EXTENDERX::instance();
