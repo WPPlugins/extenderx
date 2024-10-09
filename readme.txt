@@ -1,12 +1,12 @@
 === ExtenderX | Add Powerful Animations and Effects to Core and Third-Party Blocks ===
-Version: 1.1.2
+Version: 1.1.3
 Author: WPXERO
 Author URI: https://wpxero.com/
 Contributors: wpxero
 Tags: animation, animate, motion, visibility, gutenberg
 Requires at least: 6.0
 Tested up to: 6.6.2
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -73,8 +73,12 @@ Absolutely! With an intuitive interface, even WordPress beginners can easily enh
 
 == Changelog ==
 
+= 1.1.3 [October 10, 2024] =
+* Fixed: Ghostkit and Otter blocks compatibility issue fixed.
+* Fixed: Some minor issues are fixed.
+
 = 1.1.2 [October 08, 2024] =
-* Added: Spectra and Gutenkit compatibility issue fixed.
+* Fixed: Spectra and Gutenkit compatibility issue fixed.
 
 = 1.1.1 [October 04, 2024] =
 * Added: Easing features to Entrance animation
