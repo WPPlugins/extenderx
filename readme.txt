@@ -1,12 +1,13 @@
 === ExtenderX | Add Powerful Animations and Effects to Core and Third-Party Blocks ===
-Version: 1.1.3
+Version: 1.2.0
 Author: WPXERO
-Author URI: https://wpxero.com/
+Author URI: https://wpxero.com/plugins/extenderx
+Donate link: https://wpxero.com/plugins/extenderx/#pricing
 Contributors: wpxero
 Tags: animation, animate, motion, visibility, gutenberg
 Requires at least: 6.0
 Tested up to: 6.6.2
-Stable tag: 1.1.3
+Stable tag: 1.2.0
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,63 +16,87 @@ Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dyn
 
 == Description ==
 
-**ExtenderX** is a versatile WordPress plugin that allows you to transform ordinary blocks into interactive, visually stunning elements. Perfect for both developers and content creators, ExtenderX empowers you to enhance the functionality and appearance of your website’s blocks.
+**ExtenderX** is a powerful **WordPress block enhancement plugin** designed to transform ordinary **Gutenberg blocks** into stunning, interactive, eye-catching animations and effects to any elements. Whether you're creating a blog, business website, or e-commerce platform, ExtenderX allows you to effortlessly turn simple blocks into interactive, stunning elements that engage your visitors.
 
-### **Key Features:**
+💡 **Want even more features?** Upgrade to [**ExtenderX Pro**](https://wpxero.com/plugins/extenderx) to unlock **exclusive premium tools**, including advanced parallax scrolling, custom animation triggers, and top-tier support!—ideal for professional designers looking to create high-impact websites.
 
-- **Tilt Effect:**
-  Add a dynamic **3D-like tilt** to any block, creating depth and a sense of movement that responds to user interaction.
+### 🎯 **Key Features of ExtenderX**
+**✅ Entrance Animations** ✨
+  Engage your audience by adding smooth, attention-grabbing entrance animations as blocks appear on the screen. This feature ensures an immersive **scroll-triggered animation experience**, helping your content **stand out and captivate users** right away.
 
-- **Responsive Visibility Control:**
-  Tailor content display across different devices. **Hide or show blocks** based on screen size for a more targeted, responsive design experience.
+**✅ Floating Animations** 🪂 *(New in 1.2.0)*
+  Introduce dynamic floating effects to your blocks, creating a **sense of motion** and enhancing visual engagement. These subtle movements help you create **interactive, animated WordPress designs** that truly pop.
 
-- **Entrance Animations:**
-  Make your content pop! Apply **entrance animations** to blocks, bringing them to life as they scroll into view.
+   **Note:** Floating animations do not work simultaneously with Entrance or Tilt animations.
 
-- **Floating Animations** *(Coming Soon)*:
-  Animate your blocks to float or move, creating engaging, **attention-grabbing designs** that stand out.
+**✅ Tilt Effect** 🌀
+  Add depth and interactivity with a **3D tilt effect** on any block, making it react to user movements. This feature enhances **block interactivity** and creates a **more engaging browsing experience**.
 
-- **Parallax Scrolling** *(Coming Soon)*:
-  Create immersive, **depth-rich scrolling experiences** with parallax background animations.
+**✅ Responsive Visibility Control** 📱
+  Customize block visibility based on the visitor's device. Easily **show or hide blocks** on desktop, tablet, or mobile screens, ensuring **responsive designs** that adapt perfectly to any screen size. **Responsive web design** is crucial for modern websites, and this feature guarantees optimal layout control.
 
-**Why Choose ExtenderX?**
+**✅ Parallax Scrolling** 🌌 *(Coming Soon)*
+  Enhance your site with visually immersive **parallax scrolling** effects, creating a depth-rich experience as users scroll through your content. This feature is perfect for creating **modern scrolling websites** with engaging layered backgrounds.
 
-- **No Coding Required**: Achieve professional, interactive designs without writing a single line of code.
-- **Seamless Integration**: Works effortlessly with all **core** and **third-party blocks**, ensuring compatibility and easy application of features.
-- **Performance Optimized**: Lightweight and efficient, ExtenderX is built with performance in mind, ensuring fast load times.
-- **Future-Ready**: With **new features** continuously being added, ExtenderX evolves with your design needs.
+**✅ Tooltips** 💬 *(Coming Soon)*
+  Add helpful **tooltips** to your blocks, enhancing **user interaction** and providing additional information in a sleek, unobtrusive manner. Tooltips help clarify content and improve **user experience** without overwhelming the design.
+
+**✅ Wrapper Links** 🔗 *(Coming Soon)*
+  Turn entire blocks into clickable elements with **wrapper links**, allowing you to easily add **clickable areas** to any block. This feature is great for improving **website navigation** and user engagement.
+
+
+### 🏆 **Why ExtenderX is the Ultimate WordPress Block Plugin**
+
+👉 **User-Friendly** 🖱️
+  ExtenderX is incredibly easy to use—no coding required! Whether you’re a web designer, developer, or a beginner, the intuitive controls allow you to add stunning animations and effects with just a few clicks.
+
+👉 **Compatible with All Blocks** ✔️
+  ExtenderX works seamlessly with all **core Gutenberg blocks** and popular third-party block libraries like Kadence Blocks, Spectra, Ghostkit, Essential Blocks, Gutenverse, Gutenkit, Ultimate Blocks, Stackable, Greenshift and more. It's a **universal solution** for all block-based designs.
+
+👉 **Optimized for Speed** ⚡
+  ExtenderX is built with performance in mind, ensuring your website remains **lightning-fast** even with **advanced animations** and effects in use. No slowing down, no heavy scripts!
+
+👉 **Regular Updates** 🔄
+  Stay ahead with **continuous feature updates**. ExtenderX evolves based on user feedback and design trends, keeping your website modern and engaging.
 
 == Installation ==
 
-1. **Upload & Install**: Upload the `extenderx` folder to the `/wp-content/plugins/` directory, or install it directly through the WordPress plugin screen.
-2. **Activate**: Go to the 'Plugins' screen in WordPress and activate **ExtenderX**.
-3. **Get Started**: Navigate to the Gutenberg editor, select any block, and explore **ExtenderX** features through the block settings sidebar.
+1. **Download & Install :**  Upload the `extenderx` folder to your `/wp-content/plugins/` directory, or install the plugin directly through the WordPress **Plugin Repository**.
+
+2. **Activate the Plugin :**  Navigate to the **Plugins** section of your WordPress dashboard and activate **ExtenderX**.
+
+3. **Start Creating :** Open the **Gutenberg editor**, choose any block, and start using **ExtenderX** features from the block settings sidebar.
 
 == Frequently Asked Questions ==
 
-= How do I apply animations or effects? =
+= How can I add animations to my Gutenberg blocks? =
 
-After installing and activating the plugin, go to the Gutenberg editor, select a block, and find **ExtenderX** settings in the block sidebar to apply tilt, visibility, or animation effects.
+To apply animations with **ExtenderX**, simply install and activate the plugin. In the **Gutenberg editor**, select any block and navigate to the **ExtenderX settings** in the block sidebar. From there, you can easily add **tilt effects**, **responsive visibility controls**, and **entrance animations** to your blocks without writing any code.
 
-= Does ExtenderX work with all blocks? =
+= Is ExtenderX compatible with all Gutenberg blocks? =
 
-Yes! **ExtenderX** fully supports all core and third-party blocks, making it a versatile tool for any WordPress site.
+Yes, **ExtenderX** is fully compatible with all **core Gutenberg blocks** and popular third-party block plugins like **Kadence Blocks**, **Ultimate Blocks**, **Spectra**, **Ghostkit**, **Essential Blocks**, **Gutenverse**, **Gutenkit**, **Stackable**, **Otter Blocks**, **Greenshift**, **CoBlocks**, and others. Whether you’re using built-in blocks or custom ones from other plugins, ExtenderX works seamlessly.
 
-= Will ExtenderX slow down my site? =
+= Will ExtenderX slow down my website? =
 
-No. **ExtenderX** is optimized for performance, ensuring your site stays fast and responsive, even with advanced animations and effects.
+No, **ExtenderX** is optimized for performance, ensuring your site remains **fast and responsive**. The plugin’s advanced animation features are designed to be lightweight, so your website maintains its speed while delivering a visually stunning experience.
 
-= Is ExtenderX beginner-friendly? =
+= Is ExtenderX easy to use for beginners?? =
 
-Absolutely! With an intuitive interface, even WordPress beginners can easily enhance their blocks without needing technical knowledge.
+Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beginners to professional developers. Its **intuitive interface** allows anyone to add **animations and effects** to their blocks without needing technical expertise. You can enhance your website with ease.
 
 == Screenshots ==
 
-1. **Tilt Effect in Action** - Showcasing the interactive tilt effect applied to a block.
-2. **Responsive Visibility Control** - Demonstrating how content visibility can be controlled based on screen size.
-3. **Entrance Animations** - Example of entrance animations as blocks appear on scroll.
+1. **Entrance Animations** ✨ – Watch blocks **animate as they scroll into view**, creating eye-catching content.
+2. **Floating Animations** 🪂 – Add dynamic **floating effects** to blocks for enhanced motion and visual impact.
+3. **3D Tilt Effect** 🌀 – See how blocks transform with interactive **3D tilt effects**, adding depth and engagement.
+4. **Responsive Visibility Control** 📱 – Control block visibility based on screen size, ensuring a **responsive design** for all devices.
 
 == Changelog ==
+
+= 1.2.0 [October 18, 2024] =
+* Added: Floating animation features added.
+* Fixed: Essential Blocks, ultimate blocks and Kedance blocks compatibility issue fixed.
 
 = 1.1.3 [October 10, 2024] =
 * Fixed: Ghostkit and Otter blocks compatibility issue fixed.
@@ -93,8 +118,8 @@ Absolutely! With an intuitive interface, even WordPress beginners can easily enh
 
 == Upgrade Notice ==
 
-= 1.1.0 =
-Add stunning entrance animations to your blocks! Upgrade now to unlock new features and effects.
+**Upgrade to version 1.2.0** to unlock floating animations and improved block compatibility for a more engaging user experience.
+Looking for more advanced features? Upgrade to [**ExtenderX Pro**](https://wpxero.com/plugins/extenderx) to access **premium animations**, **parallax effects**, and **priority support**!
 
 == License & Disclaimer ==
 
