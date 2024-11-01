@@ -1,13 +1,13 @@
-=== ExtenderX | Add Powerful Animations and Effects to Core and Third-Party Blocks ===
-Version: 1.2.0
+=== ExtenderX | Add Powerful Animation and Effects to Core and Third-Party Blocks ===
+Version: 1.3.0
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/#pricing
 Contributors: wpxero
 Tags: animation, animate, motion, visibility, gutenberg
 Requires at least: 6.0
-Tested up to: 6.6.2
-Stable tag: 1.2.0
+Tested up to: 6.7
+Stable tag: 1.3.0
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,8 +16,7 @@ Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dyn
 
 == Description ==
 
-**ExtenderX** is a powerful **WordPress block enhancement plugin** designed to transform ordinary **Gutenberg blocks** into stunning, interactive, eye-catching animations and effects to any elements. Whether you're creating a blog, business website, or e-commerce platform, ExtenderX allows you to effortlessly turn simple blocks into interactive, stunning elements that engage your visitors.
-
+**ExtenderX** is a powerful Gutenberg extension that transforms any WordPress block with animation effects and interactive controls. Designed for bloggers, business owners, and developers, it brings stunning animations and responsive controls to elevate your website’s design. From floating and entrance animations to tilt effects, ExtenderX has everything you need to keep users engaged.
 💡 **Want even more features?** Upgrade to [**ExtenderX Pro**](https://wpxero.com/plugins/extenderx) to unlock **exclusive premium tools**, including advanced parallax scrolling, custom animation triggers, and top-tier support!—ideal for professional designers looking to create high-impact websites.
 
 ### 🎯 **Key Features of ExtenderX**
@@ -41,7 +40,7 @@ Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dyn
 **✅ Tooltips** 💬 *(Coming Soon)*
   Add helpful **tooltips** to your blocks, enhancing **user interaction** and providing additional information in a sleek, unobtrusive manner. Tooltips help clarify content and improve **user experience** without overwhelming the design.
 
-**✅ Wrapper Links** 🔗 *(Coming Soon)*
+**✅ Wrapper Links** 🔗 *(New in 1.3.0)*
   Turn entire blocks into clickable elements with **wrapper links**, allowing you to easily add **clickable areas** to any block. This feature is great for improving **website navigation** and user engagement.
 
 
@@ -93,6 +92,10 @@ Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beg
 4. **Responsive Visibility Control** 📱 – Control block visibility based on screen size, ensuring a **responsive design** for all devices.
 
 == Changelog ==
+
+= 1.3.0 [November 01, 2024] =
+* Added: Wrapper link features added.
+* Fixed: WordPress v6.7 compatibility issue fixed.
 
 = 1.2.0 [October 18, 2024] =
 * Added: Floating animation features added.
