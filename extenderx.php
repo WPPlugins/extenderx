@@ -4,7 +4,7 @@
  * Plugin Name:       ExtenderX
  * Plugin URI:        https://wpxero.com/plugins/extenderx
  * Description:       Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dynamic effects, and responsive controls for stunning interactivity!
- * Version:           1.3.2
+ * Version:           1.3.3
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -81,7 +81,6 @@ class XERO_EXTENDERX {
      */
     public function __construct() {
         /* We do nothing here! */
-        $this->extenderx_sdk_xero_plugin();
     }
 
     /**
@@ -102,6 +101,7 @@ class XERO_EXTENDERX {
         $this->load_files();
         add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
         add_action('enqueue_block_assets', array($this, 'enqueue_front_scripts'));
+        $this->extenderx_sdk_xero_plugin();
     }
 
     /**
@@ -110,7 +110,7 @@ class XERO_EXTENDERX {
     public static function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.3.2');
+        define('XERO_EXTENDERX_VERSION', '1.3.3');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));

@@ -263,7 +263,7 @@ if (! class_exists('XERO_SDK')) {
 
 				include_once dirname(__FILE__) . '/deactivate-feedback.php';
 
-				$current_screen = get_admin_page_parent();
+				// $current_screen = function_exists('get_current_screen') ? get_current_screen() : null;
 
 				if (isset($current_screen) && ! empty($current_screen) && 'plugins.php' === $current_screen) {
 					add_action(
