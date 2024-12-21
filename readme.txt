@@ -1,5 +1,5 @@
 === ExtenderX | Add Powerful Animation and Effects to Core and Third-Party Blocks ===
-Version: 1.3.1
+Version: 1.3.2
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/#pricing
@@ -7,7 +7,7 @@ Contributors: wpxero
 Tags: animation, animate, motion, block-editor, gutenberg
 Requires at least: 6.0
 Tested up to: 6.7.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -92,6 +92,10 @@ Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beg
 4. **Responsive Visibility Control** 📱 – Control block visibility based on screen size, ensuring a **responsive design** for all devices.
 
 == Changelog ==
+
+= 1.3.2 [December 21, 2024] =
+* Fixed: Some minor issues are fixed.
+* Improved: System Improved.
 
 = 1.3.1 [November 29, 2024] =
 * Fixed: WordPress v6.7.1 compatibility issue fixed.

@@ -4,7 +4,7 @@
  * Plugin Name:       ExtenderX
  * Plugin URI:        https://wpxero.com/plugins/extenderx
  * Description:       Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dynamic effects, and responsive controls for stunning interactivity!
- * Version:           1.3.1
+ * Version:           1.3.2
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -81,6 +81,7 @@ class XERO_EXTENDERX {
      */
     public function __construct() {
         /* We do nothing here! */
+        $this->extenderx_sdk_xero_plugin();
     }
 
     /**
@@ -93,7 +94,6 @@ class XERO_EXTENDERX {
             self::$instance = new self();
             self::$instance->define_constants();
             self::$instance->init_hooks();
-            // self::$instance->init_freemius();
         }
         return self::$instance;
     }
@@ -107,10 +107,10 @@ class XERO_EXTENDERX {
     /**
      * Define Constants
      */
-    public function define_constants() {
+    public static function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.3.1');
+        define('XERO_EXTENDERX_VERSION', '1.3.2');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
@@ -136,6 +136,7 @@ class XERO_EXTENDERX {
         wp_enqueue_script('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.js', $args['dependencies'], $args['version'], true);
         wp_enqueue_style('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.css', array(), $args['version']);
         wp_enqueue_style('style-extenderx', plugins_url('dist/style-extenderx.css', __FILE__));
+        wp_enqueue_style('xero-sdk-extenderx', plugins_url('data/assets/css/data.css', __FILE__), array(), '1.2.1', 'all');
 
         $extensions_dir =  new XERO\EXTENDERX\Register();
         $extensions_dir->add_extensions();
@@ -151,52 +152,28 @@ class XERO_EXTENDERX {
     }
 
     /**
-     * Initialize Freemius SDK within the class.
+     * SDK Integration
      */
-    public function init_freemius() {
-        if (!isset($this->freemius)) {
-            // Activate multisite integration
-            if (!defined('WP_FS__PRODUCT_16610_MULTISITE')) {
-                define('WP_FS__PRODUCT_16610_MULTISITE', true);
-            }
 
-            // Include the Freemius SDK
-            require_once dirname(__FILE__) . '/freemius/start.php';
-
-            $this->freemius = fs_dynamic_init([
-                'id'                  => '16610',
-                'slug'                => 'extenderx',
-                'premium_slug'        => 'extenderx-pro',
-                'type'                => 'plugin',
-                'public_key'          => 'pk_a10c1ad159e0b69299a18d65aa9b6',
-                'is_premium'          => true,
-                'has_premium_version' => true,
-                'has_paid_plans'      => true,
-                'trial'               => [
-                    'days'               => 14,
-                    'is_require_payment' => true,
-                ],
-                'menu'                => [
-                    'first-path' => 'extenderx.php',
-                    'contact'    => false,
-                    'support'    => false,
-                ],
-            ]);
-        }
-
-        // Pass the Freemius instance to your Pro plugin
-        if (is_plugin_active('extenderx-pro/extenderx-pro.php')) {
-            $this->freemius->add_filter('is_premium', '__return_true');
-        }
-
-        return $this->freemius;
-    }
-
-    /**
-     * Check if Freemius is initialized and available.
-     */
-    public function is_freemius_active() {
-        return isset($this->freemius);
+    public  function extenderx_sdk_xero_plugin() {
+        require_once dirname(__FILE__) . '/data/start.php';
+        // wp_enqueue_style('xero-sdk-extenderx');
+        data_dynamic_init(array(
+            'sdk_version'   => '1.2.1',
+            'product_id'    => 10,
+            'plugin_name'   => 'ExtenderX',
+            'plugin_title'  => 'Greetings from WPXERO! 🌟',
+            'api_endpoint'  => 'https://wpxero.com/wp-json/dci/v1/data-insights',
+            'slug'          => 'extenderx',
+            'core_file'     => false,
+            'plugin_deactivate_id' => false,
+            'public_key'    => 'pk_ac3oLvWY8fey0tpDa9SE3ZO7OgmswHnA',
+            'is_premium'    => false,
+            'popup_notice'  => false,
+            'deactivate_feedback' => true,
+            'text_domain'  => 'extenderx',
+            'plugin_msg'   => '<p>Make a big impact on WordPress by sharing non-sensitive plugin data. Get valuable updates and be part of something amazing!</p>',
+        ));
     }
 }
 
