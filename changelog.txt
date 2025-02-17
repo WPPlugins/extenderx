@@ -1,66 +1,56 @@
-### 1.3.3 [December 21, 2024]
-### Fixed
-- Some Minor issues are fixed.
+## Changelog
 
-### 1.3.2 [December 21, 2024]
-### Improved
-- System Improved.
+### **1.3.4** – *February 17, 2025*
+#### **Improved**
+- General performance enhancements and code optimizations for a smoother user experience.
 
-### 1.3.1 [November 29, 2024]
-### Fixed
-- Fixed: WordPress v6.7.1 compatibility issue fixed.
+### **1.3.3** – *December 21, 2024*
+#### **Fixed**
+- Resolved minor bugs and stability issues.
 
-### 1.3.0 [November 01, 2024]
+### **1.3.2** – *December 21, 2024*
+#### **Improved**
+- System optimizations to enhance overall functionality.
 
-### Added
+### **1.3.1** – *November 29, 2024*
+#### **Fixed**
+- Ensured full compatibility with **WordPress 6.7.1**, addressing any related issues.
 
-- Wrapper Link features added.
+### **1.3.0** – *November 01, 2024*
+#### **Added**
+- **Wrapper Link** feature introduced, allowing users to wrap entire blocks with custom links for better interaction.
 
-### Fixed
+#### **Fixed**
+- Compatibility issues with **WordPress 6.7** have been resolved.
 
-- Fixed: WordPress v6.7 compatibility issue fixed.
+### **1.2.0** – *October 18, 2024*
+#### **Added**
+- **Floating Animations** feature introduced, providing new motion effects to enhance visual appeal.
 
-### 1.2.0 [October 18, 2024]
+#### **Fixed**
+- Resolved compatibility conflicts with **Essential Blocks**, **Ultimate Blocks**, and **Kadence Blocks**.
 
-### Added
+### **1.1.3** – *October 10, 2024*
+#### **Fixed**
+- Compatibility fixes for **Ghostkit** and **Otter Blocks** to ensure seamless integration.
+- Various minor bug fixes for improved stability.
 
-- Floating animation features added.
+### **1.1.2** – *October 08, 2024*
+#### **Fixed**
+- Addressed compatibility issues with **Spectra** and **GutenKit** block plugins.
 
-### Fixed
+### **1.1.1** – *October 04, 2024*
+#### **Added**
+- **Easing Control** added to **Entrance Animations** for smoother motion effects.
+- **Value Reset** functionality implemented for **Tilt Animation**, allowing users to revert changes easily.
 
-- Fixed: Essential Blocks, ultimate blocks and Kadence blocks compatibility issue fixed.
+#### **Improved**
+- Enhanced **Controls UI** for a more intuitive user experience.
 
+### **1.1.0** – *October 03, 2024*
+#### **Added**
+- **Entrance Animations** introduced, enabling blocks to animate on page load for better engagement.
 
-### 1.1.3 [October 10, 2024]
-
-### Fixed
-
-- Ghostkit and Otter blocks compatibility issue fixed.
-- Some minor issues are fixed.
-
-### 1.1.2 [October 08, 2024]
-
-### Fixed
-
-- Spectra and Gutenkit compatibility issue fixed.
-
-### 1.1.1 [October 04, 2024]
-
-### Added
-
-- Easing features added to Entrance animation
-- Value Reset features added to Tilt animation
-
-### Improved
-
-- Controls UI Improved
-
-### 1.1.0 [October 03, 2024]
-
-### Added
-
-- Entrance animation features added
-
-### 1.0.0 [October 02, 2024]
-
-Initial Release
+### **1.0.0** – *October 02, 2024*
+#### **Initial Release**
+- First official release of the plugin with core functionalities.

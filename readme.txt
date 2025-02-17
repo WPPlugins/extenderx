@@ -1,13 +1,13 @@
 === ExtenderX | Add Powerful Animation and Effects to Core and Third-Party Blocks ===
-Version: 1.3.3
+Version: 1.3.4
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/#pricing
 Contributors: wpxero
 Tags: animation, animate, motion, block-editor, gutenberg
 Requires at least: 6.0
-Tested up to: 6.7.1
-Stable tag: 1.3.3
+Tested up to: 6.7.2
+Stable tag: 1.3.4
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -93,40 +93,43 @@ Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beg
 
 == Changelog ==
 
-= 1.3.3 [December 21, 2024] =
-* Fixed: Some minor issues are fixed.
+= 1.3.4 – February 17, 2025 =
+* Improved: General performance enhancements and code optimizations for a smoother user experience.
 
-= 1.3.2 [December 21, 2024] =
-* Improved: System Improved.
+= 1.3.3 – December 21, 2024 =
+* Fixed: Resolved minor bugs and stability issues.
 
-= 1.3.1 [November 29, 2024] =
-* Fixed: WordPress v6.7.1 compatibility issue fixed.
+= 1.3.2 – December 21, 2024 =
+* Improved: System optimizations to enhance overall functionality.
 
-= 1.3.0 [November 01, 2024] =
-* Added: Wrapper link features added.
-* Fixed: WordPress v6.7 compatibility issue fixed.
+= 1.3.1 – November 29, 2024 =
+* Fixed: Ensured full compatibility with WordPress 6.7.1, addressing any related issues.
 
-= 1.2.0 [October 18, 2024] =
-* Added: Floating animation features added.
-* Fixed: Essential Blocks, ultimate blocks and Kadence blocks compatibility issue fixed.
+= 1.3.0 – November 01, 2024 =
+* Added: Wrapper Link feature introduced, allowing users to wrap entire blocks with custom links for better interaction.
+* Fixed: Compatibility issues with WordPress 6.7 have been resolved.
 
-= 1.1.3 [October 10, 2024] =
-* Fixed: Ghostkit and Otter blocks compatibility issue fixed.
-* Fixed: Some minor issues are fixed.
+= 1.2.0 – October 18, 2024 =
+* Added: Floating Animations feature introduced, providing new motion effects to enhance visual appeal.
+* Fixed: Resolved compatibility conflicts with Essential Blocks, Ultimate Blocks, and Kadence Blocks.
 
-= 1.1.2 [October 08, 2024] =
-* Fixed: Spectra and Gutenkit compatibility issue fixed.
+= 1.1.3 – October 10, 2024 =
+* Fixed: Compatibility fixes for Ghostkit and Otter Blocks to ensure seamless integration.
+* Fixed: Various minor bug fixes for improved stability.
 
-= 1.1.1 [October 04, 2024] =
-* Added: Easing features to Entrance animation
-* Added: Value Reset features to Tilt animation
-* Improve: Controls UI
+= 1.1.2 – October 08, 2024 =
+* Fixed: Addressed compatibility issues with Spectra and GutenKit block plugins.
 
-= 1.1.0 [October 03, 2024] =
-* Added: Entrance animation feature for blocks.
+= 1.1.1 – October 04, 2024 =
+* Added: Easing Control added to Entrance Animations for smoother motion effects.
+* Added: Value Reset functionality implemented for Tilt Animation, allowing users to revert changes easily.
+* Improved: Enhanced Controls UI for a more intuitive user experience.
 
-= 1.0.0 [October 02, 2024] =
-* Initial Release with Tilt Effect and Responsive Visibility Control.
+= 1.1.0 – October 03, 2024 =
+* Added: Entrance Animations introduced, enabling blocks to animate on page load for better engagement.
+
+= 1.0.0 – October 02, 2024 =
+* Initial Release: First official release of the plugin with core functionalities.
 
 == Upgrade Notice ==
 
