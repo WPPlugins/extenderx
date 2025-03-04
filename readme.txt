@@ -1,5 +1,5 @@
 === ExtenderX | Add Powerful Animation and Effects to Core and Third-Party Blocks ===
-Version: 1.3.4
+Version: 1.3.5
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/#pricing
@@ -7,7 +7,7 @@ Contributors: wpxero
 Tags: animation, animate, motion, block-editor, gutenberg
 Requires at least: 6.0
 Tested up to: 6.7.2
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dyn
 == Description ==
 
 **ExtenderX** is a powerful Gutenberg extension that transforms any WordPress block with animation effects and interactive controls. Designed for bloggers, business owners, and developers, it brings stunning animations and responsive controls to elevate your website’s design. From floating and entrance animations to tilt effects, ExtenderX has everything you need to keep users engaged.
-💡 **Want even more features?** Upgrade to [**ExtenderX Pro**](https://wpxero.com/plugins/extenderx) to unlock **exclusive premium tools**, including advanced parallax scrolling, custom animation triggers, and top-tier support!—ideal for professional designers looking to create high-impact websites.
+💡 including advanced parallax scrolling, custom animation triggers, and top-tier support!—ideal for professional designers looking to create high-impact websites.
 
 ### 🎯 **Key Features of ExtenderX**
 **✅ Entrance Animations** ✨
@@ -93,6 +93,9 @@ Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beg
 
 == Changelog ==
 
+= 1.3.5 – March 04, 2025 =
+* Added: Unlock all pro features, happy designing:)
+
 = 1.3.4 – February 17, 2025 =
 * Improved: General performance enhancements and code optimizations for a smoother user experience.
 
@@ -130,11 +133,6 @@ Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beg
 
 = 1.0.0 – October 02, 2024 =
 * Initial Release: First official release of the plugin with core functionalities.
-
-== Upgrade Notice ==
-
-**Upgrade to version 1.2.0** to unlock floating animations and improved block compatibility for a more engaging user experience.
-Looking for more advanced features? Upgrade to [**ExtenderX Pro**](https://wpxero.com/plugins/extenderx) to access **premium animations**, **parallax effects**, and **priority support**!
 
 == License & Disclaimer ==
 
