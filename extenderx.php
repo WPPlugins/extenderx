@@ -4,7 +4,7 @@
  * Plugin Name:       ExtenderX
  * Plugin URI:        https://wpxero.com/plugins/extenderx
  * Description:       Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dynamic effects, and responsive controls for stunning interactivity!
- * Version:           1.3.5
+ * Version:           1.3.6
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -101,7 +101,7 @@ class XERO_EXTENDERX {
         $this->load_files();
         add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
         add_action('enqueue_block_assets', array($this, 'enqueue_front_scripts'));
-        $this->extenderx_sdk_xero_plugin();
+        add_action('admin_init', array($this, 'wpxero_data_insights'));
     }
 
     /**
@@ -110,7 +110,7 @@ class XERO_EXTENDERX {
     public static function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.3.5');
+        define('XERO_EXTENDERX_VERSION', '1.3.6');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
@@ -136,7 +136,6 @@ class XERO_EXTENDERX {
         wp_enqueue_script('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.js', $args['dependencies'], $args['version'], true);
         wp_enqueue_style('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.css', array(), $args['version']);
         wp_enqueue_style('style-extenderx', plugins_url('dist/style-extenderx.css', __FILE__));
-        wp_enqueue_style('xero-sdk-extenderx', plugins_url('data/assets/css/data.css', __FILE__), array(), '1.2.1', 'all');
 
         $extensions_dir =  new XERO\EXTENDERX\Register();
         $extensions_dir->add_extensions();
@@ -155,25 +154,25 @@ class XERO_EXTENDERX {
      * SDK Integration
      */
 
-    public  function extenderx_sdk_xero_plugin() {
-        require_once dirname(__FILE__) . '/data/start.php';
-        // wp_enqueue_style('xero-sdk-extenderx');
-        data_dynamic_init(array(
-            'sdk_version'   => '1.2.1',
-            'product_id'    => 10,
-            'plugin_name'   => 'ExtenderX',
-            'plugin_title'  => 'Greetings from WPXERO! 🌟',
-            'api_endpoint'  => 'https://wpxero.com/wp-json/dci/v1/data-insights',
-            'slug'          => 'extenderx',
-            'core_file'     => false,
-            'plugin_deactivate_id' => false,
-            'public_key'    => 'pk_ac3oLvWY8fey0tpDa9SE3ZO7OgmswHnA',
-            'is_premium'    => false,
-            'popup_notice'  => false,
-            'deactivate_feedback' => true,
-            'text_domain'  => 'extenderx',
-            'plugin_msg'   => '<p>Make a big impact on WordPress by sharing non-sensitive plugin data. Get valuable updates and be part of something amazing!</p>',
-        ));
+    public  function wpxero_data_insights() {
+        require_once XERO_EXTENDERX_DIR_PATH . 'includes/analytics/init.php';
+        wpxero_analytics_init();
+    }
+
+    public function xero_extenderx_activate() {
+    }
+
+    public function xero_extenderx_deactivate() {
+        // Initialize analytics to handle deactivation feedback
+        require_once XERO_EXTENDERX_DIR_PATH . 'includes/analytics/init.php';
+
+        // Add action to show feedback form before deactivation
+        add_action('admin_footer', function () {
+            $analytics = wpxero_analytics_init();
+
+            // Show the feedback form
+            $analytics->deactivate_feedback_form();
+        });
     }
 }
 
@@ -187,3 +186,8 @@ function xero_extenderx() {
     return XERO_EXTENDERX::instance();
 }
 add_action('plugins_loaded', 'xero_extenderx');
+
+$plugin = xero_extenderx();
+// activate and deactivate
+register_activation_hook(__FILE__, array($plugin, 'xero_extenderx_activate'));
+register_deactivation_hook(__FILE__, array($plugin, 'xero_extenderx_deactivate'));
