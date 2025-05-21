@@ -21,7 +21,7 @@ if (!function_exists('wpxero_analytics_init')) {
         require_once dirname(__FILE__) . '/config.php';
 
         // Get default parameters from config
-        $params = wp_parse_args($custom_params, uc_get_analytics_config());
+        $params = wp_parse_args($custom_params, wpxero_get_analytics_config());
 
         $analytics = new WPXERO_Analytics($params);
 

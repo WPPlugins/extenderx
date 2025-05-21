@@ -48,6 +48,11 @@ class Attributes {
                 continue;
             }
 
+            //if tooltip then enqueue tippy
+            if ($key === 'tooltip') {
+                wp_enqueue_style('tippy');
+            }
+
             // Enqueue styles and scripts for active extensions
             wp_enqueue_style("@extenderx/extensions/{$key}/style");
             wp_enqueue_script("@extenderx/extensions/{$key}/script");

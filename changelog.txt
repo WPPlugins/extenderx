@@ -1,3 +1,5 @@
+= 1.4.0 – May 20, 2025 =
+* Added: Tooltips feature added.
 
 = 1.3.6 – May 01, 2025 =
 * Fixed: Compatibility issues with **WordPress 6.8.1** have been resolved.

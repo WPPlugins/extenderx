@@ -1,5 +1,5 @@
 === ExtenderX | Add Powerful Animation and Effects to Core and Third-Party Blocks ===
-Version: 1.3.6
+Version: 1.4.0
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/#pricing
@@ -7,7 +7,7 @@ Contributors: wpxero
 Tags: animation, animate, motion, block-editor, gutenberg
 Requires at least: 6.0
 Tested up to: 6.8.1
-Stable tag: 1.3.6
+Stable tag: 1.4.0
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,7 +37,7 @@ Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dyn
 **✅ Parallax Scrolling** 🌌 *(Coming Soon)*
   Enhance your site with visually immersive **parallax scrolling** effects, creating a depth-rich experience as users scroll through your content. This feature is perfect for creating **modern scrolling websites** with engaging layered backgrounds.
 
-**✅ Tooltips** 💬 *(Coming Soon)*
+**✅ Tooltips** 💬 *(New in 1.4.0)*
   Add helpful **tooltips** to your blocks, enhancing **user interaction** and providing additional information in a sleek, unobtrusive manner. Tooltips help clarify content and improve **user experience** without overwhelming the design.
 
 **✅ Wrapper Links** 🔗 *(New in 1.3.0)*
@@ -92,6 +92,9 @@ Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beg
 4. **Responsive Visibility Control** 📱 – Control block visibility based on screen size, ensuring a **responsive design** for all devices.
 
 == Changelog ==
+
+= 1.4.0 – May 20, 2025 =
+* Added: Tooltips feature added.
 
 = 1.3.6 – May 01, 2025 =
 * Fixed: Compatibility issues with **WordPress 6.8.1** have been resolved.
