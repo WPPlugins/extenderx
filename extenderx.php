@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Plugin Name:       ExtenderX
- * Plugin URI:        https://wpxero.com/plugins/extenderx
- * Description:       Supercharge your Gutenberg blocks with ExtenderX! Enjoy advanced animations, dynamic effects, and responsive controls for stunning interactivity!
- * Version:           1.4.1
+ * Plugin Name:       Block Animation Effects – ExtenderX for Gutenberg Blocks
+ * Plugin URI:        https://wpxero.com/extenderx
+ * Description:       Animate Gutenberg blocks with entrance, floating, tilt, and motion effects. Lightweight, responsive, and easy to use.
+ * Version:           1.4.2
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -110,7 +110,7 @@ class XERO_EXTENDERX {
     public static function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.4.1');
+        define('XERO_EXTENDERX_VERSION', '1.4.2');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
@@ -136,7 +136,7 @@ class XERO_EXTENDERX {
         $args = require $asset_path;
         wp_enqueue_script('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.js', $args['dependencies'], $args['version'], true);
         wp_enqueue_style('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.css', array(), $args['version']);
-        wp_enqueue_style('style-extenderx', plugins_url('dist/style-extenderx.css', __FILE__));
+        wp_enqueue_style('style-extenderx', plugins_url('dist/style-extenderx.css',  __FILE__), array(), $args['version']);
         // Enqueue tippy
         wp_enqueue_style('tippy');
         $extensions_dir =  new XERO\EXTENDERX\Register();

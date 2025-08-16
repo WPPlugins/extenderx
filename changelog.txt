@@ -1,3 +1,9 @@
+= 1.4.2 – August 17, 2025 =
+* Added: New animation presets for entrance effects.
+* Improved: Further optimized loading times for animation scripts.
+* Fixed: Compatibility issues with the latest WordPress 6.8.2.
+* Fixed: Edge case where animations wouldn't trigger on certain themes.
+
 = 1.4.1 – July 10, 2025 =
 * Improved: Enhanced tooltip styling and positioning for better user experience.
 * Improved: Optimized plugin assets for faster loading and improved performance.
