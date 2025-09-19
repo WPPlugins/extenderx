@@ -1,3 +1,9 @@
+= 1.4.3 – September 19, 2025 =
+* Fixed: Resolved compatibility issues with WordPress 6.8.2 for improved stability.
+* Improved: Enhanced overall performance and system reliability.
+* Fixed: Corrected preview rendering issues for floating animations in the block editor.
+* Fixed: Resolved preview display problems for tilt animations in the block editor.
+
 = 1.4.2 – August 17, 2025 =
 * Added: New animation presets for entrance effects.
 * Improved: Further optimized loading times for animation scripts.
