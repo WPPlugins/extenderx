@@ -1,3 +1,6 @@
+= 1.4.4 – November 11, 2025 =
+* Improved: Enhanced overall performance and system reliability.
+
 = 1.4.3 – September 19, 2025 =
 * Fixed: Resolved compatibility issues with WordPress 6.8.2 for improved stability.
 * Improved: Enhanced overall performance and system reliability.

@@ -1,5 +1,5 @@
 === Block Animation Effects – ExtenderX for Gutenberg Blocks ===
-Version: 1.4.3
+Version: 1.4.4
 Author: WPXERO
 Author URI: https://wpxero.com/extenderx
 Donate link: https://wpxero.com/extenderx/#pricing
@@ -7,7 +7,7 @@ Contributors: wpxero
 Tags: block animation, Gutenberg animation, block effects, entrance animation, tilt effect
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -88,6 +88,9 @@ Yes! **ExtenderX** is designed for users of all skill levels, from WordPress beg
 4. **Responsive Visibility Control** 📱 – Control block visibility based on screen size, ensuring a **responsive design** for all devices.
 
 == Changelog ==
+
+= 1.4.4 – November 11, 2025 =
+* Improved: Enhanced overall performance and system reliability.
 
 = 1.4.3 – September 19, 2025 =
 * Fixed: Resolved compatibility issues with WordPress 6.8.2 for improved stability.
