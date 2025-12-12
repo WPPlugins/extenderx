@@ -4,7 +4,7 @@
  * Plugin Name:       Block Animation Effects – ExtenderX for Gutenberg Blocks
  * Plugin URI:        https://wpxero.com/extenderx
  * Description:       Animate Gutenberg blocks with entrance, floating, tilt, and motion effects. Lightweight, responsive, and easy to use.
- * Version:           1.4.4
+ * Version:           1.4.5
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -110,7 +110,7 @@ class XERO_EXTENDERX {
     public static function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.4.4');
+        define('XERO_EXTENDERX_VERSION', '1.4.5');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
