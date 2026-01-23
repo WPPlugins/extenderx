@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class LightBeams {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_action('wp_footer', [$this, 'render_effect']);
     }
@@ -22,10 +26,9 @@ class LightBeams {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $style = $settings['global']['seasonal_effects']['light_beams']['style'] ?? 'spotlight';
-        $intensity = $settings['global']['seasonal_effects']['light_beams']['intensity'] ?? 50;
-        $color = $settings['global']['seasonal_effects']['light_beams']['color'] ?? 'white';
+        $style = $this->settings_cache->get_setting('global.seasonal_effects.light_beams.style', 'spotlight');
+        $intensity = $this->settings_cache->get_setting('global.seasonal_effects.light_beams.intensity', 50);
+        $color = $this->settings_cache->get_setting('global.seasonal_effects.light_beams.color', 'white');
 ?>
         <div id="xero-light-beams"
             class="xero-seasonal-effect"

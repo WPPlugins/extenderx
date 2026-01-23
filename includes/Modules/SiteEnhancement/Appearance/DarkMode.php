@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -12,6 +13,7 @@ class DarkMode {
     use Singleton;
 
     private $settings = [];
+    private $settings_cache;
     private $default_settings = [
         'brightness' => 100,
         'contrast' => 90,
@@ -31,18 +33,19 @@ class DarkMode {
     ];
 
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         $this->load_settings();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
-        add_action('wp_footer', [$this, 'render_toggle_button'], 9999);
+        add_action('wp_footer', [$this, 'render_toggle_button']);
     }
 
     private function load_settings() {
-        $global_settings = get_option('extenderx_settings', []);
-        $dark_mode_settings = $global_settings['global']['appearance']['dark_mode'] ?? [];
+        $dark_mode_settings = $this->settings_cache->get_setting('global.appearance.dark_mode', []);
         $this->settings = wp_parse_args($dark_mode_settings, $this->default_settings);
     }
 
     public function enqueue_assets() {
+
         // Add critical inline CSS to prevent FOUC
         $this->add_critical_inline_css();
 
@@ -224,7 +227,7 @@ class DarkMode {
     }
 
     public function render_effect() {
-        // This is called by the Appearance module for compatibility
-        // The actual rendering is done via render_toggle_button in wp_footer
+        // Called by ModuleBase via wp_footer hook
+        $this->render_toggle_button();
     }
 }

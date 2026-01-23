@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class FallingHearts {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_action('wp_footer', [$this, 'render_effect']);
     }
@@ -22,9 +26,8 @@ class FallingHearts {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $intensity = $settings['global']['seasonal_effects']['hearts_falling']['intensity'] ?? 50;
-        $speed = $settings['global']['seasonal_effects']['hearts_falling']['speed'] ?? 50;
+        $intensity = $this->settings_cache->get_setting('global.seasonal_effects.hearts_falling.intensity', 50);
+        $speed = $this->settings_cache->get_setting('global.seasonal_effects.hearts_falling.speed', 50);
 ?>
         <canvas id="xero-falling-hearts"
             class="xero-seasonal-effect"

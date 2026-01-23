@@ -3,40 +3,52 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Animations;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\ModuleBase;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\Animations\EntranceEffects;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\Animations\ParallaxEffects;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\Animations\FloatingElements;
 
 defined('ABSPATH') || exit;
 
-class Animations {
+class Animations extends ModuleBase {
     use Singleton;
 
-    const SETTINGS_PREFIX = 'global.animations';
-    const MODULE_SETTINGS_KEY = 'animations';
+    private const SETTINGS_PREFIX = 'global.animations';
+    private const MODULE_SETTINGS_KEY = 'global';
 
-    const ANIMATION_FEATURES = [
-        'entrance_effects' => EntranceEffects::class,
-        'parallax_effects' => ParallaxEffects::class,
-        'floating_effects' => FloatingElements::class,
+    private const ANIMATION_FEATURES = [
+        'entrance_effects.enabled' => EntranceEffects::class,
+        'parallax_effects.enabled' => ParallaxEffects::class,
+        'floating_effects.enabled' => FloatingElements::class,
     ];
 
-    public function __construct() {
-        $this->init_features();
+    /**
+     * Get the settings key for checking if module is enabled.
+     *
+     * @since 1.0.0
+     * @return string
+     */
+    protected function get_module_settings_key(): string {
+        return self::MODULE_SETTINGS_KEY;
     }
 
-    private function init_features() {
-        $settings = get_option('extenderx_settings', []);
-        $animation_settings = $settings['global']['animations'] ?? [];
+    /**
+     * Get the settings prefix for module features.
+     *
+     * @since 1.0.0
+     * @return string
+     */
+    protected function get_settings_prefix(): string {
+        return self::SETTINGS_PREFIX;
+    }
 
-        foreach (self::ANIMATION_FEATURES as $feature_key => $feature_class) {
-            $feature_settings = $animation_settings[$feature_key] ?? [];
-            $enabled = $feature_settings['enabled'] ?? false;
-
-            if ($enabled && class_exists($feature_class)) {
-                $instance = $feature_class::instance();
-
-                if (method_exists($instance, 'render_effect')) {
-                    add_action('wp_footer', [$instance, 'render_effect'], 9999);
-                }
-            }
-        }
+    /**
+     * Get the animation features mapping.
+     *
+     * @since 1.0.0
+     * @return array<string, class-string>
+     */
+    protected function get_features(): array {
+        return self::ANIMATION_FEATURES;
     }
 }

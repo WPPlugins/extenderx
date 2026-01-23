@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class MouseTrail {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_action('wp_footer', [$this, 'render_effect']);
     }
@@ -22,10 +26,9 @@ class MouseTrail {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $style = $settings['global']['seasonal_effects']['mouse_trail']['style'] ?? 'glow';
-        $size = $settings['global']['seasonal_effects']['mouse_trail']['size'] ?? 50;
-        $color = $settings['global']['seasonal_effects']['mouse_trail']['color'] ?? 'rainbow';
+        $style = $this->settings_cache->get_setting('global.seasonal_effects.mouse_trail.style', 'glow');
+        $size = $this->settings_cache->get_setting('global.seasonal_effects.mouse_trail.size', 50);
+        $color = $this->settings_cache->get_setting('global.seasonal_effects.mouse_trail.color', 'rainbow');
 ?>
         <canvas id="xero-mouse-trail"
             class="xero-seasonal-effect"

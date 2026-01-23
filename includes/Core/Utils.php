@@ -9,31 +9,30 @@ defined('ABSPATH') || exit;
 class Utils {
     use Singleton;
 
+    /**
+     * Settings cache instance
+     *
+     * @var SettingsCache
+     */
+    private $settings_cache;
 
+    /**
+     * Constructor
+     */
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
     }
-
 
     /**
      * Get ExtenderX setting value by path
+     * Uses centralized caching to prevent excessive database queries
      *
      * @param string $path Dot notation path (e.g., 'global.appearance.dark_mode')
      * @param mixed $default Default value if not found
      * @return mixed
      */
     public function extenderx_get_setting($path, $default = null) {
-        $settings = get_option('extenderx_settings', []);
-        $keys = explode('.', $path);
-
-        foreach ($keys as $key) {
-            if (isset($settings[$key])) {
-                $settings = $settings[$key];
-            } else {
-                return $default;
-            }
-        }
-
-        return $settings;
+        return $this->settings_cache->get_setting($path, $default);
     }
 
     // Usage examples:

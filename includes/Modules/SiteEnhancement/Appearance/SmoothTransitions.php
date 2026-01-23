@@ -21,7 +21,6 @@ class SmoothTransitions {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
 ?>
         <div id="xero-smooth-transitions" class="xero-appearance-effect"></div>
 <?php

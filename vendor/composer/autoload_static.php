@@ -6,15 +6,19 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitf563961b4450e37c77a82860451bb6ef
 {
+    public static $files = array (
+        '8d50dc88e56bace65e1e72f6017983ed' => __DIR__ . '/..' . '/freemius/wordpress-sdk/start.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
-        'W' =>
+        'W' => 
         array (
             'WPXERO\\ExtenderX\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WPXERO\\ExtenderX\\' =>
+        'WPXERO\\ExtenderX\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),

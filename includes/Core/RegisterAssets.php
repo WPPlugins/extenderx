@@ -16,73 +16,73 @@ class RegisterAssets {
 
     public function register_assets() {
         // Utility protection scripts
-        wp_register_script('xero-disable-copy', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-copy/index.js', array(), null, true);
-        wp_register_script('xero-disable-right-click', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-right-click/index.js', array(), null, true);
-        wp_register_script('xero-disable-inspect', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-inspect/index.js', array(), null, true);
-        wp_register_script('xero-disable-image-drag', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-image-drag/index.js', array(), null, true);
+        wp_register_script('xero-disable-copy', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-copy/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-disable-right-click', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-right-click/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-disable-inspect', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-inspect/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-disable-image-drag', XERO_EXTENDERX_DIST_URL . 'modules/global/utilities/disable-image-drag/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // Site modes scripts
-        wp_register_script('xero-age-verification', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/age-verification/index.js', array(), null, true);
-        wp_register_script('xero-cookie-consent', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/cookie-consent/index.js', array(), null, true);
-        wp_register_script('xero-gdpr-notice', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/gdpr-notice/index.js', array(), null, true);
-        wp_register_script('xero-exit-intent', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/exit-intent/index.js', array(), null, true);
+        wp_register_script('xero-age-verification', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/age-verification/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-cookie-consent', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/cookie-consent/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-gdpr-notice', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/gdpr-notice/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-exit-intent', XERO_EXTENDERX_DIST_URL . 'modules/global/site-modes/exit-intent/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // UI enhancement scripts
-        wp_register_script('xero-back-to-top', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/back-to-top/index.js', array(), null, true);
-        wp_register_script('xero-sticky-header', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/sticky-header/index.js', array(), null, true);
-        wp_register_script('xero-sticky-footer', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/sticky-footer/index.js', array(), null, true);
-        wp_register_script('xero-scroll-progress', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/scroll-progress/index.js', array(), null, true);
-        wp_register_script('xero-smart-scroll', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/smart-scroll/index.js', array(), null, true);
-        wp_register_script('xero-custom-cursor', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/custom-cursor/index.js', array(), null, true);
-        wp_register_script('xero-cursor-hover-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/cursor-hover-effects/index.js', array(), null, true);
-        wp_register_script('xero-cursor-grab-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/cursor-grab-mode/index.js', array(), null, true);
-        wp_register_script('xero-smooth-scrolling', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/smooth-scrolling/index.js', array(), null, true);
+        wp_register_script('xero-back-to-top', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/back-to-top/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-sticky-header', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/sticky-header/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-sticky-footer', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/sticky-footer/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-scroll-progress', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/scroll-progress/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-smart-scroll', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/smart-scroll/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-custom-cursor', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/custom-cursor/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-cursor-hover-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/cursor-hover-effects/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-cursor-grab-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/cursor-grab-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-smooth-scrolling', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/smooth-scrolling/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // Seasonal effects scripts
-        wp_register_script('xero-christmas-lights', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/christmas-lights/index.js', array(), null, true);
-        wp_register_script('xero-fireworks', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/fireworks/index.js', array(), null, true);
-        wp_register_script('xero-autumn-leaves', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/autumn-leaves/index.js', array(), null, true);
-        wp_register_script('xero-falling-hearts', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/falling-hearts/index.js', array(), null, true);
-        wp_register_script('xero-halloween-bats', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/halloween-bats/index.js', array(), null, true);
-        wp_register_script('xero-ramadan-lanterns', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/ramadan-lanterns/index.js', array(), null, true);
-        wp_register_script('xero-weather-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/weather-effects/index.js', array(), null, true);
-        wp_register_script('xero-particle-background', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/particle-background/index.js', array(), null, true);
-        wp_register_script('xero-fireflies', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/fireflies/index.js', array(), null, true);
-        wp_register_script('xero-stars-twinkling', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/stars-twinkling/index.js', array(), null, true);
-        wp_register_script('xero-floating-emojis', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/floating-emojis/index.js', array(), null, true);
-        wp_register_script('xero-floating-shapes', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/floating-shapes/index.js', array(), null, true);
-        wp_register_script('xero-light-beams', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/light-beams/index.js', array(), null, true);
-        wp_register_script('xero-mouse-trail', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/mouse-trail/index.js', array(), null, true);
+        wp_register_script('xero-christmas-lights', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/christmas-lights/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-fireworks', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/fireworks/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-autumn-leaves', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/autumn-leaves/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-falling-hearts', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/falling-hearts/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-halloween-bats', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/halloween-bats/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-ramadan-lanterns', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/ramadan-lanterns/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-weather-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/weather-effects/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-particle-background', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/particle-background/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-fireflies', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/fireflies/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-stars-twinkling', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/stars-twinkling/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-floating-emojis', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/floating-emojis/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-floating-shapes', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/floating-shapes/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-light-beams', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/light-beams/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-mouse-trail', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/mouse-trail/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // Appearance scripts
-        wp_register_script('xero-dark-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dark-mode/index.js', array('darkreader'), null, true);
-        wp_register_script('xero-light-mode-toggle', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/light-mode-toggle/index.js', array(), null, true);
-        wp_register_script('xero-auto-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/auto-mode/index.js', array(), null, true);
-        wp_register_script('xero-high-contrast-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/high-contrast-mode/index.js', array(), null, true);
-        wp_register_script('xero-reading-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/reading-mode/index.js', array(), null, true);
-        wp_register_script('xero-night-shift-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/night-shift-mode/index.js', array(), null, true);
-        wp_register_script('xero-fade-in-load', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/fade-in-load/index.js', array(), null, true);
-        wp_register_script('xero-smooth-transitions', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/smooth-transitions/index.js', array(), null, true);
-        wp_register_script('xero-skeleton-loader', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/skeleton-loader/index.js', array(), null, true);
-        wp_register_script('xero-preloader', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/preloader/index.js', array(), null, true);
-        wp_register_script('xero-glassmorphism', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/glassmorphism/index.js', array(), null, true);
-        wp_register_script('xero-blur-background-on-scroll', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/blur-background-on-scroll/index.js', array(), null, true);
-        wp_register_script('xero-dim-background-on-idle', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dim-background-on-idle/index.js', array(), null, true);
+        wp_register_script('xero-dark-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dark-mode/index.js', array('darkreader'), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-light-mode-toggle', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/light-mode-toggle/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-auto-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/auto-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-high-contrast-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/high-contrast-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-reading-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/reading-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-night-shift-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/night-shift-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-fade-in-load', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/fade-in-load/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-smooth-transitions', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/smooth-transitions/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-skeleton-loader', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/skeleton-loader/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-preloader', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/preloader/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-glassmorphism', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/glassmorphism/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-blur-background-on-scroll', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/blur-background-on-scroll/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-dim-background-on-idle', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dim-background-on-idle/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // Animation scripts
-        wp_register_script('xero-entrance-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/entrance-effects/index.js', array(), null, true);
-        wp_register_script('xero-parallax-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/parallax-effects/index.js', array(), null, true);
-        wp_register_script('xero-floating-elements', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/floating-elements/index.js', array(), null, true);
+        wp_register_script('xero-entrance-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/entrance-effects/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-parallax-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/parallax-effects/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-floating-elements', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/floating-elements/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // Marketing scripts
-        wp_register_script('xero-announcement-bar', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/announcement-bar/index.js', array(), null, true);
-        wp_register_script('xero-floating-cta-button', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/floating-cta-button/index.js', array(), null, true);
-        wp_register_script('xero-sticky-whatsapp-button', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/sticky-whatsapp-button/index.js', array(), null, true);
-        wp_register_script('xero-cta-pulse-animation', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/cta-pulse-animation/index.js', array(), null, true);
-        wp_register_script('xero-global-countdown-banner', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/global-countdown-banner/index.js', array(), null, true);
+        wp_register_script('xero-announcement-bar', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/announcement-bar/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-floating-cta-button', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/floating-cta-button/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-sticky-whatsapp-button', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/sticky-whatsapp-button/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-cta-pulse-animation', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/cta-pulse-animation/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-global-countdown-banner', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/global-countdown-banner/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         //vender script register
-        wp_register_script('darkreader', XERO_EXTENDERX_ASSETS_URL . 'vendor/darkreader/darkreader.js', array(), null, true);
+        wp_register_script('darkreader', XERO_EXTENDERX_ASSETS_URL . 'vendor/darkreader/darkreader.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // Site modes styles with RTL support
         $this->register_style_with_rtl('xero-age-verification', 'modules/global/site-modes/age-verification/style-style.css');

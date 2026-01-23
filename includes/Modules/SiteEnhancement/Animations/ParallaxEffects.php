@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Animations;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class ParallaxEffects {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
     }
 
@@ -21,9 +25,8 @@ class ParallaxEffects {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $speed = $settings['global']['animations']['parallax_effects']['speed'] ?? 50;
-        $elements = $settings['global']['animations']['parallax_effects']['elements'] ?? 'images';
+        $speed = $this->settings_cache->get_setting('global.animations.parallax_effects.speed', 50);
+        $elements = $this->settings_cache->get_setting('global.animations.parallax_effects.elements', 'images');
 ?>
         <div id="xero-parallax-effects"
             class="xero-animation-effect"

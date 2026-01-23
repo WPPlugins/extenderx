@@ -13,6 +13,7 @@ class FloatingElements {
 
     public function __construct() {
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
+        add_action('wp_footer', [$this, 'render_effect']);
     }
 
     public function enqueue_assets() {
@@ -21,7 +22,6 @@ class FloatingElements {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
 ?>
         <div id="xero-floating-elements" class="xero-animation-effect"></div>
 <?php

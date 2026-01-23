@@ -63,7 +63,7 @@ class Enqueue {
                 'server_environment' => [
                     'php_version' => phpversion(),
                     'mysql_version' => $wpdb->db_version(),
-                    'web_server' => $_SERVER['SERVER_SOFTWARE'] ?? 'N/A',
+                    'web_server' => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'N/A',
                     'max_execution_time' => ini_get('max_execution_time') . 's',
                     'memory_limit' => ini_get('memory_limit'),
                 ],
@@ -100,6 +100,7 @@ class Enqueue {
             wp_enqueue_style(
                 'extenderx-admin',
                 XERO_EXTENDERX_DIST_URL . 'admin/style-admin.css',
+                [],
                 $admin_assets['version']
             );
         }

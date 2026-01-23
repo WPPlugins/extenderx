@@ -4,6 +4,20 @@ namespace WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects;
 
 use WPXERO\ExtenderX\Core\ModuleBase;
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\ChristmasLights;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\Fireworks;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\AutumnLeaves;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\FallingHearts;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\HalloweenBats;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\RamadanLanterns;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\WeatherEffects;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\ParticleBackground;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\Fireflies;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\StarsTwinkling;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\FloatingEmojis;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\FloatingShapes;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\LightBeams;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\MouseTrail;
 
 if (!defined('ABSPATH')) {
     exit;

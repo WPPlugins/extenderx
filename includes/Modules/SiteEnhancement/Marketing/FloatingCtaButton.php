@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Marketing;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class FloatingCtaButton {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
     }
 
@@ -21,13 +25,12 @@ class FloatingCtaButton {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $text = $settings['global']['marketing']['floating_cta_button']['text'] ?? 'Get Started';
-        $url = $settings['global']['marketing']['floating_cta_button']['url'] ?? '#';
-        $position = $settings['global']['marketing']['floating_cta_button']['position'] ?? 'bottom-right';
-        $bg_color = $settings['global']['marketing']['floating_cta_button']['bg_color'] ?? '#667eea';
-        $text_color = $settings['global']['marketing']['floating_cta_button']['text_color'] ?? '#ffffff';
-        $icon = $settings['global']['marketing']['floating_cta_button']['icon'] ?? '🎯';
+        $text = $this->settings_cache->get_setting('global.marketing.floating_cta_button.text', 'Get Started');
+        $url = $this->settings_cache->get_setting('global.marketing.floating_cta_button.url', '#');
+        $position = $this->settings_cache->get_setting('global.marketing.floating_cta_button.position', 'bottom-right');
+        $bg_color = $this->settings_cache->get_setting('global.marketing.floating_cta_button.bg_color', '#667eea');
+        $text_color = $this->settings_cache->get_setting('global.marketing.floating_cta_button.text_color', '#ffffff');
+        $icon = $this->settings_cache->get_setting('global.marketing.floating_cta_button.icon', '🎯');
 ?>
         <a href="<?php echo esc_url($url); ?>"
             id="xero-floating-cta"

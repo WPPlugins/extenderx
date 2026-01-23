@@ -23,7 +23,38 @@ if (!defined('ABSPATH')) {
 class SiteEnhancement {
     use Singleton;
 
+    /**
+     * Track if modules have been initialized
+     *
+     * @var bool
+     */
+    private static $modules_initialized = false;
+
+    /**
+     * Initialize the SiteEnhancement module.
+     *
+     * @since 1.0.0
+     */
     public function __construct() {
+        add_action('init', [$this, 'init_modules'], 10);
+    }
+
+    /**
+     * Initialize all sub-modules.
+     *
+     * Deferred to 'init' hook to ensure WordPress is fully loaded
+     * and prevent memory issues during plugin initialization.
+     *
+     * @since 1.0.0
+     * @return void
+     */
+    public function init_modules() {
+        // Guard against multiple initializations
+        if (self::$modules_initialized) {
+            return;
+        }
+        self::$modules_initialized = true;
+
         SiteModes::instance();
         Utilities::instance();
         UIEnhancements::instance();

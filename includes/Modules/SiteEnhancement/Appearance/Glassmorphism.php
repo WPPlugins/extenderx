@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class Glassmorphism {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
     }
 
@@ -21,8 +25,7 @@ class Glassmorphism {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $intensity = $settings['global']['appearance']['glassmorphism']['intensity'] ?? 50;
+        $intensity = $this->settings_cache->get_setting('global.appearance.glassmorphism.intensity', 50);
 ?>
         <div id="xero-glassmorphism"
             class="xero-appearance-effect"

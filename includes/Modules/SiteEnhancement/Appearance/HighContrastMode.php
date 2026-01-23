@@ -21,7 +21,6 @@ class HighContrastMode {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
 ?>
         <div id="xero-high-contrast-mode" class="xero-appearance-effect"></div>
 <?php

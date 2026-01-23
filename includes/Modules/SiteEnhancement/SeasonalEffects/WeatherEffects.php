@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class WeatherEffects {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_action('wp_footer', [$this, 'render_effect']);
     }
@@ -22,10 +26,9 @@ class WeatherEffects {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $type = $settings['global']['seasonal_effects']['weather']['type'] ?? 'rain';
-        $intensity = $settings['global']['seasonal_effects']['weather']['intensity'] ?? 50;
-        $apply_to = $settings['global']['seasonal_effects']['weather']['apply_to'] ?? 'entire';
+        $type = $this->settings_cache->get_setting('global.seasonal_effects.weather.type', 'rain');
+        $intensity = $this->settings_cache->get_setting('global.seasonal_effects.weather.intensity', 50);
+        $apply_to = $this->settings_cache->get_setting('global.seasonal_effects.weather.apply_to', 'entire');
 ?>
         <canvas id="xero-weather-effects"
             class="xero-seasonal-effect"

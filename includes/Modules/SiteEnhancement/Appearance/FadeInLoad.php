@@ -21,7 +21,6 @@ class FadeInLoad {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
 ?>
         <div id="xero-fade-in-load" class="xero-appearance-effect"></div>
 <?php

@@ -21,7 +21,6 @@ class AutoMode {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
 ?>
         <div id="xero-auto-mode" class="xero-appearance-effect"></div>
 <?php

@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class StarsTwinkling {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_action('wp_footer', [$this, 'render_effect']);
     }
@@ -22,10 +26,9 @@ class StarsTwinkling {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $count = $settings['global']['seasonal_effects']['stars_twinkling']['count'] ?? 100;
-        $speed = $settings['global']['seasonal_effects']['stars_twinkling']['speed'] ?? 50;
-        $background = $settings['global']['seasonal_effects']['stars_twinkling']['background'] ?? 'dark';
+        $count = $this->settings_cache->get_setting('global.seasonal_effects.stars_twinkling.count', 100);
+        $speed = $this->settings_cache->get_setting('global.seasonal_effects.stars_twinkling.speed', 50);
+        $background = $this->settings_cache->get_setting('global.seasonal_effects.stars_twinkling.background', 'dark');
 ?>
         <canvas id="xero-stars-twinkling"
             class="xero-seasonal-effect xero-background-effect"

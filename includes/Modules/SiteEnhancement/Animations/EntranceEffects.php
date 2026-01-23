@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Animations;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class EntranceEffects {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
     }
 
@@ -21,9 +25,8 @@ class EntranceEffects {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $animation = $settings['global']['animations']['entrance_effects']['animation'] ?? 'fade-in';
-        $duration = $settings['global']['animations']['entrance_effects']['duration'] ?? 600;
+        $animation = $this->settings_cache->get_setting('global.animations.entrance_effects.animation', 'fade-in');
+        $duration = $this->settings_cache->get_setting('global.animations.entrance_effects.duration', 600);
 ?>
         <div id="xero-entrance-effects"
             class="xero-animation-effect"

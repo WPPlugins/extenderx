@@ -12,5 +12,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "freemius/wordpress-sdk": "dev-master"
+    }
 }

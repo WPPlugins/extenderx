@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Core;
 
 use WPXERO\ExtenderX\Core\Utils;
+use WPXERO\ExtenderX\Core\ProFeatures;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -27,12 +28,20 @@ abstract class ModuleBase {
     protected Utils $utils;
 
     /**
+     * Pro Features instance.
+     *
+     * @var ProFeatures
+     */
+    protected ProFeatures $pro_features;
+
+    /**
      * Initialize the module.
      *
      * @since 1.0.0
      */
     public function __construct() {
         $this->utils = Utils::instance();
+        $this->pro_features = ProFeatures::instance();
 
         if (!$this->is_site_enhancement_enabled()) {
             return;
@@ -89,10 +98,22 @@ abstract class ModuleBase {
      */
     protected function initialize_features(): void {
         foreach ($this->get_features() as $feature_key => $feature_class) {
-            if ($this->is_feature_enabled($feature_key)) {
+            if ($this->is_feature_enabled($feature_key) && $this->can_use_feature($feature_key)) {
                 $feature_class::instance();
             }
         }
+    }
+
+    /**
+     * Check if user can use a feature (considering pro restrictions)
+     *
+     * @since 1.5.0
+     * @param string $feature_key The feature identifier key.
+     * @return bool True if user can use the feature, false otherwise.
+     */
+    protected function can_use_feature(string $feature_key): bool {
+        $clean_key = str_replace('.enabled', '', $feature_key);
+        return $this->pro_features->can_use_premium_feature($clean_key);
     }
 
     /**

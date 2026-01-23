@@ -21,7 +21,6 @@ class ReadingMode {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
 ?>
         <button id="xero-reading-mode-toggle" class="xero-appearance-effect xero-mode-toggle" aria-label="Toggle reading mode">
             <span class="xero-toggle-icon">📖</span>

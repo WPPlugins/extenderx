@@ -21,7 +21,6 @@ class LightModeToggle {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
 ?>
         <button id="xero-light-mode-toggle" class="xero-appearance-effect xero-mode-toggle" aria-label="Toggle light mode">
             <span class="xero-toggle-icon"></span>

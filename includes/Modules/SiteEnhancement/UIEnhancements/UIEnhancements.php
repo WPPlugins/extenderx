@@ -4,6 +4,16 @@ namespace WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements;
 
 use WPXERO\ExtenderX\Core\ModuleBase;
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\BackToTop;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\StickyHeader;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\StickyFooter;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\ScrollProgress;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\SmartScroll;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\CustomCursor;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\CursorHoverEffects;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\CursorGrabMode;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\ScrollbarStyler;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\SmoothScrolling;
 
 if (!defined('ABSPATH')) {
     exit;

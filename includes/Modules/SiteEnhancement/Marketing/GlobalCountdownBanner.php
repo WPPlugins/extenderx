@@ -3,6 +3,7 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Marketing;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -11,7 +12,10 @@ if (!defined('ABSPATH')) {
 class GlobalCountdownBanner {
     use Singleton;
 
+    private $settings_cache;
+
     public function __construct() {
+        $this->settings_cache = SettingsCache::instance();
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
     }
 
@@ -21,15 +25,14 @@ class GlobalCountdownBanner {
     }
 
     public function render_effect() {
-        $settings = get_option('extenderx_settings', []);
-        $title = $settings['global']['marketing']['global_countdown_banner']['title'] ?? 'Limited Time Offer!';
-        $end_date = $settings['global']['marketing']['global_countdown_banner']['end_date'] ?? date('Y-m-d H:i:s', strtotime('+7 days'));
-        $position = $settings['global']['marketing']['global_countdown_banner']['position'] ?? 'top';
-        $bg_color = $settings['global']['marketing']['global_countdown_banner']['bg_color'] ?? '#ff4757';
-        $text_color = $settings['global']['marketing']['global_countdown_banner']['text_color'] ?? '#ffffff';
-        $show_cta = $settings['global']['marketing']['global_countdown_banner']['show_cta'] ?? true;
-        $cta_text = $settings['global']['marketing']['global_countdown_banner']['cta_text'] ?? 'Shop Now';
-        $cta_url = $settings['global']['marketing']['global_countdown_banner']['cta_url'] ?? '#';
+        $title = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.title', 'Limited Time Offer!');
+        $end_date = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.end_date', date('Y-m-d H:i:s', strtotime('+7 days')));
+        $position = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.position', 'top');
+        $bg_color = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.bg_color', '#ff4757');
+        $text_color = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.text_color', '#ffffff');
+        $show_cta = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.show_cta', true);
+        $cta_text = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.cta_text', 'Shop Now');
+        $cta_url = $this->settings_cache->get_setting('global.marketing.global_countdown_banner.cta_url', '#');
 ?>
         <div id="xero-countdown-banner"
             class="xero-marketing-effect xero-countdown-<?php echo esc_attr($position); ?>"
