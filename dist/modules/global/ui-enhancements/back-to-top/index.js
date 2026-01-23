@@ -1,0 +1,1 @@
+!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const t=document.getElementById("xero-back-to-top");t&&(window.addEventListener("scroll",(function(){window.pageYOffset>300?t.classList.add("visible"):t.classList.remove("visible")})),t.addEventListener("click",(function(){window.scrollTo({top:0,behavior:"smooth"})})))}))}();

@@ -1,0 +1,1 @@
+!function(){"use strict";document.documentElement.style.opacity="0",document.documentElement.style.transition="opacity 0.6s ease",document.addEventListener("DOMContentLoaded",(function(){setTimeout((function(){document.documentElement.style.opacity="1"}),50)})),"complete"===document.readyState&&(document.documentElement.style.opacity="1")}();

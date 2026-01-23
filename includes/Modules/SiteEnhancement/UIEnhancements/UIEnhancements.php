@@ -1,0 +1,61 @@
+<?php
+
+namespace WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements;
+
+use WPXERO\ExtenderX\Core\ModuleBase;
+use WPXERO\ExtenderX\Traits\Singleton;
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+class UIEnhancements extends ModuleBase {
+    use Singleton;
+
+    private const SETTINGS_PREFIX = 'global.ui_enhancements';
+    private const MODULE_SETTINGS_KEY = 'global';
+
+    private const UI_ENHANCEMENT_FEATURES = [
+        'back_to_top.enabled'      => BackToTop::class,
+        'sticky_header.enabled'    => StickyHeader::class,
+        'preloader.enabled'        => StickyFooter::class,
+        'scroll_progress.enabled'  => ScrollProgress::class,
+        'smooth_scroll.enabled'    => SmartScroll::class,
+        'cursor_effects.enabled'   => CustomCursor::class,
+        'cursor_hover.enabled'      => CursorHoverEffects::class,
+        'cursor_grab.enabled'       => CursorGrabMode::class,
+        'scrollbar_style.enabled'   => ScrollbarStyler::class,
+        'smooth_scrolling.enabled'  => SmoothScrolling::class,
+    ];
+
+
+    /**
+     * Get the settings key for checking if module is enabled.
+     *
+     * @since 1.0.0
+     * @return string
+     */
+    protected function get_module_settings_key(): string {
+        return self::MODULE_SETTINGS_KEY;
+    }
+
+    /**
+     * Get the settings prefix for module features.
+     *
+     * @since 1.0.0
+     * @return string
+     */
+    protected function get_settings_prefix(): string {
+        return self::SETTINGS_PREFIX;
+    }
+
+    /**
+     * Get the UI enhancement features mapping.
+     *
+     * @since 1.0.0
+     * @return array<string, class-string>
+     */
+    protected function get_features(): array {
+        return self::UI_ENHANCEMENT_FEATURES;
+    }
+}

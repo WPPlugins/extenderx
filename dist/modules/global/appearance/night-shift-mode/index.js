@@ -1,0 +1,1 @@
+!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const t=document.getElementById("xero-night-shift-mode");if(!t)return;const e=parseInt(t.dataset.intensity)||50,n=document.createElement("div");n.className="xero-night-shift-overlay",n.style.opacity=e/100*.3,t.appendChild(n)}))}();

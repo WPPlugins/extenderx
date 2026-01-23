@@ -1,0 +1,16 @@
+{
+    "name": "wpxero/extenderx",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "WPXERO\\ExtenderX\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WPXERO"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

@@ -1,0 +1,1787 @@
+# Copyright (C) 2026 WPXERO
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Block Animation Effects – ExtenderX for Gutenberg Blocks 1.5.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/extenderx\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-23T03:15:53+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: extenderx\n"
+
+#. Plugin Name of the plugin
+#: extenderx.php
+msgid "Block Animation Effects – ExtenderX for Gutenberg Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: extenderx.php
+msgid "https://wpxero.com/extenderx"
+msgstr ""
+
+#. Description of the plugin
+#: extenderx.php
+msgid "Animate Gutenberg blocks with entrance, floating, tilt, and motion effects. Lightweight, responsive, and easy to use."
+msgstr ""
+
+#. Author of the plugin
+#: extenderx.php
+msgid "WPXERO"
+msgstr ""
+
+#. Author URI of the plugin
+#: extenderx.php
+msgid "https://wpxero.com"
+msgstr ""
+
+#: includes/Admin/Menu.php:20
+#: includes/Admin/Menu.php:21
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/index.js:204
+#: packages/extensions/src/index.js:53
+msgid "ExtenderX"
+msgstr ""
+
+#: includes/Core/Settings.php:119
+msgid "User don't have permissions to change options."
+msgstr ""
+
+#: includes/Core/Settings.php:132
+msgid "User don't have permissions to view options."
+msgstr ""
+
+#: includes/Core/Settings.php:161
+msgid "Settings updated successfully."
+msgstr ""
+
+#: includes/Core/Settings.php:166
+msgid "Invalid settings data provided."
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/Appearance/DarkMode.php:177
+msgid "Toggle Dark Mode"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/AgeVerification.php:37
+msgid "Age Verification Required"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/AgeVerification.php:38
+msgid "You must be 18 years or older to access this website. Please verify your age to continue."
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/AgeVerification.php:40
+msgid "I am 18 or Older"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/AgeVerification.php:41
+msgid "I am Under 18"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ComingSoonMode.php:35
+#: includes/Modules/SiteEnhancement/SiteModes/ComingSoonMode.php:161
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageElementor.js:80
+#: packages/admin/src/pages/PageGutenberg.js:162
+#: packages/extensions/components/ToggleButton/index.js:47
+msgid "Coming Soon"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ComingSoonMode.php:162
+msgid "Something amazing is on the horizon. Get ready for an extraordinary experience!"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ComingSoonMode.php:166
+msgid "Days"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ComingSoonMode.php:170
+msgid "Hours"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ComingSoonMode.php:174
+msgid "Minutes"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/CookieConsent.php:38
+msgid "We use cookies to enhance your browsing experience and analyze our traffic. By clicking \"Accept\", you consent to our use of cookies."
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/CookieConsent.php:41
+msgid "Accept All"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/CookieConsent.php:42
+msgid "Decline"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ExitIntent.php:34
+msgid "Close"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ExitIntent.php:36
+msgid "Wait! Don't Leave Yet!"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ExitIntent.php:37
+msgid "Before you go, check out our special offer just for you! We have something amazing that you don't want to miss."
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ExitIntent.php:39
+msgid "Show Me the Offer"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/ExitIntent.php:40
+msgid "No Thanks"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/GDPRNotice.php:38
+msgid "We care about your privacy. This website uses cookies and processes personal data in accordance with GDPR regulations. By continuing to use this site, you agree to our Privacy Policy."
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/GDPRNotice.php:41
+msgid "I Understand"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/GDPRNotice.php:42
+msgid "Privacy Policy"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/MaintenanceMode.php:35
+msgid "Maintenance Mode"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/MaintenanceMode.php:160
+msgid "Under Maintenance"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/SiteModes/MaintenanceMode.php:161
+msgid "We are currently performing scheduled maintenance to improve your experience. We'll be back soon!"
+msgstr ""
+
+#: includes/Modules/SiteEnhancement/UIEnhancements/BackToTop.php:26
+msgid "Back to top"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:9
+#: packages/admin/src/pages/PageGlobalEffects.js:239
+msgid "Dark Mode"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:10
+msgid "Enable dark mode toggle for your website with customizable color schemes and automatic system preference detection"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:18
+msgid "Preloader"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:19
+msgid "Rich tooltips with HTML content and styling"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:27
+msgid "Scroll-triggered Animations"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:28
+msgid "Advanced scroll-based animation triggers"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:33
+msgid "Back to Top"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:34
+msgid "Smooth transitions between page navigations"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:42
+msgid "Sticky Header"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:43
+msgid "Add particle animations and backgrounds"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:48
+msgid "Sticky Footer"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:49
+msgid "Integrate Lottie animations into your blocks"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:57
+msgid "Smooth Scrolling"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:58
+msgid "Character-by-character text animations"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:63
+msgid "Scroll Progress Bar"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:64
+msgid "Elements that follow mouse movement"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:69
+msgid "Scrollbar Styler"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:70
+msgid "Animate SVG paths with draw effects"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:78
+#: packages/admin/src/pages/PageGlobalEffects.js:3625
+msgid "In Development"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:79
+msgid "Planned"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:116
+msgid "Want to Request a Feature?"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:117
+msgid "Have an idea for a new feature? Let us know! We love hearing from our users."
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageComingSoon.js:119
+msgid "Submit Feature Request"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:51
+msgid "Quick Start"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:39
+#: packages/admin/src/pages/PageGlobalEffects.js:59
+#: packages/admin/src/pages/PageGutenberg.js:40
+msgid "Failed to save settings"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:46
+#: packages/admin/src/pages/PageGlobalEffects.js:66
+#: packages/admin/src/pages/PageGutenberg.js:47
+msgid "Settings saved successfully!"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:100
+msgid "Quick Actions"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:57
+#: packages/admin/src/pages/PageDashboard.js:109
+#: packages/admin/src/pages/PageGlobalEffects.js:2444
+msgid "Site Enhancements"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:110
+msgid "Enable site-wide effects"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:130
+#: packages/admin/src/pages/PageElementor.js:62
+msgid "Elementor Integration"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:131
+msgid "Enable Elementor widgets"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:154
+msgid "Gutenberg Blocks"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:155
+msgid "Enable block extensions"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageDashboard.js:243
+msgid "Coming Soon Modules"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:53
+msgid "Main dashboard overview"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:113
+#: packages/admin/src/pages/PageGlobalEffects.js:231
+#: packages/extensions/src/tooltip/controls.js:121
+msgid "Appearance"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:241
+msgid "Enable dark mode theme for your website"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:254
+msgid "Dark Mode Settings"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:118
+#: packages/admin/src/pages/PageGlobalEffects.js:1731
+msgid "Utility & Protection"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1739
+msgid "Disable Right Click"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1740
+msgid "Prevent right-click context menu"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1763
+msgid "Disable Copy"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1764
+msgid "Prevent text copying"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1787
+msgid "Disable Inspect"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1788
+msgid "Disable developer tools"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1811
+msgid "Disable Image Drag"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1812
+msgid "Prevent image dragging"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1835
+msgid "Hide Admin Bar on Frontend"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:1837
+msgid "Hide WordPress admin bar for logged-in users"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2450
+msgid "All global effects are active on your site"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2454
+msgid "Enable to activate global effects on your site"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2471
+msgid "Site Enhancements Disabled"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2472
+msgid "The Site Enhancements master switch is currently disabled. Enable it to activate all global effects on your site. It will be automatically enabled when you turn on any individual effect."
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:114
+msgid "Animations"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:115
+msgid "Parallax"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:116
+msgid "Seasonal & Visual Effects"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:117
+msgid "UI Enhancements"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:119
+msgid "Content Behavior"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:120
+msgid "Performance"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:121
+msgid "Marketing"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:139
+msgid "Reset Tab Settings?"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:140
+msgid "This will reset all settings in the"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:140
+msgid "tab to their default values. Are you sure?"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:141
+msgid "Yes, Reset Tab"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:143
+msgid "Cancel"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:168
+msgid "settings have been reset to defaults"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:133
+msgid "Cannot reset this tab"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2499
+msgid "Reset to Defaults"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2523
+msgid "Cursor Style"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2540
+msgid "Default"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2541
+msgid "Dot"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2542
+msgid "Ring"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2543
+#: packages/admin/src/pages/PageGlobalEffects.js:2857
+msgid "Custom"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2559
+#: packages/extensions/src/tooltip/controls.js:207
+msgid "Animation Type"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2569
+msgid "Fade In"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2570
+msgid "Slide Up"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2571
+msgid "Zoom In"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2572
+msgid "Bounce In"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2584
+msgid "Duration (ms)"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2609
+#: packages/extensions/src/tooltip/controls.js:256
+msgid "Delay (ms)"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2630
+msgid "Disable on Mobile"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2656
+#: packages/admin/src/pages/PageGlobalEffects.js:2810
+#: packages/admin/src/pages/PageGlobalEffects.js:2837
+#: packages/admin/src/pages/PageGlobalEffects.js:3472
+msgid "Style"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2672
+msgid "Classic"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2673
+msgid "Modern"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2674
+msgid "Colorful"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2690
+#: packages/admin/src/pages/PageGlobalEffects.js:2743
+#: packages/admin/src/pages/PageGlobalEffects.js:2963
+#: packages/admin/src/pages/PageGlobalEffects.js:3001
+#: packages/admin/src/pages/PageGlobalEffects.js:3064
+#: packages/admin/src/pages/PageGlobalEffects.js:3136
+#: packages/admin/src/pages/PageGlobalEffects.js:3501
+msgid "Intensity"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2715
+#: packages/admin/src/pages/PageGlobalEffects.js:2768
+#: packages/admin/src/pages/PageGlobalEffects.js:2981
+#: packages/admin/src/pages/PageGlobalEffects.js:3019
+#: packages/admin/src/pages/PageGlobalEffects.js:3223
+#: packages/admin/src/pages/PageGlobalEffects.js:3448
+msgid "Speed"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2789
+msgid "Temperature"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2825
+msgid "Wave"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2826
+msgid "Pulse"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2827
+msgid "Shimmer"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2854
+msgid "Spinner"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2855
+msgid "Dots"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2856
+msgid "Bars"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2867
+msgid "Opacity"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2890
+msgid "Blur Amount"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2915
+msgid "Timeout (seconds)"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:2940
+msgid "Sensitivity"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3042
+msgid "Effect Type"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3057
+msgid "Rain"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3058
+msgid "Fog"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3059
+msgid "Storm"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3060
+msgid "Snow"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3080
+msgid "Apply to"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3094
+msgid "Entire Site"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3095
+msgid "Home Page"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3097
+msgid "Selected Pages"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3106
+msgid "Emoji"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3122
+msgid "😊 Happy"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3123
+msgid "❤️ Heart"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3124
+msgid "⭐ Star"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3125
+msgid "🎉 Party"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3126
+msgid "🌸 Flower"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3153
+msgid "Frequency"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3170
+msgid "Colors"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3187
+#: packages/admin/src/pages/PageGlobalEffects.js:3317
+msgid "Multi-color"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3189
+msgid "Red & Gold"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3191
+msgid "Blue & Silver"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3193
+#: packages/admin/src/pages/PageGlobalEffects.js:3606
+msgid "Rainbow"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3204
+msgid "Particle Count"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3240
+msgid "Connection Lines"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3264
+#: packages/admin/src/pages/PageGlobalEffects.js:3429
+msgid "Count"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3282
+msgid "Glow Intensity"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3298
+#: packages/admin/src/pages/PageGlobalEffects.js:3518
+#: packages/admin/src/pages/PageGlobalEffects.js:3590
+msgid "Color"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3313
+msgid "Yellow"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3314
+msgid "Green"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3315
+#: packages/admin/src/pages/PageGlobalEffects.js:3607
+msgid "Blue"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3329
+msgid "Star Count"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3348
+msgid "Twinkle Speed"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3365
+msgid "Background Color"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3381
+msgid "Dark Sky"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3383
+msgid "Twilight"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3386
+msgid "Transparent"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3398
+msgid "Shape Type"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3415
+msgid "Mixed Shapes"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3418
+msgid "Circles Only"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3421
+msgid "Squares Only"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3424
+msgid "Triangles Only"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3489
+msgid "Spotlight"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3492
+msgid "Light Beams"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3494
+msgid "Sun Rays"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3496
+msgid "Searchlight"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3534
+msgid "White"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3535
+msgid "Warm"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3536
+msgid "Cool"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3537
+msgid "Colored"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3548
+msgid "Trail Style"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3564
+msgid "Glow"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3566
+msgid "Particles"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3568
+msgid "Line Trail"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3569
+msgid "Sparkle"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3573
+msgid "Size"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3608
+msgid "Purple"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3609
+msgid "Gold"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3619
+msgid "Advanced Configuration Coming Soon"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGlobalEffects.js:3622
+msgid "Dark mode advanced settings and customization options are currently in development."
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:59
+msgid "Configure global animation effects"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:63
+msgid "Gutenberg Editor"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:8
+#: packages/admin/src/pages/PageGutenberg.js:97
+#: packages/admin/src/pages/PageShortcodes.js:23
+msgid "Entrance Animation"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:98
+msgid "Add entrance effects to Gutenberg blocks"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:14
+#: packages/admin/src/pages/PageGutenberg.js:103
+#: packages/admin/src/pages/PageShortcodes.js:17
+msgid "Floating Animation"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:15
+#: packages/admin/src/pages/PageGutenberg.js:104
+msgid "Create smooth floating motion effects"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageElementor.js:20
+#: packages/admin/src/pages/PageGutenberg.js:109
+#: packages/extensions/src/tilt/controls.js:77
+msgid "Tilt Animation"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:21
+#: packages/admin/src/pages/PageGutenberg.js:110
+msgid "3D tilt effects on hover"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageElementor.js:26
+#: packages/admin/src/pages/PageGutenberg.js:115
+#: packages/extensions/src/visibility/controls.js:32
+msgid "Visibility Control"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:116
+msgid "Control block visibility based on conditions"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageElementor.js:32
+#: packages/admin/src/pages/PageGutenberg.js:121
+#: packages/extensions/src/wrapperlink/controls.js:29
+msgid "Wrapper Link"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:122
+msgid "Make entire blocks clickable"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: dist/extensions/editor.js:1
+#: packages/admin/src/pages/PageElementor.js:38
+#: packages/admin/src/pages/PageGutenberg.js:127
+#: packages/extensions/src/tooltip/controls.js:62
+msgid "Tooltip"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:128
+msgid "Add tooltips to blocks"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:45
+#: packages/admin/src/pages/PageGutenberg.js:133
+msgid "Custom CSS/JS"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:134
+msgid "Add custom code to blocks"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:51
+#: packages/admin/src/pages/PageGutenberg.js:140
+msgid "Scroll Effects"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:52
+#: packages/admin/src/pages/PageGutenberg.js:141
+msgid "Trigger animations on scroll"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:188
+msgid "Extensions"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:218
+msgid "Gutenberg Block Editor Enhancements"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:224
+msgid "All Gutenberg Block Editor Enhancements are active on your site"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:228
+msgid "Enable to activate Gutenberg Block Editor Enhancements on your site"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:245
+msgid "Gutenberg Block Editor Enhancements Disabled"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:246
+msgid "The Gutenberg Block Editor Enhancements master switch is currently disabled. Enable it to activate Gutenberg Block Editor Enhancements on your site."
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:100
+#: packages/admin/src/pages/PageGutenberg.js:268
+msgid "How to Use"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageElementor.js:103
+#: packages/admin/src/pages/PageGutenberg.js:271
+msgid "Enable the extensions you want to use above"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:277
+msgid "Edit any page or post in the Block Editor"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:280
+msgid "Select a block and open the block settings sidebar"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageGutenberg.js:286
+msgid "Look for the \"ExtenderX\" panel to configure effects"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:65
+msgid "Gutenberg block editor extensions"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:87
+msgid "System Info"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:94
+msgid "OK"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:98
+msgid "Issue"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:86
+msgid "System information copied to clipboard!"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:119
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:124
+msgid "WordPress Environment"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:128
+msgid "WordPress Version"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:131
+msgid "Multisite"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:133
+msgid "Yes"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:134
+msgid "No"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:136
+msgid "Language"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:139
+msgid "Timezone"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:146
+msgid "Server Environment"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:150
+msgid "PHP Version"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:153
+msgid "MySQL Version"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:156
+msgid "Web Server"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:159
+msgid "Max Execution Time"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:165
+msgid "Memory Limit"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:172
+msgid "Theme Information"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:176
+msgid "Active Theme"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:179
+msgid "Version"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:182
+msgid "Author"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:188
+msgid "Active Plugins"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:201
+msgid "Debug Information"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:205
+msgid "WP_DEBUG"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:210
+msgid "SCRIPT_DEBUG"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/PageSystemInfo.js:215
+msgid "WP_DEBUG_LOG"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/pages/index.js:89
+msgid "System diagnostic information"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/store/settings/actions.js:27
+msgid "Failed to load settings"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/store/settings/actions.js:61
+msgid "Something went wrong, please, try again…"
+msgstr ""
+
+#: dist/admin/admin.js:1
+#: packages/admin/src/index.js:241
+msgid "Support"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/components/ResetButton/index.js:64
+msgid "Upgrade"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: dist/library/index.js:1
+#: packages/extensions/components/ToggleButton/index.js:37
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/Repeatable/index.js:28
+msgid "Pro"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/components/ToggleButton/index.js:42
+msgid "New"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/entrance/controls.js:383
+#: packages/extensions/src/floating/controls.js:262
+#: packages/extensions/src/floating/controls.js:508
+#: packages/extensions/src/floating/controls.js:754
+msgid "Duration"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/entrance/controls.js:388
+#: packages/extensions/src/entrance/controls.js:416
+#: packages/extensions/src/floating/controls.js:270
+#: packages/extensions/src/floating/controls.js:337
+#: packages/extensions/src/floating/controls.js:516
+#: packages/extensions/src/floating/controls.js:583
+#: packages/extensions/src/floating/controls.js:762
+#: packages/extensions/src/floating/controls.js:829
+msgid "ms"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/entrance/controls.js:411
+#: packages/extensions/src/floating/controls.js:329
+#: packages/extensions/src/floating/controls.js:575
+#: packages/extensions/src/floating/controls.js:821
+msgid "Delay"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:129
+msgid "Translate"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:172
+msgid "Translate (X)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:205
+msgid "Translate (Y)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:373
+msgid "Rotate"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:418
+msgid "Rotate (X)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:451
+msgid "Rotate (Y)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:619
+#: packages/extensions/src/tilt/controls.js:135
+#: packages/extensions/src/tooltip/controls.js:38
+msgid "Scale"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:664
+msgid "Scale (X)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:697
+msgid "Scale (Y)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:871
+msgid "Stop Animation"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/floating/controls.js:872
+msgid "Preview Animation"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tilt/controls.js:115
+msgid "Max Tilt"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tilt/controls.js:119
+msgid "deg"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tilt/controls.js:155
+#: packages/extensions/src/tooltip/controls.js:39
+msgid "Perspective"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tilt/controls.js:177
+msgid "Stop Preview"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tilt/controls.js:178
+msgid "Preview"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:36
+msgid "Shift Away"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:37
+msgid "Shift Toward"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:40
+msgid "Fade"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:44
+msgid "Light"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:45
+msgid "Dark"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:46
+msgid "Gray"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:47
+msgid "Gradient"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:51
+msgid "Hover"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:52
+msgid "Click"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:53
+msgid "Focus"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:54
+msgid "Hover & Focus"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:55
+msgid "Click & Hover"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:103
+msgid "Tooltip is active. Hover over the element in the editor or preview to see it."
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:108
+msgid "Tooltip Content"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:125
+msgid "Position"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:128
+msgid "Top"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:129
+msgid "Right"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:130
+msgid "Bottom"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:131
+msgid "Left"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:144
+msgid "Theme"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:158
+msgid "Distance from Element (px)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:174
+msgid "Max Width (px)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:190
+msgid "Show Arrow"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:203
+msgid "Animation & Behavior"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:221
+msgid "Trigger"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:240
+msgid "Animation Duration (ms)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:272
+msgid "Interactive (clickable tooltip content)"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/tooltip/controls.js:285
+msgid "Z-Index"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/visibility/controls.js:65
+msgid "Hide Block"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/visibility/controls.js:69
+msgid "Hide the block from everything"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/visibility/controls.js:88
+msgid "Screen Size"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/visibility/controls.js:91
+msgid "Hide On Desktop"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/visibility/controls.js:104
+msgid "Hide On Tablet"
+msgstr ""
+
+#: dist/extensions/editor.js:1
+#: packages/extensions/src/visibility/controls.js:117
+msgid "Hide On Mobile"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/IconPicker/index.js:121
+msgid "Search Icon"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/IconPicker/index.js:126
+msgid "Type to Search…"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/IconPicker/index.js:134
+#: packages/library/src/controls/IconPicker/index.js:139
+msgid "Icon Output"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/IconPicker/index.js:151
+msgid "Customize Icon"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/IconPicker/index.js:160
+msgid "Reset"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/IconPicker/index.js:323
+msgid "No icons found."
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/Repeatable/index.js:23
+msgid "Pros"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/Repeatable/index.js:34
+msgid "Title"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/Repeatable/index.js:36
+msgid "Why do you like the product?"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+#: packages/library/src/controls/Repeatable/index.js:54
+msgid "Add Item"
+msgstr ""
+
+#: dist/library/index.js:1
+#: packages/library/dist/index.js:1
+msgid "Multi Range"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:9
+msgid "Add entrance effects to Elementor widgets"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:27
+msgid "Control widget visibility based on conditions"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:33
+msgid "Make entire widgets clickable"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:39
+msgid "Add tooltips to widgets"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:46
+msgid "Add custom code to widgets"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:63
+msgid "These features require Elementor to be installed and activated. Once enabled, you will find ExtenderX options in the Elementor widget settings panel."
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:102
+msgid "Make sure Elementor is installed and activated"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:104
+msgid "Edit any page with Elementor"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:105
+msgid "Select a widget and open the Advanced tab"
+msgstr ""
+
+#: packages/admin/src/pages/PageElementor.js:106
+msgid "Look for the \"ExtenderX\" section to configure effects"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:11
+msgid "Snowfall Effect"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:13
+msgid "Add snowfall animation to any page or post"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:19
+msgid "Wrap content with floating animation"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:25
+msgid "Add entrance effects to any content"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:29
+msgid "Tilt Effect"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:31
+msgid "Add 3D tilt effect on hover"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:43
+msgid "How to Use Shortcodes"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:44
+msgid "Copy any shortcode below and paste it into your posts, pages, or widgets. You can customize the parameters to fit your needs."
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:79
+msgid "Shortcode Parameters"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:83
+msgid "Controls the strength of the effect (0-100)"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:87
+msgid "Controls the animation speed (0-100)"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:91
+msgid "Delay before animation starts (in milliseconds)"
+msgstr ""
+
+#: packages/admin/src/pages/PageShortcodes.js:95
+msgid "Choose from: fadeIn, slideUp, zoomIn, bounceIn"
+msgstr ""
+
+#: packages/extensions/src/floating/controls.js:263
+#: packages/extensions/src/floating/controls.js:330
+#: packages/extensions/src/floating/controls.js:509
+#: packages/extensions/src/floating/controls.js:576
+#: packages/extensions/src/floating/controls.js:755
+#: packages/extensions/src/floating/controls.js:822
+msgid " (pro)"
+msgstr ""
+
+#: packages/extensions/src/index.js:66
+msgid "Upgrade to Pro"
+msgstr ""

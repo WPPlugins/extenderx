@@ -1,0 +1,22 @@
+<?php
+
+namespace WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements;
+
+use WPXERO\ExtenderX\Traits\Singleton;
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+class CursorGrabMode {
+    use Singleton;
+
+    public function __construct() {
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
+    }
+
+    public function enqueue_assets() {
+        wp_enqueue_script('xero-cursor-grab-mode');
+        wp_enqueue_style('xero-cursor-grab-mode');
+    }
+}

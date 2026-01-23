@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Plugin Name:       Block Animation Effects – ExtenderX for Gutenberg Blocks
+ * Plugin Name:       ExtenderX – Block Animation, Dark Mode, Content Protection & Security for WordPress
  * Plugin URI:        https://wpxero.com/extenderx
- * Description:       Animate Gutenberg blocks with entrance, floating, tilt, and motion effects. Lightweight, responsive, and easy to use.
- * Version:           1.4.5
+ * Description:       All-in-one WordPress plugin for block animations, dark mode, content protection, and website security.
+ * Version:           1.5.0
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -19,88 +19,36 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+// Check if vendor directory and autoload.php exist
+$autoload_file = __DIR__ . '/vendor/autoload.php';
+if (file_exists($autoload_file)) {
+    // Load autoloader (vendor/autoload.php).
+    require_once $autoload_file;
+}
+
+use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\Register;
+use WPXERO\ExtenderX\Core\Settings;
+use WPXERO\ExtenderX\Core\Attributes;
+use WPXERO\ExtenderX\Admin\Dashboard;
+use WPXERO\ExtenderX\Modules\Gutenberg\Gutenberg;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SiteEnhancement;
+use WPXERO\ExtenderX\Core\RegisterAssets;
+
 class XERO_EXTENDERX {
-    /**
-     * The single class instance.
-     *
-     * @var $instance
-     */
-    private static $instance = null;
-
-    /**
-     * Path to the plugin directory
-     *
-     * @var $plugin_path
-     */
-    public $plugin_path;
-
-    /**
-     * URL to the plugin directory
-     *
-     * @var $plugin_url
-     */
-    public $plugin_url;
-
-    /**
-     * Plugin name
-     *
-     * @var $plugin_name
-     */
-    public $plugin_name;
-
-    /**
-     * Plugin version
-     *
-     * @var $plugin_version
-     */
-    public $plugin_version;
-
-    /**
-     * Plugin slug
-     *
-     * @var $plugin_slug
-     */
-    public $plugin_slug;
-
-    /**
-     * Plugin name sanitized
-     *
-     * @var $plugin_name_sanitized
-     */
-    public $plugin_name_sanitized;
-
-    /**
-     * Freemius instance
-     *
-     * @var $freemius
-     */
-    private $freemius;
-
+    use Singleton;
     /**
      * XERO\EXTENDERX constructor.
      */
     public function __construct() {
         /* We do nothing here! */
+        self::define_constants();
+        self::init_hooks();
     }
 
-    /**
-     * Get the single class instance.
-     *
-     * @return XERO_EXTENDERX
-     */
-    public static function instance() {
-        if (is_null(self::$instance)) {
-            self::$instance = new self();
-            self::$instance->define_constants();
-            self::$instance->init_hooks();
-        }
-        return self::$instance;
-    }
 
     public function init_hooks() {
         $this->load_files();
-        add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
-        add_action('enqueue_block_assets', array($this, 'enqueue_front_scripts'));
     }
 
 
@@ -110,46 +58,21 @@ class XERO_EXTENDERX {
     public static function define_constants() {
         define('XERO_EXTENDERX_FILE', __FILE__);
         define('XERO_EXTENDERX_SLUG', 'extenderx');
-        define('XERO_EXTENDERX_VERSION', '1.4.5');
+        define('XERO_EXTENDERX_VERSION', '1.5.0');
         define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
         define('XERO_EXTENDERX_ADMIN_URL', plugin_dir_url(__FILE__));
+        define('XERO_EXTENDERX_ASSETS_URL', plugin_dir_url(__FILE__) . 'assets/');
+        define('XERO_EXTENDERX_DIST_URL', plugin_dir_url(__FILE__) . 'dist/');
         define('XERO_EXTENDERX_WP_VERSION', (float) get_bloginfo('version'));
         define('XERO_EXTENDERX_PHP_VERSION', (float) phpversion());
     }
 
     public function load_files() {
-        require_once XERO_EXTENDERX_DIR_PATH . 'includes/Utils.php';
-        require_once XERO_EXTENDERX_DIR_PATH . 'includes/Register.php';
-        require_once XERO_EXTENDERX_DIR_PATH . 'includes/Attributes.php';
-    }
-
-
-    public function enqueue_editor_assets() {
-        wp_register_style('tippy', XERO_EXTENDERX_ADMIN_URL . 'assets/vendor/tippy.js/tippy.min.css', array(), XERO_EXTENDERX_VERSION);
-
-        if (!is_admin()) {
-            return;
-        }
-
-        //library
-        $asset_path = __DIR__ . '/dist/extenderx.asset.php';
-        $args = require $asset_path;
-        wp_enqueue_script('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.js', $args['dependencies'], $args['version'], true);
-        wp_enqueue_style('@extenderx/library', XERO_EXTENDERX_ADMIN_URL . 'dist/extenderx.css', array(), $args['version']);
-        wp_enqueue_style('style-extenderx', plugins_url('dist/style-extenderx.css',  __FILE__), array(), $args['version']);
-        // Enqueue tippy
-        wp_enqueue_style('tippy');
-        $extensions_dir =  new XERO\EXTENDERX\Register();
-        $extensions_dir->add_extensions();
-    }
-
-
-    public function enqueue_front_scripts() {
-        if (is_admin()) {
-            return;
-        }
-        $extensions_dir =  new XERO\EXTENDERX\Register();
-        $extensions_dir->add_frontend_assets();
+        Settings::instance();
+        Dashboard::instance();
+        RegisterAssets::instance();
+        Gutenberg::instance();
+        SiteEnhancement::instance();
     }
 
     public function xero_extenderx_activate() {

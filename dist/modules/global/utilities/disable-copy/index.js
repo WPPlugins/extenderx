@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){document.addEventListener("copy",(function(e){return e.preventDefault(),!1})),document.addEventListener("cut",(function(e){return e.preventDefault(),!1})),document.body.style.userSelect="none",document.body.style.webkitUserSelect="none",document.body.style.msUserSelect="none",document.body.style.mozUserSelect="none"}));
