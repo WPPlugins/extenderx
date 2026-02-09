@@ -1,1 +1,1 @@
-!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){document.documentElement.classList.add("xero-high-contrast")}))}();
+!function(){"use strict";document.addEventListener("DOMContentLoaded",function(){document.documentElement.classList.add("xero-high-contrast")})}();

@@ -1,1 +1,1 @@
-!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const o=document.querySelector("footer, .site-footer, #colophon, .footer");o&&o.classList.add("xero-sticky-footer")}))}();
+!function(){"use strict";document.addEventListener("DOMContentLoaded",function(){const o=document.querySelector("footer, .site-footer, #colophon, .footer");o&&o.classList.add("xero-sticky-footer")})}();

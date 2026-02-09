@@ -1,5 +1,5 @@
 === ExtenderX – Block Animation, Dark Mode & Content Protection ===
-Version: 1.5.1
+Version: 1.5.2
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/pricing
@@ -7,7 +7,7 @@ Contributors: wpxero
 Tags: dark mode, disable right click, content protection, block animation, disable copy paste
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -142,6 +142,11 @@ Absolutely! The content protection features (disable right click, disable image 
 7. **Responsive Visibility Control** 📱 – Control block visibility based on screen size, ensuring a **responsive design** for all devices.
 
 == Changelog ==
+
+= 1.5.2 – February 09, 2026 =
+* Fixed: Resolved compatibility issues with WordPress 6.9 for improved stability.
+* Improved: Improved overall performance and system reliability.
+* Improved: Dark mode support for the website, providing a comfortable viewing experience in low-light environments.
 
 = 1.5.1 – January 23, 2026 =
 * Added: Freemius SDK integration for better plugin management and updates.

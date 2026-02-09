@@ -1,3 +1,8 @@
+= 1.5.2 – February 09, 2026 =
+* Fixed: Resolved compatibility issues with WordPress 6.9 for improved stability.
+* Improved: Improved overall performance and system reliability.
+* Improved: Dark mode support for the website, providing a comfortable viewing experience in low-light environments.
+
 = 1.5.1 – January 23, 2026 =
 * Added: Freemius SDK integration for better plugin management and updates.
 

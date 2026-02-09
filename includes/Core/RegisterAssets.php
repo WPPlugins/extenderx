@@ -12,6 +12,13 @@ class RegisterAssets {
 
     public function __construct() {
         add_action('wp_enqueue_scripts', [$this, 'register_assets']);
+        add_action('admin_enqueue_scripts', [$this, 'register_admin_assets']);
+    }
+
+    public function register_admin_assets() {
+        wp_register_script('darkreader', XERO_EXTENDERX_ASSETS_URL . 'vendor/darkreader/darkreader.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-dark-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dark-mode/index.js', array('darkreader'), XERO_EXTENDERX_VERSION, true);
+        $this->register_style_with_rtl('xero-dark-mode', 'modules/global/appearance/dark-mode/style-style.css');
     }
 
     public function register_assets() {

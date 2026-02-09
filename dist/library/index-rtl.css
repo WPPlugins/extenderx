@@ -9,7 +9,7 @@
 .extenderx--border-control .components-range-control,.extenderx--border-control .components-unit-control{margin-bottom:0!important}.extenderx--border-control .extenderx--border-radius-control{margin-top:1em}.extenderx--border-control .extenderx--border-radius-control .components-range-control{padding-right:6px;padding-left:6px}.extenderx--border-control .components-border-box-control-linked-button .components-button{color:#a0aec0}
 .extenderx--unit-range-control{display:flex}.extenderx--unit-range-control>*{width:50%}.extenderx--unit-range-control .components-unit-control{margin-bottom:0}.extenderx--unit-range-control .components-range-control{margin-bottom:0!important;margin-right:16px}
 .extenderx--box-shadow-control .extenderx--color-control{margin-bottom:1.5em;margin-top:1.5em}
-.extenderx--container-control{border:none;border-top:1px solid #e0e0e0;margin-top:-1px}.extenderx--container-control h2,.extenderx--container-control h3{display:block;font-size:inherit;margin-bottom:0;margin-top:0;padding:0;transition:background .1s ease-in-out}.extenderx--container-control h2:hover,.extenderx--container-control h3:hover{background:#f0f0f0;border:none}.extenderx--container-control .components-button{border:none;box-shadow:none;box-sizing:border-box;color:#1e1e1e;font-weight:500;height:auto;outline:none;padding:16px 16px 16px 48px;position:relative;text-align:right;transition:background .1s ease-in-out;width:100%}.extenderx--container-control .components-button svg{fill:currentColor;color:#1e1e1e;margin-left:0!important;position:absolute;left:16px;top:50%;transform:translateY(-50%);transition:color .1s ease-in-out}.extenderx--container-control .components-button.has-icon.has-text{padding-right:16px}.extenderx--container-control .components-button:focus:not(:disabled){border-radius:0;box-shadow:inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent,var(--wp-admin-theme-color,#007cba))}.extenderx--container-control svg{height:24px;width:24px}
+.extenderx--container-control{border:none;border-top:1px solid #e0e0e0;margin-top:-1px}.extenderx--container-control h2,.extenderx--container-control h3{display:block;font-size:inherit;margin-bottom:0;margin-top:0;padding:0;transition:background .1s ease-in-out}.extenderx--container-control h2:hover,.extenderx--container-control h3:hover{background:#f0f0f0;border:none}.extenderx--container-control .components-button{border:none;box-shadow:none;box-sizing:border-box;color:#1e1e1e;font-weight:500;height:auto;outline:none;padding:16px 16px 16px 48px;position:relative;text-align:right;transition:background .1s ease-in-out;width:100%}.extenderx--container-control .components-button svg{color:#1e1e1e;fill:currentColor;margin-left:0!important;position:absolute;left:16px;top:50%;transform:translateY(-50%);transition:color .1s ease-in-out}.extenderx--container-control .components-button.has-icon.has-text{padding-right:16px}.extenderx--container-control .components-button:focus:not(:disabled){border-radius:0;box-shadow:inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent,var(--wp-admin-theme-color,#007cba))}.extenderx--container-control svg{height:24px;width:24px}
 .extenderx--custom-css-control small,.extenderx--custom-css-control--modal small{display:block;margin:1em 0}.extenderx--custom-css-control .CodeMirror,.extenderx--custom-css-control--modal .CodeMirror{border:1px solid #eee;height:auto}
 .extenderx--font-appearance-control .components-custom-select-control label{display:none}
 .extenderx--control-header-button{border:0;box-shadow:none;color:#a0aec0;font-size:18px;height:auto;margin-bottom:0;min-width:0;outline:0;padding:2px 4px;width:auto}.extenderx--control-header-button svg{box-sizing:border-box;height:1em;width:1em}.extenderx--control-header-button .dashicon{color:#a0aec0;font-size:15px;height:15px;width:15px}.extenderx--control-header-button.is-pressed,.extenderx--control-header-button.is-pressed .dashicon{background-color:var(--wp-admin-theme-color,#3858e9)}.extenderx--button-group,.extenderx--font-size-control>.components-button-group{border:1px solid #a0aec0;display:flex;width:100%}.extenderx--button-group .components-button,.extenderx--font-size-control>.components-button-group .components-button{align-items:center;border-radius:0;box-shadow:none;color:#a0aec0;display:flex;flex-grow:1;font-size:13px;justify-content:center;outline:none}.extenderx--button-group .components-button:focus,.extenderx--font-size-control>.components-button-group .components-button:focus{box-shadow:none;outline:none}.extenderx--button-group .components-button.is-pressed,.extenderx--font-size-control>.components-button-group .components-button.is-pressed{background-color:var(--wp-admin-theme-color,#3858e9);color:#fff}.extenderx--button-group .components-button.has-icon,.extenderx--font-size-control>.components-button-group .components-button.has-icon{font-size:24px}.extenderx--button-group .components-button>svg,.extenderx--font-size-control>.components-button-group .components-button>svg{height:28px;width:28px}
@@ -56,22 +56,14 @@
 .ReactVirtualized__Table__headerRow {
   font-weight: 700;
   text-transform: uppercase;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
 }
 .ReactVirtualized__Table__row {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 .ReactVirtualized__Table__headerTruncatedText {
@@ -101,14 +93,11 @@
 }
 
 .ReactVirtualized__Table__sortableHeaderIconContainer {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
 }
 .ReactVirtualized__Table__sortableHeaderIcon {
-  -webkit-box-flex: 0;
-          flex: 0 0 24px;
+  flex: 0 0 24px;
   height: 1em;
   width: 1em;
   fill: currentColor;
@@ -118,5 +107,5 @@
 
 .ReactVirtualized__List {
 }
-.extenderx-component-image-picker,.extenderx-component-image-picker.extenderx-component-image-picker-2{--extenderx-component-image-picker-item-size:50%}.extenderx-component-image-picker.extenderx-component-image-picker-3{--extenderx-component-image-picker-item-size:33.33%}.extenderx-component-image-picker.extenderx-component-image-picker-4{--extenderx-component-image-picker-item-size:25%}.extenderx-component-image-picker.extenderx-component-image-picker-5{--extenderx-component-image-picker-item-size:20%}.extenderx-component-image-picker.extenderx-component-image-picker-6{--extenderx-component-image-picker-item-size:16.66%}.extenderx-component-image-picker .components-base-control__field{display:flex;flex-wrap:wrap;justify-content:space-between}.extenderx-component-image-picker .components-base-control__field>.components-base-control__label{min-width:100%}.extenderx-component-image-picker .extenderx-component-image-picker-item{align-items:center;background:none;border:none;border-radius:4px;color:inherit;cursor:pointer;display:flex;flex-direction:column;flex-shrink:0;justify-content:flex-start;margin:4px 0;overflow:hidden;padding:4px;width:calc(var(--extenderx-component-image-picker-item-size) - 4px)}.extenderx-component-image-picker .extenderx-component-image-picker-item:hover{background:#d3d3d3;color:#a9a9a9}.extenderx-component-image-picker .extenderx-component-image-picker-item.extenderx-component-image-picker-item-active{box-shadow:0 0 0 2px #a9a9a9;color:#a9a9a9;outline:2px solid transparent;outline-offset:-2px}.extenderx-component-image-picker .extenderx-component-image-picker-item:focus{box-shadow:0 0 0 2px #8a2be2;color:#a9a9a9;outline:2px solid transparent;outline-offset:-2px}.extenderx-component-image-picker .extenderx-component-image-picker-item img{border:1px solid hsla(0,0%,66%,.2);border-radius:4px;display:block;height:auto;outline:1px solid transparent;width:100%}.extenderx-component-image-picker .extenderx-component-image-picker-item svg{fill:currentColor;border:1px solid hsla(0,0%,66%,.2);border-radius:4px;display:block;height:45px;outline:1px solid transparent;width:100%}.extenderx-component-image-picker .extenderx-component-image-picker-item span{display:block;padding:4px 2px;text-align:center}
+.extenderx-component-image-picker,.extenderx-component-image-picker.extenderx-component-image-picker-2{--extenderx-component-image-picker-item-size:50%}.extenderx-component-image-picker.extenderx-component-image-picker-3{--extenderx-component-image-picker-item-size:33.33%}.extenderx-component-image-picker.extenderx-component-image-picker-4{--extenderx-component-image-picker-item-size:25%}.extenderx-component-image-picker.extenderx-component-image-picker-5{--extenderx-component-image-picker-item-size:20%}.extenderx-component-image-picker.extenderx-component-image-picker-6{--extenderx-component-image-picker-item-size:16.66%}.extenderx-component-image-picker .components-base-control__field{display:flex;flex-wrap:wrap;justify-content:space-between}.extenderx-component-image-picker .components-base-control__field>.components-base-control__label{min-width:100%}.extenderx-component-image-picker .extenderx-component-image-picker-item{align-items:center;background:none;border:none;border-radius:4px;color:inherit;cursor:pointer;display:flex;flex-direction:column;flex-shrink:0;justify-content:flex-start;margin:4px 0;overflow:hidden;padding:4px;width:calc(var(--extenderx-component-image-picker-item-size) - 4px)}.extenderx-component-image-picker .extenderx-component-image-picker-item:hover{background:#d3d3d3;color:#a9a9a9}.extenderx-component-image-picker .extenderx-component-image-picker-item.extenderx-component-image-picker-item-active{box-shadow:0 0 0 2px #a9a9a9;color:#a9a9a9;outline:2px solid transparent;outline-offset:-2px}.extenderx-component-image-picker .extenderx-component-image-picker-item:focus{box-shadow:0 0 0 2px #8a2be2;color:#a9a9a9;outline:2px solid transparent;outline-offset:-2px}.extenderx-component-image-picker .extenderx-component-image-picker-item img{border:1px solid hsla(0,0%,66%,.2);border-radius:4px;display:block;height:auto;outline:1px solid transparent;width:100%}.extenderx-component-image-picker .extenderx-component-image-picker-item svg{border:1px solid hsla(0,0%,66%,.2);border-radius:4px;display:block;fill:currentColor;height:45px;outline:1px solid transparent;width:100%}.extenderx-component-image-picker .extenderx-component-image-picker-item span{display:block;padding:4px 2px;text-align:center}
 .extenderx--base-controls>div{margin-bottom:1em}

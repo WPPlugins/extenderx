@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",(function(){document.addEventListener("contextmenu",(function(e){return e.preventDefault(),!1}))}));
+document.addEventListener("DOMContentLoaded",function(){document.addEventListener("contextmenu",function(e){return e.preventDefault(),!1})});
