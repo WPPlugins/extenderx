@@ -3,7 +3,7 @@
         'name' => 'wpxero/extenderx',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c43a619850170de96f126deed56caa8f1fdae018',
+        'reference' => 'c0f4dfa40c4da3f33b765bbc76325e9d68b90421',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -24,7 +24,7 @@
         'wpxero/extenderx' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c43a619850170de96f126deed56caa8f1fdae018',
+            'reference' => 'c0f4dfa40c4da3f33b765bbc76325e9d68b90421',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

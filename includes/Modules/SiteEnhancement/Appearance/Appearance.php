@@ -6,7 +6,6 @@ use WPXERO\ExtenderX\Traits\Singleton;
 use WPXERO\ExtenderX\Core\ModuleBase;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\DarkMode;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\LightModeToggle;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\AutoMode;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\HighContrastMode;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\ReadingMode;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\NightShiftMode;
@@ -29,7 +28,6 @@ class Appearance extends ModuleBase {
     private const APPEARANCE_FEATURES = [
         'dark_mode.enabled' => DarkMode::class,
         'light_mode_toggle.enabled' => LightModeToggle::class,
-        'auto_mode.enabled' => AutoMode::class,
         'high_contrast_mode.enabled' => HighContrastMode::class,
         'reading_mode.enabled' => ReadingMode::class,
         'night_shift_mode.enabled' => NightShiftMode::class,

@@ -26,11 +26,6 @@ class ProFeatures {
      */
     private const PRO_FEATURES = [
         // Appearance - Advanced Modes
-        'auto_mode' => [
-            'title' => 'Auto Mode',
-            'category' => 'appearance',
-            'type' => 'premium'
-        ],
         'high_contrast_mode' => [
             'title' => 'High Contrast Mode',
             'category' => 'appearance',
@@ -218,11 +213,6 @@ class ProFeatures {
         ],
         'sticky_footer' => [
             'title' => 'Sticky Footer',
-            'category' => 'ui_enhancements',
-            'type' => 'premium'
-        ],
-        'scroll_progress' => [
-            'title' => 'Scroll Progress Bar',
             'category' => 'ui_enhancements',
             'type' => 'premium'
         ],

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Plugin Name:       ExtenderX – Block Animation, Dark Mode & Content Protection
+ * Plugin Name:       ExtenderX – Block Animations & 60+ Site Enhancements
  * Plugin URI:        https://wpxero.com/extenderx
  * Description:       All-in-one WordPress plugin for block animations, dark mode, content protection, and website security.
- * Version:           1.5.2
+ * Version:           1.6.0
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
  * Requires at least: 6.0
@@ -71,7 +71,7 @@ class XERO_EXTENDERX {
             define('XERO_EXTENDERX_SLUG', 'extenderx');
         }
         if (!defined('XERO_EXTENDERX_VERSION')) {
-            define('XERO_EXTENDERX_VERSION', '1.5.2');
+            define('XERO_EXTENDERX_VERSION', '1.6.0');
         }
         if (!defined('XERO_EXTENDERX_DIR_PATH')) {
             define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));

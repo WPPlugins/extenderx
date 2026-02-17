@@ -1,3 +1,11 @@
+= 1.6.0 – February 17, 2026 =
+* Added: Back to Top button module for enhanced site navigation and user convenience.
+* Added: Sticky Header module to keep headers visible while scrolling for better accessibility.
+* Added: Sticky Footer module for persistent footer visibility across all pages.
+* Added: Smooth Scroll module for seamless page navigation and improved browsing experience.
+* Added: Scrollspy module for automatic navigation highlighting based on scroll position.
+* Added: Scroll Progress Bar module to display reading progress indicator for visitors.
+
 = 1.5.2 – February 09, 2026 =
 * Fixed: Resolved compatibility issues with WordPress 6.9 for improved stability.
 * Improved: Improved overall performance and system reliability.

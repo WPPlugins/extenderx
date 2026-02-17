@@ -94,6 +94,7 @@ class Enqueue {
                     'nonce' => wp_create_nonce('extenderx-admin-nonce'),
                     'rest_url' => rest_url('wpxero/extenderx/v1'),
                     'system_info' => $system_info,
+                    'site_data' => $this->get_site_data(),
                 ]
             );
 
@@ -105,6 +106,81 @@ class Enqueue {
             );
         }
     }
+    /**
+     * Get site data for admin UI (post types, pages, user roles, etc.)
+     *
+     * @return array
+     */
+    private function get_site_data() {
+        // Public post types
+        $post_types = get_post_types(['public' => true], 'objects');
+        $post_types_data = [];
+        foreach ($post_types as $slug => $obj) {
+            if ($slug === 'attachment') {
+                continue;
+            }
+            $post_types_data[] = [
+                'value' => $slug,
+                'label' => $obj->labels->singular_name,
+                'count' => (int) wp_count_posts($slug)->publish,
+            ];
+        }
+
+        // Pages (up to 200 for the selector)
+        $pages = get_posts([
+            'post_type'      => 'page',
+            'post_status'    => 'publish',
+            'posts_per_page' => 200,
+            'orderby'        => 'title',
+            'order'          => 'ASC',
+            'no_found_rows'  => true,
+        ]);
+        $pages_data = [];
+        foreach ($pages as $page) {
+            $pages_data[] = [
+                'value' => (string) $page->ID,
+                'label' => $page->post_title ?: __('(no title)', 'extenderx'),
+                'slug'  => $page->post_name,
+            ];
+        }
+
+        // Posts (up to 100 for the selector)
+        $posts = get_posts([
+            'post_type'      => 'post',
+            'post_status'    => 'publish',
+            'posts_per_page' => 100,
+            'orderby'        => 'title',
+            'order'          => 'ASC',
+            'no_found_rows'  => true,
+        ]);
+        $posts_data = [];
+        foreach ($posts as $post) {
+            $posts_data[] = [
+                'value' => (string) $post->ID,
+                'label' => $post->post_title ?: __('(no title)', 'extenderx'),
+                'slug'  => $post->post_name,
+            ];
+        }
+
+        // User roles
+        $wp_roles = wp_roles();
+        $roles_data = [];
+        foreach ($wp_roles->role_names as $role_key => $role_name) {
+            $roles_data[] = [
+                'value' => $role_key,
+                'label' => translate_user_role($role_name),
+            ];
+        }
+
+        return [
+            'post_types' => $post_types_data,
+            'pages'      => $pages_data,
+            'posts'      => $posts_data,
+            'user_roles' => $roles_data,
+            'home_url'   => home_url('/'),
+        ];
+    }
+
     /**
      * Get active plugins information
      *

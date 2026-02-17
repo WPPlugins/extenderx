@@ -26,16 +26,16 @@ class UIEnhancements extends ModuleBase {
     private const MODULE_SETTINGS_KEY = 'global';
 
     private const UI_ENHANCEMENT_FEATURES = [
-        'back_to_top.enabled'      => BackToTop::class,
-        'sticky_header.enabled'    => StickyHeader::class,
-        'preloader.enabled'        => StickyFooter::class,
-        'scroll_progress.enabled'  => ScrollProgress::class,
-        'smooth_scroll.enabled'    => SmartScroll::class,
-        'cursor_effects.enabled'   => CustomCursor::class,
-        'cursor_hover.enabled'      => CursorHoverEffects::class,
-        'cursor_grab.enabled'       => CursorGrabMode::class,
-        'scrollbar_style.enabled'   => ScrollbarStyler::class,
-        'smooth_scrolling.enabled'  => SmoothScrolling::class,
+        'back_to_top.enabled'          => BackToTop::class,
+        'sticky_header.enabled'        => StickyHeader::class,
+        'sticky_footer.enabled'        => StickyFooter::class,
+        'scroll_progress.enabled'      => ScrollProgress::class,
+        'smart_scroll.enabled'         => SmartScroll::class,
+        'custom_cursor.enabled'        => CustomCursor::class,
+        'cursor_hover_effects.enabled' => CursorHoverEffects::class,
+        'cursor_grab_mode.enabled'     => CursorGrabMode::class,
+        'scrollbar_styler.enabled'     => ScrollbarStyler::class,
+        'smooth_scrolling.enabled'     => SmoothScrolling::class,
     ];
 
 
