@@ -18,6 +18,7 @@ class StickyFooter {
         'selector'              => 'auto',
         'custom_selector'       => '',
         'bg_color'              => '#ffffff',
+        'text_color'            => '#333333',
         'bg_opacity'            => 100,
         'shadow'                => 'medium',
         'z_index'               => 9998,
@@ -125,6 +126,7 @@ class StickyFooter {
 
     private function generate_inline_css() {
         $bg_color   = sanitize_text_field($this->settings['bg_color']) ?: '#ffffff';
+        $text_color = sanitize_text_field($this->settings['text_color']) ?: '#333333';
         $bg_opacity = intval($this->settings['bg_opacity']);
         $z_index    = intval($this->settings['z_index']);
         $blur       = (bool)$this->settings['blur_background'];
@@ -133,6 +135,10 @@ class StickyFooter {
         $r = hexdec(substr($bg_color, 1, 2));
         $g = hexdec(substr($bg_color, 3, 2));
         $b = hexdec(substr($bg_color, 5, 2));
+        $r_t = hexdec(substr($text_color, 1, 2));
+        $g_t = hexdec(substr($text_color, 3, 2));
+        $b_t = hexdec(substr($text_color, 5, 2));
+
         $alpha = $bg_opacity / 100;
 
         $shadow_map = [
@@ -153,6 +159,7 @@ class StickyFooter {
             box-shadow: {$shadow} !important;
             z-index: {$z_index} !important;
             animation: xeroSlideUp 0.3s ease-out;
+            color: rgba({$r_t}, {$g_t}, {$b_t}, {$alpha}) !important;
         }
         @keyframes xeroSlideUp {
             from { transform: translateY(100%); opacity: 0; }

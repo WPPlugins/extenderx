@@ -213,6 +213,12 @@ class BackToTop {
             case 'top-right':
                 $position_css = 'top: 30px; right: 30px; bottom: auto;';
                 break;
+            case 'bottom-center':
+                $position_css = 'bottom: 30px; left: 50%; transform: translateX(-50%);';
+                break;
+            case 'top-center':
+                $position_css = 'top: 30px; left: 50%; transform: translateX(-50%);';
+                break;
             case 'top-left':
                 $position_css = 'top: 30px; left: 30px; right: auto; bottom: auto;';
                 break;

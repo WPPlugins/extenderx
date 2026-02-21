@@ -19,6 +19,7 @@ class StickyHeader {
         'custom_selector'       => '',
         'scroll_offset'         => 100,
         'bg_color'              => '#ffffff',
+        'text_color'            => '#333333',
         'bg_opacity'            => 98,
         'shadow'                => 'medium',
         'animation'             => 'slide-down',
@@ -131,6 +132,7 @@ class StickyHeader {
 
     private function generate_inline_css() {
         $bg_color   = sanitize_text_field($this->settings['bg_color']) ?: '#ffffff';
+        $text_color = sanitize_text_field($this->settings['text_color']) ?: '#333333';
         $bg_opacity = intval($this->settings['bg_opacity']);
         $z_index    = intval($this->settings['z_index']);
         $blur       = (bool)$this->settings['blur_background'];
@@ -142,6 +144,10 @@ class StickyHeader {
         $g = hexdec(substr($bg_color, 3, 2));
         $b = hexdec(substr($bg_color, 5, 2));
         $alpha = $bg_opacity / 100;
+
+        $r_t = hexdec(substr($text_color, 1, 2));
+        $g_t = hexdec(substr($text_color, 3, 2));
+        $b_t = hexdec(substr($text_color, 5, 2));
 
         $shadow_map = [
             'none'   => 'none',
@@ -155,6 +161,7 @@ class StickyHeader {
             background: rgba({$r}, {$g}, {$b}, {$alpha}) !important;
             box-shadow: {$shadow} !important;
             z-index: {$z_index} !important;
+            color: rgba({$r_t}, {$g_t}, {$b_t}, {$alpha}) !important;
         }";
 
         if ($blur) {

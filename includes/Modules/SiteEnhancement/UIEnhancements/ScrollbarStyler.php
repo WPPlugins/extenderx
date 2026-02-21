@@ -140,7 +140,6 @@ class ScrollbarStyler {
         ::-webkit-scrollbar-track { background: {$track_color}; border-radius: {$radius}px; }
         ::-webkit-scrollbar-thumb { background: {$thumb_bg}; border-radius: {$radius}px; {$border_css} transition: background 0.3s ease; }
         ::-webkit-scrollbar-thumb:hover { background: {$thumb_hover_bg}; }
-        * { scrollbar-width: thin; scrollbar-color: {$thumb_color} {$track_color}; }
         html { scrollbar-gutter: stable; }";
 
         if ($dark_support) {
@@ -148,7 +147,6 @@ class ScrollbarStyler {
             $css .= "@media (prefers-color-scheme: dark) {
                 ::-webkit-scrollbar-track { background: {$dark_track}; }
                 ::-webkit-scrollbar-thumb { {$dark_border} }
-                * { scrollbar-color: {$thumb_color} {$dark_track}; }
             }";
         }
 

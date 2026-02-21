@@ -1,5 +1,5 @@
 === ExtenderX – Block Animations, Dark Mode, Content Protection & 60+ Site Enhancements ===
-Version: 1.6.0
+Version: 1.6.1
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/pricing
@@ -7,7 +7,7 @@ Contributors: wpxero
 Tags: dark mode, disable right click, content protection, block animation, scroll effects
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,8 @@ Most WordPress plugins solve one problem. ExtenderX solves dozens — **block an
 - Automatic dark theme generation for your entire site
 - Works with any WordPress theme
 - Floating toggle button for visitors
+
+**Ready for more power? [Upgrade to Pro](https://wpxero.com/plugins/extenderx/pricing)** to unlock all features.
 
 ---
 
@@ -284,6 +286,14 @@ Click the **Upgrade** or **Pricing** link in the ExtenderX dashboard within your
 
 == Changelog ==
 
+= 1.6.1 – February 22, 2026 =
+* Tweaked: Dark Mode for admin dashboard.
+* Tweaked: Shortcodes for the dark mode.
+* Improved: unlock color settings for the dark mode.
+* Improved: top center and bottom center positions added for the back to top button.
+* Improved: Color settings added for the sticky header and footer.
+* Fixed: Scrollbar styler issues are resolved.
+
 = 1.6.0 – February 17, 2026 =
 * Added: Back to Top button module for enhanced site navigation and user convenience.
 * Added: Sticky Header module to keep headers visible while scrolling for better accessibility.
@@ -382,8 +392,8 @@ Click the **Upgrade** or **Pricing** link in the ExtenderX dashboard within your
 
 == Upgrade Notice ==
 
-= 1.6.0 =
-Major update! 6 new features added: Back to Top button, Sticky Header, Sticky Footer, Smooth Scroll, Scrollspy, and Scroll Progress Bar. Update now for the best experience.
+= 1.6.1 =
+Tweaked Dark Mode for admin dashboard and shortcodes. Improved color settings for dark mode, back to top button positions, and sticky header/footer colors. Fixed scrollbar styler issues.
 
 == License & Disclaimer ==
 

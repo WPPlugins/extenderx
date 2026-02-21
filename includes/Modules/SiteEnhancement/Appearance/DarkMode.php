@@ -21,7 +21,7 @@ class DarkMode {
         'grayscale' => 0,
         'text_stroke' => 0,
         'filter_mode' => 1,
-        'default_dark_mode' => false,
+        'default_dark_mode' => true,
         'use_system_color_scheme' => false,
         'enable_for_pdfs' => false,
         'immediate_modify' => true,

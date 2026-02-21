@@ -1,3 +1,11 @@
+= 1.6.1 – February 22, 2026 =
+* Tweaked: Dark Mode for admin dashboard.
+* Tweaked: Shortcodes for the dark mode.
+* Improved: unlock color settings for the dark mode.
+* Improved: top center and bottom center positions added for the back to top button.
+* Improved: Color settings added for the sticky header and footer.
+* Fixed: Scrollbar styler issues are resolved.
+
 = 1.6.0 – February 17, 2026 =
 * Added: Back to Top button module for enhanced site navigation and user convenience.
 * Added: Sticky Header module to keep headers visible while scrolling for better accessibility.
