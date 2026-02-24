@@ -19,7 +19,7 @@ class ScrollProgress {
         'height'                => 4,
         'color'                 => '#667eea',
         'gradient_end'          => '#764ba2',
-        'use_gradient'          => true,
+        'use_gradient'          => false,
         'background_color'      => 'rgba(0, 0, 0, 0.05)',
         'border_radius'         => 0,
         'show_on_mobile'        => true,

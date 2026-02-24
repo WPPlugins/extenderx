@@ -204,18 +204,6 @@ class ProFeatures {
             'category' => 'marketing',
             'type' => 'premium'
         ],
-
-        // Advanced UI Enhancements
-        'sticky_header' => [
-            'title' => 'Sticky Header',
-            'category' => 'ui_enhancements',
-            'type' => 'premium'
-        ],
-        'sticky_footer' => [
-            'title' => 'Sticky Footer',
-            'category' => 'ui_enhancements',
-            'type' => 'premium'
-        ],
         'cursor_effects' => [
             'title' => 'Custom Cursor',
             'category' => 'ui_enhancements',

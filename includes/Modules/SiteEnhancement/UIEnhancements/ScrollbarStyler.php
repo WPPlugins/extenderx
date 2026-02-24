@@ -20,7 +20,7 @@ class ScrollbarStyler {
         'thumb_color_hover'     => '#764ba2',
         'track_color'           => '#f1f1f1',
         'border_radius'         => 10,
-        'use_gradient'          => true,
+        'use_gradient'          => false,
         'gradient_end'          => '#764ba2',
         'thumb_border'          => true,
         'dark_mode_support'     => true,

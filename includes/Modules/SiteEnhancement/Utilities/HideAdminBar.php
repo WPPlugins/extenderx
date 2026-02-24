@@ -17,12 +17,6 @@ class HideAdminBar {
     use Singleton;
 
     public function __construct() {
-        add_action('after_setup_theme', [$this, 'hide_admin_bar']);
-    }
-
-    public function hide_admin_bar() {
-        if (!is_admin()) {
-            show_admin_bar(false);
-        }
+        add_filter('show_admin_bar', '__return_false');
     }
 }

@@ -1,5 +1,5 @@
 === ExtenderX – Block Animations, Dark Mode, Content Protection & 60+ Site Enhancements ===
-Version: 1.6.1
+Version: 1.6.2
 Author: WPXERO
 Author URI: https://wpxero.com/plugins/extenderx
 Donate link: https://wpxero.com/plugins/extenderx/pricing
@@ -7,7 +7,7 @@ Contributors: wpxero
 Tags: dark mode, disable right click, content protection, block animation, scroll effects
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -286,6 +286,11 @@ Click the **Upgrade** or **Pricing** link in the ExtenderX dashboard within your
 
 == Changelog ==
 
+= 1.6.2 – February 24, 2026 =
+* Fixed: Resolved Sticky Header and Sticky Footer modules not functioning correctly on certain themes.
+* Fixed: Corrected gradient color rendering issues in Scrollbar Styler and Scroll Progress Bar modules.
+* Fixed: Addressed Hide Admin Bar on Frontend option not applying properly for logged-in users.
+
 = 1.6.1 – February 22, 2026 =
 * Tweaked: Dark Mode for admin dashboard.
 * Tweaked: Shortcodes for the dark mode.
@@ -392,8 +397,8 @@ Click the **Upgrade** or **Pricing** link in the ExtenderX dashboard within your
 
 == Upgrade Notice ==
 
-= 1.6.1 =
-Tweaked Dark Mode for admin dashboard and shortcodes. Improved color settings for dark mode, back to top button positions, and sticky header/footer colors. Fixed scrollbar styler issues.
+= 1.6.2 =
+Fixed Sticky Header and Sticky Footer modules not functioning correctly on certain themes. Corrected gradient color rendering issues in Scrollbar Styler and Scroll Progress Bar modules. Addressed Hide Admin Bar on Frontend option not applying properly for logged-in users.
 
 == License & Disclaimer ==
 

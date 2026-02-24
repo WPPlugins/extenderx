@@ -1,3 +1,8 @@
+= 1.6.2 – February 24, 2026 =
+* Fixed: Resolved Sticky Header and Sticky Footer modules not functioning correctly on certain themes.
+* Fixed: Corrected gradient color rendering issues in Scrollbar Styler and Scroll Progress Bar modules.
+* Fixed: Addressed Hide Admin Bar on Frontend option not applying properly for logged-in users.
+
 = 1.6.1 – February 22, 2026 =
 * Tweaked: Dark Mode for admin dashboard.
 * Tweaked: Shortcodes for the dark mode.
