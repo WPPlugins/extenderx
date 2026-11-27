@@ -37,8 +37,12 @@ class DarkMode {
         'schedule_enabled' => false,
         'schedule_start' => '20:00',
         'schedule_end' => '06:00',
-        'exclude_pages' => '',
+        'exclude_pages' => '',        // legacy newline text (IDs/slugs/URLs) — superseded by the page-rules keys below
         'exclude_selectors' => '',
+        'page_filter_mode' => 'exclude',
+        'exclude_page_ids' => [],
+        'exclude_post_ids' => [],
+        'exclude_url_patterns' => [],
         'custom_css' => '',
         'wp_admin_dark_mode' => false,
         'floating_button_size' => 48,
@@ -61,13 +65,37 @@ class DarkMode {
         $this->settings = wp_parse_args($dark_mode_settings, $this->default_settings);
     }
 
+    /**
+     * Memoized per request — called from enqueue, the footer toggle and the
+     * shortcode.
+     *
+     * @var bool|null
+     */
+    private $page_allowed = null;
+
     private function should_apply_on_current_page() {
-        $exclude_pages = array_filter(array_map('trim', explode("\n", $this->settings['exclude_pages'])));
-        if (empty($exclude_pages)) {
-            return true;
+        if (null !== $this->page_allowed) {
+            return $this->page_allowed;
         }
 
-        $current_url = $_SERVER['REQUEST_URI'] ?? '';
+        // Standard page rules (include/exclude list; see Core\PageFilter).
+        if (\WPXERO\ExtenderX\Core\PageFilter::blocks($this->settings)) {
+            return $this->page_allowed = false;
+        }
+
+        // Legacy newline-text exclusions (IDs / slugs / URL patterns) — no
+        // longer offered in the UI but still honored so installs that saved
+        // them before the page-rules panel keep their behavior.
+        return $this->page_allowed = !$this->matches_legacy_exclusions();
+    }
+
+    private function matches_legacy_exclusions() {
+        $exclude_pages = array_filter(array_map('trim', explode("\n", (string) $this->settings['exclude_pages'])));
+        if (empty($exclude_pages)) {
+            return false;
+        }
+
+        $current_url = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : '';
         $current_id = get_queried_object_id();
 
         foreach ($exclude_pages as $exclusion) {
@@ -75,34 +103,41 @@ class DarkMode {
             if (empty($exclusion)) continue;
 
             if (is_numeric($exclusion) && intval($exclusion) === $current_id) {
-                return false;
+                return true;
             }
 
             if (strpos($exclusion, '/') === 0 || strpos($exclusion, 'http') === 0) {
                 $pattern = str_replace(['*', '/'], ['.*', '\/'], $exclusion);
                 if (preg_match('/^' . $pattern . '$/i', $current_url)) {
-                    return false;
+                    return true;
                 }
             }
 
             if (function_exists('get_page_by_path')) {
                 $page = get_page_by_path($exclusion);
                 if ($page && $page->ID === $current_id) {
-                    return false;
+                    return true;
                 }
             }
         }
 
-        return true;
+        return false;
     }
 
     public function enqueue_assets() {
-        $should_apply = $this->should_apply_on_current_page();
+        // Page ruled out (include/exclude page rules or legacy exclusions):
+        // load nothing — no runtime, no toggle assets, no config. The runtime
+        // itself never consulted the localized `shouldApplyDarkMode` flag, so
+        // gating here is what actually enforces the rules (a stored
+        // localStorage preference would otherwise re-darken excluded pages).
+        if (!$this->should_apply_on_current_page()) {
+            return;
+        }
+
+        $should_apply = true;
 
         // Add critical inline CSS to prevent FOUC
-        if ($should_apply) {
-            $this->add_critical_inline_css();
-        }
+        $this->add_critical_inline_css();
 
         // Enqueue initialization script (registered in RegisterAssets)
         wp_enqueue_script('xero-dark-mode');
@@ -314,6 +349,11 @@ class DarkMode {
         if (!$this->settings['show_toggle']) {
             return;
         }
+        // No toggle on pages the page rules exclude — the runtime isn't loaded
+        // there, so the button would be inert.
+        if (!$this->should_apply_on_current_page()) {
+            return;
+        }
 
         $position = $this->settings['toggle_position'];
         $style = $this->settings['toggle_style'];
@@ -333,7 +373,7 @@ class DarkMode {
         <div id="extenderx-dark-reader-toggle"
             class="extenderx-dark-reader-toggle <?php echo esc_attr($position); ?> style-<?php echo esc_attr($style); ?>"
             <?php if ($inline_style) : ?>style="<?php echo esc_attr($inline_style); ?>" <?php endif; ?>>
-            <button aria-label="<?php echo esc_attr__('Toggle Dark Mode', 'extenderx'); ?>" aria-pressed="false" role="switch">
+            <button aria-label="<?php echo esc_attr__('Dark mode', 'extenderx'); ?>" aria-checked="false" role="switch">
                 <?php $this->render_toggle_style($style); ?>
             </button>
         </div>
@@ -392,6 +432,12 @@ class DarkMode {
      *   label      – custom aria-label text
      */
     public function render_shortcode_toggle($atts = []) {
+        // No toggle on pages the page rules exclude — the runtime isn't
+        // loaded there, so the button would be inert.
+        if (!$this->should_apply_on_current_page()) {
+            return '';
+        }
+
         $atts = shortcode_atts([
             'style' => $this->settings['toggle_style'],
             'size'  => intval($this->settings['floating_button_size']),
@@ -417,7 +463,7 @@ class DarkMode {
         ?>
         <div class="extenderx-dark-reader-shortcode-toggle extenderx-dark-reader-toggle style-<?php echo esc_attr($style_name); ?> <?php echo esc_attr($extra_class); ?>"
             <?php if ($inline_style) : ?>style="<?php echo esc_attr($inline_style); ?>"<?php endif; ?>>
-            <button aria-label="<?php echo $label; ?>" aria-pressed="false" role="switch">
+            <button aria-label="<?php echo $label; ?>" aria-checked="false" role="switch">
                 <?php $this->render_toggle_style($style_name); ?>
             </button>
         </div>

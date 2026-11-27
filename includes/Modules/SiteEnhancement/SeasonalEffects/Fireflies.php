@@ -21,11 +21,17 @@ class Fireflies {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('fireflies')) {
+            return;
+        }
         wp_enqueue_style('xero-fireflies');
         wp_enqueue_script('xero-fireflies');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('fireflies')) {
+            return;
+        }
         $count = $this->settings_cache->get_setting('global.seasonal_effects.fireflies.count', 30);
         $glow = $this->settings_cache->get_setting('global.seasonal_effects.fireflies.glow', 50);
         $color = $this->settings_cache->get_setting('global.seasonal_effects.fireflies.color', 'yellow');

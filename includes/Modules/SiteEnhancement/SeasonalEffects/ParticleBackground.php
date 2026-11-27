@@ -21,11 +21,17 @@ class ParticleBackground {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('particle_bg')) {
+            return;
+        }
         wp_enqueue_style('xero-particle-background');
         wp_enqueue_script('xero-particle-background');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('particle_bg')) {
+            return;
+        }
         $count = $this->settings_cache->get_setting('global.seasonal_effects.particle_bg.count', 50);
         $speed = $this->settings_cache->get_setting('global.seasonal_effects.particle_bg.speed', 50);
         $lines = $this->settings_cache->get_setting('global.seasonal_effects.particle_bg.lines', false);

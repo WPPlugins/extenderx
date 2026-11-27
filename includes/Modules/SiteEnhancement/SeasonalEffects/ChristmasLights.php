@@ -21,11 +21,17 @@ class ChristmasLights {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('christmas_lights')) {
+            return;
+        }
         wp_enqueue_style('xero-christmas-lights');
         wp_enqueue_script('xero-christmas-lights');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('christmas_lights')) {
+            return;
+        }
         $style = $this->settings_cache->get_setting('global.seasonal_effects.christmas_lights.style', 'classic');
 ?>
         <div id="xero-christmas-lights" data-style="<?php echo esc_attr($style); ?>" class="xero-seasonal-effect"></div>

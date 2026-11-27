@@ -1,404 +1,489 @@
-=== ExtenderX – Block Animations, Dark Mode, Content Protection & 60+ Site Enhancements ===
-Version: 1.6.2
+=== ExtenderX – Accessibility Toolbar, Dark Mode & Site Tools ===
+Version: 1.11.2
 Author: WPXERO
-Author URI: https://wpxero.com/plugins/extenderx
+Author URI: https://wpxero.com
 Donate link: https://wpxero.com/plugins/extenderx/pricing
 Contributors: wpxero
-Tags: dark mode, disable right click, content protection, block animation, scroll effects
-Requires at least: 6.0
-Tested up to: 6.9
-Stable tag: 1.6.2
+Tags: accessibility, accessibility toolbar, accessibility widget, a11y, wcag
+Requires at least: 6.2
+Tested up to: 7.1
+Stable tag: 1.11.2
 Requires PHP: 7.4
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Animate blocks, enable dark mode & protect content. 60+ tools: disable right-click, copy & inspect. Works with any theme or builder. Fast & no-code!
+Free accessibility toolbar: text size, contrast, dyslexia & low-vision profiles. No cookies, no external service, no subscription.
 
 == Description ==
 
-ExtenderX is the **ultimate all-in-one WordPress enhancement plugin** that brings together **Gutenberg block animations**, **dark mode**, **content protection**, **scroll effects**, **sticky header**, **back to top**, and **60+ powerful site enhancements** — all from a single, lightweight plugin. Whether you want to **animate blocks on scroll**, **protect your content from copying**, **enable dark mode**, or add **professional UI features** like scroll progress bars and smooth scrolling — ExtenderX does it all without slowing down your website.
+**Some of your visitors can't read your site comfortably.** Text is too small, contrast is too low, the font is hard going with dyslexia, or the motion makes them feel unwell. Most "accessibility widgets" fix this by loading a script from someone else's server, charging a monthly fee, and promising legal compliance they can't deliver.
 
-ExtenderX combines two powerful feature sets: **Gutenberg Block Animations** that extend every core and third-party block with animation controls, visibility options, tooltips, and wrapper links — directly from the block settings sidebar. Plus **60+ site-wide enhancements** including dark mode, content protection, scroll effects, and UI tools that work seamlessly with **any WordPress theme, page builder, or plugin** — including Elementor, Divi, Beaver Builder, and more. No shortcodes, no conflicts, no bloat.
+**ExtenderX takes a different route.** It adds a free accessibility toolbar to any WordPress theme. Visitors open it with one click or **Alt+A** and adjust the page to suit them: bigger text, higher contrast, a readable font, paused animations, or a one-click profile for low vision, dyslexia, focus or seizure safety.
 
+* **Free.** The toolbar, 11 visitor tools, 4 quick profiles, a skip link and focus outlines cost nothing.
+* **Private.** No cookies, no tracking, nothing fetched from an external service. A visitor's choices stay in their own browser.
+* **Honest.** It does not claim to make your site "compliant", because no plugin can. It gives visitors control and gives you tools to find problems in your own content.
+* **Light.** Nothing loads on your site until you switch it on.
 
-### 🎯 What Makes ExtenderX Different?
+[Live demo](https://wpxero.com/plugins/extenderx?utm_source=wporg&utm_medium=readme&utm_campaign=demo) | [Compare Free vs Pro](https://wpxero.com/plugins/extenderx/pricing?utm_source=wporg&utm_medium=readme&utm_campaign=top)
 
-Most WordPress plugins solve one problem. ExtenderX solves dozens — **block animations**, **website appearance**, **content security**, **UI enhancements**, **marketing tools**, and **seasonal effects** — all managed from a single, beautifully designed dashboard. Enable only what you need. Every feature loads conditionally, so your site stays fast.
+### Accessibility toolbar (free)
 
-- One-click activation from the dashboard
-- Automatic dark theme generation for your entire site
-- Works with any WordPress theme
-- Floating toggle button for visitors
+Tools that let visitors adjust how your site is displayed, so they can read and navigate it more comfortably. Everything is off until you enable it, nothing is fetched from an external service, and no visitor data leaves their browser.
 
-**Ready for more power? [Upgrade to Pro](https://wpxero.com/plugins/extenderx/pricing)** to unlock all features.
+- **Accessibility Toolbar** — a floating button that opens a panel of display controls, grouped into Text, Color, Content, and Motion & reading. Free tools: text size, a readable font, left-aligned text, high contrast, inverted colors, grayscale, a light background, underlined links, highlighted headings, hidden images, and paused motion.
+- **Quick profiles** — **Low vision**, **Dyslexia**, **Focus** and **Seizure safe** each switch on a matching set of tools in one click, using only the tools you have enabled. Press again to clear.
+- **Keyboard shortcut** — visitors open and close the panel with **Alt+A** from anywhere on the page. A badge on the button shows how many settings are active, and **Reset all** clears them.
+- **Remembered preferences** — a visitor's choices follow them from page to page, stored in their own browser. No cookies, nothing identifying recorded, and nothing sent to your server.
+- **Skip to Content Link** — lets keyboard visitors jump past the header straight to your main content. Hidden until focused, and it moves focus properly rather than only scrolling. If your target selector doesn't match, common landmarks are tried automatically.
+- **Enhanced Focus Outlines** — a configurable ring (color, thickness, offset) around whichever element the keyboard is on, for themes that hide or wash out the browser default. Appears for keyboard input, not mouse clicks.
 
----
+You choose which side the button sits on, how far up from the bottom, which tools appear, and whether the profiles row and the shortcut are offered.
 
-### FREE FEATURES
+The toolbar is itself keyboard operable, announces changes to screen readers, and honors the visitor's "prefers-reduced-motion" system setting — motion starts paused for those visitors, and turning that off will not force animations back on for them.
 
-### Content Protection & Website Security
+### Not an overlay, and no compliance promises
 
-Protect your valuable content with a comprehensive suite of security tools. ExtenderX gives you four layers of protection to prevent unauthorized content theft:
+ExtenderX does not rewrite your markup, inject fixes from a remote service, or claim to make your site meet WCAG, the ADA or the European Accessibility Act. Those depend on your content, your theme and your own testing with real assistive technology. The toolbar is one part of that work: it lets visitors change how your site is displayed, and the Pro audit tools help you find gaps in your own content.
 
-**✅ Disable Right Click**
-Prevent unauthorized copying by **disabling right click** on your WordPress site. When enabled, visitors cannot access the browser context menu, making it significantly harder to copy text, save images, or view page source code. Essential for photographers, writers, and content creators who want to keep their work safe.
+### Pro accessibility tools
 
-**✅ Disable Copy Paste**
-**Prevent copy paste** on your website to protect your written content from text theft. This feature blocks keyboard shortcuts (Ctrl+C, Ctrl+V) and text selection, ensuring your original articles, blog posts, tutorials, and copyrighted material cannot be easily lifted by content scrapers or competitors.
-
-**✅ Disable Inspect Element**
-**Disable browser inspect element** and developer tools to deter users from accessing your website's source code. This feature blocks common keyboard shortcuts for opening developer tools (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U), making it harder for others to reverse-engineer your site's design, study your CSS, or steal your code.
-
-**✅ Disable Image Drag**
-Prevent **image downloading** by disabling drag-and-drop functionality on all images across your site. Stop visitors from saving your photos, graphics, and illustrations by simply dragging them to their desktop or another application. Combined with disable right click, this provides robust image protection.
-
-### Gutenberg Block Animations & Effects
-
-Transform static WordPress pages into engaging, interactive experiences. ExtenderX adds powerful animation and interaction controls to **every Gutenberg block** — core blocks and third-party blocks alike.
-
-**✅ Entrance Animations (Animate on Scroll)**
-Make blocks **animate on scroll** with smooth, eye-catching entrance effects. Choose from multiple animation presets — fade in, slide up, zoom in, flip, bounce, and more. Each entrance animation includes full customization options:
-
-- Multiple animation presets to choose from
-- Customizable animation duration and delay
-- Easing control for natural motion curves
-- Trigger animations when blocks scroll into the viewport
-- Perfect for landing pages, portfolios, and storytelling layouts
-
-**✅ Floating Animations**
-Add subtle, continuous **floating motion effects** to any Gutenberg block. Floating animations create a sense of depth and liveliness on your page — perfect for hero sections, testimonials, feature highlights, and promotional banners. Make your **interactive WordPress designs** stand out.
-**Note:** Floating animations do not work simultaneously with Entrance or Tilt animations.
-
-**✅ 3D Tilt Effect**
-Apply a stunning **3D tilt effect** to any block. Blocks respond dynamically to cursor movement, creating an immersive sense of depth and interactivity. This feature uses the VanillaTilt.js library for smooth, GPU-accelerated performance. Great for cards, images, pricing tables, and portfolio items.
-
-- Responds to mouse/cursor movement in real-time
-- Adjustable tilt intensity and perspective
-- Value reset functionality for easy adjustments
-- GPU-accelerated for smooth performance
-
-**✅ Responsive Visibility Control**
-Control exactly which blocks appear on which devices. Show or hide any Gutenberg block on **desktop**, **tablet**, or **mobile** — essential for creating truly **responsive web designs** without duplicating content. Build adaptive layouts that look perfect on every screen size.
-
-- Hide on desktop, tablet, or mobile independently
-- Works with all core and third-party blocks
-- No duplicate content needed
-- Clean CSS-based visibility (no JavaScript overhead)
-
-**✅ Tooltips**
-Add informative **tooltips to any Gutenberg block** to display additional context, explanations, or guidance without cluttering your design. Tooltips appear on hover, powered by the Tippy.js library for smooth, accessible tooltip rendering. Perfect for feature comparisons, technical documentation, and interactive content.
-
-**✅ Wrapper Links**
-Turn **any Gutenberg block into a clickable link**. Wrapper Links let you wrap entire block containers (images, groups, columns, cards) with a custom URL — enabling better navigation, improved click-through rates, and more intuitive user flows. No need for extra HTML or custom code.
-
-### Additional Free Features
-
-**✅ Hide Admin Bar on Frontend**
-Remove the WordPress admin bar from the frontend for a cleaner, more professional visitor experience. Perfect for membership sites, client websites, and when you want a distraction-free frontend view for logged-in users.
-
-**✅ Centralized Dashboard**
-Manage all 60+ ExtenderX features from one comprehensive, beautifully designed dashboard. Toggle features on and off, configure settings, and monitor everything from a single admin page. No hunting through multiple menu items — everything is organized by category: Appearance, Animations, Content Protection, UI Enhancements, Marketing, Seasonal Effects, and Site Modes.
+- **Seven more visitor tools** — reading guide, reading mask, text spacing, content zoom, the OpenDyslexic typeface (bundled with the plugin and served from your own site, downloaded only when a visitor turns it on), a large cursor, and saturation control.
+- **Toolbar branding** — button and icon colors, four icon choices, button size, stacking order, and hide-on-mobile.
+- **Accessibility Statement** — generates an editable *draft* page describing the steps you take, what the site offers, what is still unfinished, and how visitors can report a problem. Written as prompts for you to complete; it asserts nothing about meeting any particular standard or law on your behalf.
+- **Alt Text Audit** — lists images in your media library with no alternative text, paginated for large libraries, with a link to fix each one.
 
 ---
 
-### FREEMIUM FEATURES
-**✅ Dark Mode for WordPress**
-Enable **dark mode** on your WordPress website with a single click. Give your visitors the option to switch between light and dark themes for a comfortable browsing experience — especially in low-light environments. Dark mode is one of the most requested features by modern website visitors. ExtenderX uses the powerful DarkReader engine to deliver a smooth, reliable **dark theme** that works with any WordPress theme.
+### Also included: site tools for any theme
 
-**✅ Preloader (coming soon)**
-Display a stylish **loading animation** while your pages load to create a polished first impression. Preloaders mask content loading, prevent layout shifts, and give visitors visual feedback that your site is responsive. Choose from multiple animation styles and customize colors to match your brand.
+ExtenderX also ships a set of site tools you can switch on from the same dashboard, so you don't need a separate plugin for each. They work on any WordPress theme — classic or block, with or without the Gutenberg editor. A disabled tool adds no CSS or JavaScript to your pages.
 
-**✅ Skeleton Loader (coming soon)**
-Replace blank loading states with **placeholder content shapes** that mimic your actual layout. Skeleton loaders show visitors exactly where content will appear, reducing perceived load time and creating a smoother, more professional user experience on content-heavy pages.
+### Block Editor Extensions (all free)
 
-**✅ Back to Top Button**
-Add a customizable **back to top button** that appears as visitors scroll down your pages. Improve navigation and user experience on long-form content, blogs, and documentation sites. Fully configurable with custom positioning, styling, and scroll behavior.
+Six extensions added to the Gutenberg sidebar for every registered block — core WordPress blocks and third-party block libraries alike. No replacement blocks. No shortcodes.
 
-**✅ Scroll Progress Bar**
-Display a **reading progress indicator** at the top of your pages so visitors always know how far they've scrolled through your content. Perfect for blog posts, articles, tutorials, and long-form landing pages. Choose your bar color, height, and position.
+* **Entrance Animation** — scroll-triggered effects (fade in, slide up, zoom, flip, bounce, and more) with duration, delay, and easing controls. Fires once when the block enters the viewport.
+* **Floating Animation** — smooth, continuous looping motion for hero sections, testimonial cards, and promotional banners.
+* **Tilt Animation** — GPU-accelerated 3D tilt that responds to cursor movement, powered by VanillaTilt.js.
+* **Visibility Control** — show or hide any block on desktop, tablet, or mobile using clean CSS.
+* **Wrapper Link** — make any block — group, column, image, card — fully clickable.
+* **Tooltip** — accessible hover tooltips on any block, rendered by Tippy.js.
 
-**✅ Smooth Scrolling**
-Enable **buttery-smooth scrolling** across your entire website for a polished, modern browsing experience. Replaces the default browser scroll behavior with fluid, natural-feeling scroll transitions. Works on all pages automatically.
+Scripts and styles are added only to pages where at least one block uses an extension.
 
-**✅ Sticky Header**
-Keep your **navigation header visible** at all times as visitors scroll down your pages. Sticky headers improve navigation accessibility, reduce bounce rates, and ensure important menu items and CTAs remain within reach — no matter how far down the page visitors scroll.
+**Compatible block libraries:** Kadence Blocks · Spectra (UAG) · Stackable · Essential Blocks · Ultimate Blocks · Ghostkit · Gutenverse · GutenKit · Otter Blocks · Greenshift · CoBlocks · GenerateBlocks · all core WordPress blocks
 
-**✅ Sticky Footer**
-Pin your **footer to the bottom** of the viewport on pages with minimal content, ensuring it always stays at the bottom of the screen. Sticky footers create a polished, professional appearance and prevent awkward floating footers on short pages.
+### Motion & Animations (Beta)
 
-**✅ Scrollbar Styler**
-Customize your website's **scrollbar appearance** to match your brand design. Replace the default browser scrollbar with custom colors, widths, and border-radius settings. Create a cohesive visual experience that extends to every detail of your site.
+* **Site-Wide Animations** (free) — set one reveal style and it applies automatically to your content across every page. Supports block-type targeting, stagger delays, and per-page or per-block overrides in the editor.
+* **Scroll-Linked Effects** (Pro) — parallax drift and scroll-progress scrub for elements you target.
+* **Import / Export** (Pro) — back up your motion configuration or move it between sites.
+
+### Appearance
+
+* **Dark Mode** — visitor-facing dark/light toggle powered by DarkReader. Works with any theme, no configuration.
+* **Skeleton Loading Screen** (Pro) — show a skeleton placeholder while page content loads.
+* **Preloader** (Pro) — display a branded animation before the page reveals.
+
+### Navigation & Scrolling
+
+* **Back to Top Button** — floating button with style presets, icon, position, and visibility options.
+* **Sticky Header** — keeps your navigation fixed at the top of the viewport as visitors scroll.
+* **Sticky Footer Bar** — persistent footer strip across all pages.
+* **Scroll Progress Bar** — visual reading-progress indicator at the top of the page.
+* **Scrollspy** — highlights the active navigation link based on scroll position.
+* **Smart Scroll** — hides the header when scrolling down, reveals it when scrolling up.
+* **Scroll to Bottom Button** (Pro) — one-click jump to the bottom of the page; stacks neatly beside Back to Top.
+* **Smooth Scrolling** (Pro) — smooth page scrolling powered by Lenis.
+* **Scrollbar Styler** (Pro) — customize the browser scrollbar color and appearance.
+
+### Site Access Modes
+
+* **Maintenance Mode** — show visitors a maintenance page while you work; admins keep full site access.
+* **Coming Soon Mode** — full-page coming-soon screen before launch.
+* **Age Verification** (Pro) · **Cookie Consent** (Pro) · **GDPR Notice** (Pro) · **Exit-Intent Popup** (Pro)
+
+### Marketing
+
+* **Announcement Bar** — dismissible top or bottom banner for offers and notices.
+* **Floating CTA Button** — fixed call-to-action button that follows the visitor.
+* **CTA Pulse Animation** — draw attention to any button with a pulse ring.
+* **Sticky WhatsApp Button** (Pro) — floating WhatsApp chat widget.
+* **Global Countdown Banner** (Pro) — site-wide urgency timer for sales and launches.
+
+### Custom Code
+
+* **Insert Headers & Footers** — add HTML, CSS, or JavaScript to your site's `<head>`, after the opening `<body>`, or before the closing `</body>`. Suited to Google Analytics, Google Tag Manager, Meta Pixel, AdSense, and site verification tags.
+* **Code Snippet Library** — create, name, and toggle reusable HTML, CSS, and JavaScript snippets. Disabled snippets stay saved but stop running.
+* **Pro adds** PHP snippets, conditional display logic (specific pages or post types), and scheduling.
+
+### Save & Go
+
+A menu in the post editor (block and classic) that saves and then takes you straight to the next step.
+
+* **Free:** Save & New, Save & List, Save & Next, Save & Previous, Save & View.
+* **Pro:** Save & Duplicate, Save & Return, Save & View in New Window, a choice of default action, button placement options, and **Bulk Add** — paste a list of titles and create posts, pages or custom post types in one go.
+
+### Seasonal Effects
+
+* **Free:** Winter Snow, Autumn Leaves, Falling Hearts.
+* **Pro:** Spring Petals, Summer Bubbles, Christmas Lights, Fireworks, Halloween Bats, Ramadan Lanterns, Black Friday and Cyber Monday confetti, Weather, Particle Background, Fireflies, Twinkling Stars, Floating Emojis, Floating Shapes, Light Beams, Mouse Trail — plus scheduling by date range, page targeting, and per-effect colors.
+
+All effects honor the visitor's "prefers-reduced-motion" system setting.
+
+### Content Protection (all free)
+
+Disable Right Click · Disable Copy · Disable Inspect · Disable Image Drag · Hide Admin Bar on Frontend
 
 ---
 
-### 🏅 Why WordPress Users Choose ExtenderX
+### Free vs Pro at a glance
 
-- **All-in-One Solution** – 60+ features replacing multiple plugins: animations, dark mode, content protection, scroll effects, marketing tools, and more.
-- **Zero Coding Required** – Every feature is toggle-based. Beginners can set up advanced features in minutes.
-- **Universal Block Compatibility** – Works with all core Gutenberg blocks and 12+ popular third-party block libraries.
-- **Performance Optimized** – Conditional asset loading ensures only active features load. No unused CSS/JS bloat.
-- **RTL Ready** – Full right-to-left language support for Arabic, Hebrew, and other RTL languages.
-- **Clean Codebase** – Built with modern PHP (OOP, Singleton pattern, modular architecture) and WordPress best practices.
-- **Freemius Powered** – Secure licensing, automatic updates, and a seamless upgrade experience.
-- **Regular Updates** – Actively maintained with new features, compatibility patches, and performance improvements.
-- **Dedicated Support** – Expert help when you need it from the WPXERO team.
+**Free — yours to keep:**
+All 6 Block Editor extensions · Accessibility Toolbar with 11 visitor tools, 4 quick profiles, Alt+A shortcut and remembered preferences · Skip to Content link · Enhanced Focus Outlines · Site-Wide Animations (beta) · Insert Headers & Footers + HTML/CSS/JS snippets · Dark Mode · Back to Top · Sticky Header · Sticky Footer Bar · Scroll Progress Bar · Smart Scroll · Scrollspy · Maintenance Mode · Coming Soon Mode · Announcement Bar · Floating CTA Button · CTA Pulse Animation · 5 Save & Go actions · Winter Snow · Autumn Leaves · Falling Hearts · All 5 Content Protection tools · Full RTL support
 
-### 🤝 Works Perfectly With any themes and page builders
+**Pro — when you need more:**
+7 more accessibility tools · Accessibility toolbar branding · Accessibility Statement generator · Alt Text Audit · Scroll-Linked Effects (parallax, scrub) · Motion Import/Export · Scroll to Bottom button · Smooth Scrolling (Lenis) · Scrollbar Styler · Skeleton Loading Screen · Preloader · 16 more seasonal and ambient effects · Seasonal scheduling, targeting and colors · Sticky WhatsApp Button · Global Countdown Banner · Advanced marketing widget options · Age Verification · Cookie Consent · GDPR Notice · Exit-Intent Popup · PHP snippets · Conditional snippet display · Snippet scheduling · 3 more Save & Go actions · Bulk Add
 
-ExtenderX is tested and compatible with all major WordPress themes, page builders, and Gutenberg block libraries:
+### Credits
 
-- Astra
-- Kadence
-- GeneratePress
-- flavor starter theme
-- Divi
-- OceanWP
-- Avada
-- BeTheme
-- Flatsome
-- Storefront
-- WooCommerce
-- Elementor
-- Beaver Builder
-- Kadence Blocks
-- Spectra (formerly UAG)
-- Stackable
-- Essential Blocks
-- Ultimate Blocks
-- Ghostkit
-- Gutenverse
-- GutenKit
-- Otter Blocks
-- Greenshift
-- CoBlocks
-- And all other popular themes and page builders
+The Dyslexia font tool uses [OpenDyslexic](https://opendyslexic.org/) by Abbie Gonzalez, licensed under the SIL Open Font License 1.1 (included in `assets/fonts/opendyslexic/OFL.txt`).
 
-### 👥 Who Is ExtenderX For?
+### Is ExtenderX Pro right for you?
 
-- **Bloggers & Writers** – Protect your articles from content theft with copy and right-click protection while adding engaging scroll animations.
-- **Photographers & Artists** – Prevent image downloads with drag protection and right-click disabling. Showcase your portfolio with 3D tilt and entrance animations.
-- **Web Designers & Agencies** – Deliver polished, interactive client websites with smooth scrolling, dark mode, sticky headers, and professional UI features.
-- **eCommerce Store Owners** – Boost conversions with countdown banners, floating CTA buttons, announcement bars, and WhatsApp chat support.
-- **Content Creators & Educators** – Use tooltips, reading mode, and scroll progress bars to create the best content consumption experience.
-- **Developers** – Add custom CSS/JS per block, leverage the modular architecture, and extend functionality with clean WordPress hooks and filters.
+Start with the free plugin. Upgrade when one of these matches what you are doing:
+
+* **You run a store or run promotions** — countdown banner, exit-intent popup, WhatsApp button, and Black Friday / Cyber Monday effects you can schedule ahead of time.
+* **You need consent and age gates** — Cookie Consent, GDPR Notice and Age Verification without adding three more plugins.
+* **You are working on accessibility** — an Alt Text Audit to find images to fix, an Accessibility Statement draft, extra reading tools, and a toolbar that matches your brand.
+* **You build sites for clients** — PHP snippets with conditional logic, Motion Import/Export between sites, and Bulk Add to scaffold pages in seconds.
+* **You care about polish** — smooth scrolling, parallax, preloader, skeleton loading screen and a styled scrollbar.
+
+Upgrading keeps every setting you already have. Pro installs alongside the free plugin and unlocks the features marked **PRO** in the same dashboard — nothing to migrate or reconfigure.
+
+[See plans and pricing →](https://wpxero.com/plugins/extenderx/pricing?utm_source=wporg&utm_medium=readme&utm_campaign=upgrade)
 
 == Installation ==
 
-1. **Download & Install:** Upload the `extenderx` folder to your `/wp-content/plugins/` directory, or search for **ExtenderX** in the WordPress Plugin Repository and click **Install Now**.
+1. In your WordPress admin, go to **Plugins → Add New**, search for **ExtenderX**, then click **Install Now** and **Activate**. Or upload the `extenderx` folder to `/wp-content/plugins/` manually.
+2. After activation, open **ExtenderX** in the left admin menu.
+3. To add the accessibility toolbar, go to **Site Enhancements → Accessibility** and enable **Accessibility Toolbar**, then visit your site and press **Alt+A**.
+4. Use the **Quick Start** screen to enable any other modules you want: Site Enhancements, Block Editor extensions, and/or Custom Code.
+5. Configure each module from the sidebar: **Site Enhancements** for site-wide tools (including the **Accessibility** tab), **Block Editor** for Gutenberg block extensions, **Custom Code** for header/footer scripts and snippets.
+6. For block animations: edit any page or post, select a block, and open the **ExtenderX** panel in the right sidebar.
 
-2. **Activate the Plugin:** Navigate to **Plugins > Installed Plugins** in your WordPress dashboard and click **Activate** next to ExtenderX.
-
-3. **Configure Your Features:** After activation, you'll be redirected to the **ExtenderX Dashboard** where you can enable dark mode, content protection, animations, and all other features with a single click.
-
-4. **Use Block Animations:** Open the **Gutenberg Block Editor**, select any block, and look for the **ExtenderX** panel in the block settings sidebar. From there, add entrance animations, floating effects, tilt effects, tooltips, visibility controls, and wrapper links.
-
-5. **That's It!** Your features are live. No coding, no shortcodes, no configuration headaches.
+**To add Pro:** purchase a plan at [wpxero.com](https://wpxero.com/plugins/extenderx/pricing?utm_source=wporg&utm_medium=readme&utm_campaign=install), install the ExtenderX Pro plugin alongside this one, and activate your licence. Keep the free plugin active — Pro extends it.
 
 == Frequently Asked Questions ==
 
-= How do I enable dark mode on my WordPress website? =
-Navigate to **ExtenderX > Dashboard** in your WordPress admin. Find the **Appearance** section and toggle on **Dark Mode**. Once enabled, your website will automatically support dark theme viewing. Visitors will see a floating toggle button to switch between light and dark modes. Dark mode works with every WordPress theme using the DarkReader engine.
+= What accessibility tools does ExtenderX include, and are they free? =
 
-= How does content protection work in ExtenderX? =
-ExtenderX provides four layers of content protection that work together: **Disable Right Click** blocks the browser context menu, **Disable Copy Paste** blocks text selection and keyboard copy shortcuts, **Disable Inspect Element** blocks developer tools access, and **Disable Image Drag** prevents drag-and-drop image saving. You can enable any combination from the dashboard.
+The core tools are free: an **Accessibility Toolbar** with 11 visitor display controls (text size, readable font, left-aligned text, high contrast, inverted colors, grayscale, light background, underlined links, highlighted headings, hidden images, paused motion), four **quick profiles** (Low vision, Dyslexia, Focus, Seizure safe), an **Alt+A** keyboard shortcut, remembered preferences, a **Skip to Content** link, and **Enhanced Focus Outlines**. Pro adds seven more visitor tools, toolbar branding, an Accessibility Statement generator, and an Alt Text Audit.
 
-= Can I disable right click on my WordPress site? =
-Yes! Go to **ExtenderX > Dashboard**, find the **Content Protection** section, and enable **Disable Right Click**. This instantly prevents visitors from accessing the browser context menu on your site, making it significantly harder to copy your text, images, or view your page source.
+= Does this plugin make my site WCAG, ADA, or EAA compliant? =
 
-= How do I prevent people from copying text from my website? =
-Enable the **Disable Copy Paste** feature from the ExtenderX dashboard. This blocks text selection, Ctrl+C/Ctrl+V keyboard shortcuts, and other copy mechanisms. It's particularly effective for protecting original articles, blog posts, tutorials, recipes, and any written content from being stolen.
+No — and be careful with any plugin that claims otherwise. ExtenderX gives visitors control over how your site is displayed and gives you two tools for finding problems in your own content. Compliance depends on your content, your markup, your theme, and your own testing with real assistive technology. Treat these tools as one part of the work, not a substitute for it.
 
-= Can I disable inspect element and developer tools? =
-Yes. Enable **Disable Inspect Element** from the dashboard. This blocks F12, Ctrl+Shift+I, Ctrl+Shift+J, and Ctrl+U keyboard shortcuts that open browser developer tools, making it harder for users to access your source code, CSS, and HTML structure.
+= Is ExtenderX an accessibility overlay? =
+
+Not in the usual sense. Overlay services load a script from their own servers, try to rewrite your page automatically, and often promise compliance. ExtenderX runs entirely on your own site, sends nothing anywhere, and only changes how the page is displayed when a visitor asks it to. It doesn't rewrite your content or claim to fix it.
+
+= Does ExtenderX help with the European Accessibility Act (EAA)? =
+
+It helps, but it is not compliance on its own. The EAA has applied to many businesses selling products and services to people in the EU, including online shops, since 28 June 2025. Meeting it depends on your content, markup and theme. ExtenderX gives visitors display controls, adds a skip link and visible focus outlines, and Pro helps you draft an accessibility statement and find images missing alt text. Use those alongside your own testing, not instead of it.
+
+= How do I add an accessibility widget to my WordPress site? =
+
+Go to **ExtenderX → Site Enhancements → Accessibility** and enable **Accessibility Toolbar**. Use the gear icon to pick which side the button sits on, how far up from the bottom, which tools appear, and whether the quick profiles row and the Alt+A shortcut are offered. Nothing loads on your site until you enable it.
+
+= Does the accessibility toolbar set cookies or send visitor data anywhere? =
+
+No. A visitor's choices are stored in their own browser so they carry from page to page. No cookies are set, nothing identifying is recorded, nothing is sent to your server, and nothing is fetched from an external service. You can switch remembering off in the toolbar settings, though visitors then have to set their preferences again on every page.
+
+= How do I add a skip to content link? =
+
+Enable **Skip to Content Link** under **ExtenderX → Site Enhancements → Accessibility** and set **Target** to a CSS selector for your main content area — `#main` suits most themes. The link stays invisible until a keyboard visitor tabs to it, then moves focus into the content rather than only scrolling. If the selector matches nothing, common landmarks are tried automatically, so it keeps working if you change themes.
+
+= My theme hides the keyboard focus ring. Can ExtenderX fix that? =
+
+Yes. Enable **Enhanced Focus Outlines** under **ExtenderX → Site Enhancements → Accessibility** and set the ring's color, thickness, and offset. It appears for keyboard and similar input but not for mouse clicks.
+
+= How do I find images that are missing alt text? =
+
+With ExtenderX Pro, open **ExtenderX → Site Enhancements → Accessibility** and use **Alt Text Audit**. It lists media library images with no alternative text and links to each one for editing; results are paginated so it stays fast on large libraries. When writing alt text, describe what the image conveys in context. If an image is purely decorative, leaving it empty is the correct choice.
+
+= Does the accessibility toolbar respect the "reduce motion" system setting? =
+
+Yes. If a visitor's system asks for reduced motion, the toolbar starts with motion already paused, and switching that off will not force animations back on for them. The toolbar itself is keyboard operable and announces changes to screen readers.
+
+= Does ExtenderX work with any WordPress theme? =
+
+Yes. The Site Enhancements module (dark mode, sticky header, maintenance mode, seasonal effects, content protection, marketing tools, and more) works with any WordPress theme — classic or block themes. The Block Editor Extensions work within the Gutenberg editor and are compatible with any theme that supports the block editor.
+
+= Does ExtenderX work with page builders like Elementor or Divi? =
+
+The Site Enhancements tools (dark mode, sticky header, announcement bar, code snippets, seasonal effects, maintenance mode, and so on) work site-wide regardless of which builder or editor you use. The Block Editor Extensions are specific to the WordPress Gutenberg / block editor and do not add animation controls inside Elementor or Divi's own editors.
 
 = How do I add scroll animations to Gutenberg blocks? =
-Open any page or post in the Gutenberg editor, select any block, and look for the **ExtenderX** panel in the right sidebar. Click on **Entrance Animation**, choose your preferred animation preset (fade in, slide up, zoom, flip, etc.), set the duration and delay, and publish. Your blocks will now animate when they scroll into view.
 
-= What is the 3D Tilt Effect and how do I use it? =
-The 3D Tilt Effect makes blocks respond to cursor movement with a realistic 3D perspective tilt. Select any block in the editor, open the ExtenderX panel, and enable **Tilt Effect**. Adjust the tilt intensity and perspective to your liking. It's powered by VanillaTilt.js and works beautifully on cards, images, and portfolio items.
+Go to **ExtenderX → Block Editor** and make sure **Entrance Animation** is enabled. Then edit any page or post, select a block, and open the **ExtenderX** panel in the right sidebar. Choose a preset (fade in, slide up, zoom, flip, bounce, and more), set a duration and delay if you like, and publish. The animation fires once when the block scrolls into the visitor's viewport.
 
-= How do I show or hide blocks on mobile, tablet, or desktop? =
-Select any block, open the ExtenderX panel, and use the **Visibility Control** options. You can independently toggle visibility for desktop, tablet, and mobile. This uses clean CSS media queries — no JavaScript overhead and no duplicate content.
+= What is the difference between entrance animations, floating animation, and tilt? =
 
-= How do I add a back to top button to my WordPress site? =
-Go to **ExtenderX > Dashboard**, find **UI Enhancements**, and enable **Back to Top**. A customizable scroll-to-top button will appear on your site. You can configure its position, style, and scroll behavior.
+Entrance animations fire once when a block scrolls into view. Floating animation is a continuous looping motion — useful for hero images or feature callouts. Tilt responds to the visitor's cursor position in real time. Only one motion type runs per block at a time.
 
-= How do I add a scroll progress bar? =
-Enable **Scroll Progress Bar** from the UI Enhancements section in the dashboard. A reading progress indicator will appear at the top of your pages, showing visitors how far they've scrolled through your content.
+= What makes ExtenderX different from other animation plugins? =
 
-= What is Smooth Scrolling and how do I enable it? =
-Smooth Scrolling replaces the default jerky browser scroll with fluid, butter-smooth transitions. Enable it from **UI Enhancements** in the dashboard. It works across your entire website automatically.
+Most animation plugins only animate their own blocks, or require you to switch to a different page builder. ExtenderX does two things others don't: it adds animations to every block you already use (any Gutenberg block, any plugin), and it bundles a full suite of site-wide tools — dark mode, sticky header, maintenance mode, seasonal effects, code snippets, marketing widgets — so you don't need a separate plugin for each. One dashboard, one plugin, conditional asset loading throughout.
 
-= How does the Sticky Header feature work? =
-The **Sticky Header** (Pro) keeps your site header/navigation fixed at the top of the viewport as visitors scroll. This ensures navigation links, your logo, and important CTAs are always visible. Enable it from the UI Enhancements section.
+= Does ExtenderX work with Kadence Blocks, Spectra, Stackable, and other third-party blocks? =
 
-= Can I add a WhatsApp chat button to my site? =
-Yes! With **ExtenderX Pro**, enable the **Sticky WhatsApp Button** from the Marketing section. Configure your WhatsApp number and a custom message, and a floating chat button will appear on your site for instant customer communication.
-
-= Does ExtenderX support maintenance mode or coming soon pages? =
-Yes! ExtenderX Pro includes both **Maintenance Mode** and **Coming Soon Mode**. Maintenance Mode shows a maintenance page to visitors while you update your site (admins can still access everything). Coming Soon Mode displays a launch teaser page for new sites or upcoming products.
-
-= What seasonal effects are available? =
-ExtenderX Pro includes 14 seasonal and visual effects: Christmas Lights, Fireworks, Autumn Leaves, Falling Hearts, Halloween Bats, Ramadan Lanterns, Weather Effects, Particle Background, Fireflies, Twinkling Stars, Floating Emojis, Floating Shapes, Light Beams, and Mouse Trail. Each can be enabled/disabled individually.
-
-= Is ExtenderX compatible with all Gutenberg blocks? =
-Yes! ExtenderX is fully compatible with all **core WordPress Gutenberg blocks** and popular third-party block plugins including **Kadence Blocks**, **Spectra**, **Stackable**, **Essential Blocks**, **Ultimate Blocks**, **Ghostkit**, **Gutenverse**, **GutenKit**, **Otter Blocks**, **Greenshift**, **CoBlocks**, and more. Every block automatically gets access to ExtenderX animation and enhancement features.
-
-= Does ExtenderX work with third-party block libraries? =
-Absolutely. ExtenderX extends the Gutenberg editor itself, not specific blocks. This means any block — whether it's a core WordPress block or from a third-party plugin — automatically receives ExtenderX's animation controls, visibility options, tooltips, and wrapper link features.
+Yes. ExtenderX extends the Gutenberg editor globally, so every registered block — Kadence, Spectra, Stackable, Essential Blocks, Ultimate Blocks, Ghostkit, Greenshift, Otter Blocks, and all core WordPress blocks — automatically gets the ExtenderX sidebar panel with all six extensions.
 
 = Will ExtenderX slow down my website? =
-No. ExtenderX is built with performance as a top priority. Features use **conditional asset loading** — JavaScript and CSS for each feature are only loaded when that specific feature is enabled and used on the current page. Unused features add zero overhead. The plugin architecture uses WordPress best practices including settings caching, efficient database queries, and optimized script registration.
+
+No. Every module uses conditional asset loading. Animation scripts only load on pages where at least one block uses an effect. Site enhancement scripts only load when their feature is enabled. Disabled features add zero CSS or JavaScript to any page.
+
+= What is Site-Wide Animations and how is it different from block entrance animations? =
+
+Site-Wide Animations (free, beta) lets you set a single reveal style — such as Flip Y — once from the dashboard, and it applies automatically to your content across every page without manually configuring each block. You can still override it per page or per block inside the editor. Block entrance animations, by contrast, are configured individually per block and give you precise control over each effect.
+
+= How do I enable dark mode on my WordPress site? =
+
+Go to **ExtenderX → Site Enhancements → Appearance** and toggle **Dark Mode** on. Visitors get a floating button to switch between light and dark. The engine is DarkReader and works with any theme.
+
+= How do I put my WordPress site in maintenance mode? =
+
+Go to **ExtenderX → Site Enhancements → Site Access Modes** and enable **Maintenance Mode**. Visitors see a maintenance screen; admins keep full access to the backend.
+
+= How do I create a coming soon page? =
+
+Enable **Coming Soon Mode** under **ExtenderX → Site Enhancements → Site Access Modes**. Visitors see a full-page coming-soon screen before launch; administrators keep full site access.
+
+= How do I add Google Analytics or Google Tag Manager without editing theme files? =
+
+Go to **ExtenderX → Custom Code**, click **Add Snippet**, paste your tracking code, choose **Header** (`<head>`), **Body Open** (after `<body>`), or **Footer** (before `</body>`) as the injection point, and save. Works for Google Analytics, Google Tag Manager, Meta Pixel, AdSense, and verification tags — no theme file edits needed.
+
+= How do I add an announcement bar or notification bar? =
+
+Enable **Announcement Bar** under **ExtenderX → Site Enhancements → Marketing**. Set your message, colors, position, and whether visitors can dismiss it.
+
+= How do I add a sticky header to my WordPress site? =
+
+Enable **Sticky Header** under **ExtenderX → Site Enhancements → Navigation & Scrolling**. Your existing header stays fixed at the top of the viewport as visitors scroll.
+
+= How do I add a scroll progress bar? =
+
+Enable **Scroll Progress Bar** under **ExtenderX → Site Enhancements → Navigation & Scrolling**.
+
+= How do I add a back to top button to my WordPress site? =
+
+Enable **Back to Top Button** under **ExtenderX → Site Enhancements → Navigation & Scrolling**. Pro adds a matching Scroll to Bottom button with the same style options; both can be active simultaneously.
+
+= How do I add a falling snow or seasonal animation effect? =
+
+Go to **ExtenderX → Site Enhancements → Seasonal Effects** and enable **Winter Snow**, **Autumn Leaves**, or **Falling Hearts** (all free). Pro unlocks Spring Petals, Summer Bubbles, Christmas Lights, Fireworks, Halloween Bats, Ramadan Lanterns, and more. All effects respect the visitor's "reduce motion" preference automatically.
+
+= How does content protection work? =
+
+Under **ExtenderX → Site Enhancements → Content Protection**, toggle any combination of: Disable Right Click, Disable Copy, Disable Inspect, Disable Image Drag, or Hide Admin Bar on Frontend. Each operates independently.
+
+= What is Save & Go? =
+
+Save & Go adds a menu to the post editor (block and classic) that saves your post and then jumps to the next step: a new post, the post list, the next or previous post, or the front end. Those five actions are free. Pro adds Save & Duplicate, Save & Return, Save & View in New Window, and Bulk Add for creating many posts from a list of titles.
+
+= Can I add a WhatsApp chat button to my site? =
+
+Yes, with ExtenderX Pro. Enable **Sticky WhatsApp Button** under **Site Enhancements → Marketing**.
+
+= Does ExtenderX include cookie consent and GDPR tools? =
+
+Yes, with ExtenderX Pro. Enable **Cookie Consent** or **GDPR Notice** under **Site Enhancements → Site Access Modes**.
 
 = Does ExtenderX support RTL languages? =
-Yes! ExtenderX includes full RTL (right-to-left) stylesheet support. All stylesheets are registered with RTL alternatives, making ExtenderX fully compatible with Arabic, Hebrew, Persian, Urdu, and other RTL languages.
 
-= Do I need coding knowledge to use ExtenderX? =
-Not at all! ExtenderX is designed for complete beginners. Every feature is controlled through simple toggle switches and visual controls from the centralized dashboard. Add animations, enable dark mode, protect your content, and configure 60+ features — all without writing a single line of code.
+Yes. ExtenderX ships full RTL stylesheet support for Arabic, Hebrew, Persian, Urdu, and other right-to-left languages.
 
-= Can I use dark mode, content protection, and animations together? =
-Yes! All ExtenderX features are designed to work together harmoniously. You can enable dark mode, activate all content protection features, add block animations, use scroll effects, and enable UI enhancements — all simultaneously without conflicts.
+= How do I show or hide a block on mobile, tablet, or desktop? =
 
-= Is ExtenderX good for photographers and content creators? =
-ExtenderX is a must-have for photographers, artists, writers, and content creators. The content protection suite (disable right click, disable image drag, disable copy paste, disable inspect element) provides comprehensive protection for your original work. Combined with 3D tilt effects and entrance animations for showcasing portfolios, it's the ideal plugin for creative professionals.
+In the Block Editor, select a block, open the **ExtenderX** panel, and use **Visibility Control** to toggle visibility per device independently. Visibility is applied with CSS — no duplicate HTML content.
 
-= Does ExtenderX include cookie consent and GDPR compliance tools? =
-Yes! ExtenderX Pro includes both a **Cookie Consent** banner and a **GDPR Notice** feature. These help you comply with EU cookie laws, ePrivacy regulations, and GDPR data protection requirements.
+= How do I make an entire block clickable? =
 
-= What is the difference between free and Pro? =
-The **free version** includes dark mode, all content protection features (disable right click, copy, inspect, image drag), 6 Gutenberg block extensions (entrance animations, floating animations, tilt effect, tooltips, visibility control, wrapper links), back to top button, scroll progress bar, smooth scrolling, scrollspy, and hide admin bar. **ExtenderX Pro** unlocks 40+ additional features including seasonal effects, marketing tools, site modes, advanced appearance modes, premium UI enhancements, and parallax effects.
+Enable **Wrapper Link** in the ExtenderX panel for any block and enter a URL. The entire block becomes a clickable link on the frontend.
 
 = How do I upgrade to ExtenderX Pro? =
-Click the **Upgrade** or **Pricing** link in the ExtenderX dashboard within your WordPress admin. You can also visit [wpxero.com/plugins/extenderx/pricing](https://wpxero.com/plugins/extenderx/pricing) to view plans and purchase a license. After purchasing, install the Pro addon and activate your license key.
+
+Click **Upgrade to Pro** inside the ExtenderX dashboard, or visit [wpxero.com/plugins/extenderx/pricing](https://wpxero.com/plugins/extenderx/pricing?utm_source=wporg&utm_medium=readme&utm_campaign=faq-upgrade). Install the Pro plugin alongside the free one and activate your licence — your existing settings carry over.
 
 == Screenshots ==
 
-1. **Centralized Dashboard** – Manage all 60+ ExtenderX features from one beautifully organized dashboard. Toggle features on/off with a single click.
-2. **Dark Mode** – Enable dark mode on your WordPress website with a floating toggle for visitors to switch themes.
-3. **Content Protection Settings** – Configure disable right click, copy paste, inspect element, and image drag protection from one panel.
-4. **Entrance Animations** – Add scroll-triggered entrance animations to any Gutenberg block with customizable presets, duration, and easing.
-5. **Floating Animations** – Apply continuous floating motion effects to blocks for dynamic, engaging page designs.
-6. **3D Tilt Effect** – Interactive 3D tilt that responds to cursor movement, adding depth and engagement to cards and images.
-7. **Responsive Visibility Control** – Show or hide any block on desktop, tablet, or mobile for fully responsive layouts.
-8. **Back to Top & Scroll Progress** – Customizable back to top button and scroll progress bar for improved navigation.
-9. **Seasonal Effects** – 14 stunning visual effects for holidays and celebrations, from Christmas lights to fireworks.
-10. **Marketing Tools** – Announcement bars, countdown banners, floating CTAs, and WhatsApp buttons for higher conversions.
+1. **Accessibility toolbar on the front end** – the Dyslexia profile applied in one click: larger text, a readable font and left-aligned text. Visitors open the panel with the floating button or Alt+A.
+2. **Low vision profile** – high contrast, 130% text, underlined links and highlighted headings, all from one button. Reset all clears everything.
+3. **Dashboard** – turn the accessibility toolbar on with one click, then preview it on your site. Site Enhancements, Block Editor extensions and Custom Code sit below.
+4. **Accessibility settings** – Accessibility Toolbar, Skip to Content Link, Enhanced Focus Outlines, Accessibility Statement, and Alt Text Audit, with the toolbar's tool, profile, and branding settings.
+5. **Site Enhancements — Appearance** – Dark Mode, Skeleton Loading Screen, and Preloader toggles with per-feature settings.
+6. **Site Enhancements — Navigation & Scrolling** – Back to Top, Scroll to Bottom, Sticky Header, Sticky Footer Bar, Scrollbar Styler, and Smooth Scrolling.
+7. **Site Enhancements — Motion & Animations (Beta)** – Site-Wide Animations and Scroll-Linked Effects engines with Import/Export for your motion configuration.
+8. **Site Enhancements — Seasonal Effects** – Site-wide effects grouped by Seasons, Holidays, Sales, and Ambient; Winter Snow, Autumn Leaves, and Falling Hearts are free.
+9. **Site Enhancements — Content Protection** – Disable Right Click, Copy, Inspect, Image Drag, and Hide Admin Bar controls.
+10. **Site Enhancements — Marketing** – Announcement Bar, Floating CTA Button, Sticky WhatsApp Button, CTA Pulse Animation, and Global Countdown Banner.
+11. **Site Access Modes** – Maintenance Mode, Coming Soon Mode, Age Verification, Cookie Consent, GDPR Notice, and Exit-Intent Popup.
+12. **Block Editor Extensions** – Six Gutenberg extensions (Entrance Animation, Floating Animation, Tilt, Visibility Control, Wrapper Link, Tooltip) with individual toggles.
+13. **Custom Code Snippets** – Snippet table with type (HTML/CSS/JS), injection location, logic rules, and per-snippet active toggle.
 
 == Changelog ==
 
+= 1.11.2 – November 27, 2026 =
+* Fix: Setting Sticky Header Scroll Offset to 0 px now makes the header stick from the first pixel of scroll. Before, it behaved like 100 px and the admin slider jumped back to 100.
+* Fix: The same 0 value is now respected by Floating CTA Scroll Offset, Scrollspy Offset, Back to Top and Scroll to Bottom Scroll Speed (0 jumps instantly), and Dark Mode Transition Speed (0 switches instantly).
+* Fix: Sticky Header's Animation setting now works. "None" pins the header without any animation, and "Fade In" fades instead of sliding. Before, every choice slid the header in.
+* Fix: Sticky Header no longer disappears and slides back in when it sticks while still on screen (for example with a small Scroll Offset). The entrance animation now plays only for a header that had scrolled out of view.
+* Fix: Page content no longer jumps up by the header's height when Sticky Header switches on.
+* Fix: Sticky Header's "Show on mobile" setting is now respected on small screens.
+* Improved: Sticky Header applies straight away when a page loads already scrolled down, without waiting for the next scroll.
+* Improved: Sticky Header's entrance animation is skipped for visitors who ask their device to reduce motion.
+
+= 1.11.1 – November 21, 2026 =
+* Fix: With the accessibility toolbar on, the Dark Mode switch, Back to Top, Scroll to Bottom, Floating CTA and WhatsApp buttons were hidden underneath its button. They now stack above it.
+* Fix: The toolbar's "Pause animations" option and the Seizure-safe profile now also stop the seasonal effects (snow, leaves, hearts and the rest), not only CSS animations.
+* Fix: Copy and right-click protection no longer blocks form fields — visitors can select, copy, paste and use spell-check in inputs and text areas again.
+* Fix: The Announcement Bar and Countdown Banner no longer hide behind the WordPress admin bar when you are logged in, and no longer run 40 px past the right edge.
+* Fix: Updated stylesheets now reach visitors right after a plugin update instead of being served from the browser or page cache.
+* Fix: Particle Background no longer blocks clicks — links, buttons and form fields under it work again.
+* Fix: Block animations (Entrance, Floating, Tilt), Tooltip, Visibility and Wrapper Link now appear in the block editor as soon as you turn on Gutenberg Blocks, instead of only after saving the Block Editor page.
+* Fix: Zoom content (Pro) no longer enlarges the accessibility toolbar off the screen, and the reading guide and mask stay on the pointer while zoomed.
+* Fix: The accessibility toolbar button moves above the Cookie Consent / GDPR bar while it is showing, so visitors can reach it straight away.
+* Improved: The Dyslexia font tool (Pro) now ships the OpenDyslexic typeface, so every visitor gets it — not only those who have it installed. It is served from your own site and downloaded only when a visitor turns the tool on.
+* Improved: A cleaner dashboard — every Site Enhancements section is visible at once, each page shows its title, the layout uses the full width on tablets and small laptops, settings buttons are easier to find, and keyboard focus is clearly visible.
+* Improved: PHP snippets (Pro) with a syntax error are refused on save with the line number, instead of saving as active and silently not running.
+* Improved: The Accessibility Statement (Pro) lists only the accessibility tools that are switched on.
+* Improved: Sticky WhatsApp and Countdown Banner cards say what to fill in when they are on but not yet showing; the Alt Text Audit tells you when the media library has no images.
+* Improved: While Maintenance or Coming Soon mode is on, administrators see a reminder in the admin bar that links to its settings.
+* Improved: The Dark Mode switch announces its on/off state to screen readers.
+* Improved: Updated the Freemius SDK to 2.13.5.
+
+= 1.11.0 – October 30, 2026 =
+* New: The dashboard now opens with an Accessibility toolbar card. Turn the toolbar on with one click, then preview it on your site.
+* Improved: The plugin is now named "ExtenderX – Accessibility Toolbar, Dark Mode & Site Tools". Nothing about your settings or the plugin's features changes.
+* Improved: The WordPress.org review reminder now also appears on sites using the accessibility toolbar, not only those using block animations.
+
+= 1.10.0 – September 19, 2026 =
+* New: Save & Go — adds a menu to the post editor (block and classic) that saves and then jumps straight to a new post, the post list, the next or previous post, or the front end. Five actions ship free.
+* New (Pro): Three more actions — Save & Duplicate, Save & Return, and Save & View in New Window — plus a choice of default action and control over where the button sits in each editor.
+* New (Pro): Bulk Add — paste a list of titles and create them as posts, pages or custom post types in one go, nested under each other where the post type supports it.
+* Improved: Removed a duplicate "Saved" indicator that appeared alongside the dashboard's toast notifications.
+
+= 1.9.0 – August 30, 2026 =
+* New: Accessibility — a new dashboard tab with tools that let visitors adjust how your site is displayed. Free, and off until you enable it.
+* New: Accessibility toolbar — a floating button opening a panel of display controls, grouped into Text, Color, Content and Motion. Covers text size, a readable font, left-aligned text, high contrast, inverted colors, grayscale, a light background, underlined links, highlighted headings, hidden images and paused motion.
+* New: Quick profiles — Low vision, Dyslexia, Focus and Seizure safe presets that switch on a matching set of tools in one click, using only the tools you have enabled.
+* New: Visitor preferences are remembered from page to page, stored in the visitor's own browser. No cookies, and nothing is sent to a server.
+* New: Skip to Content link — lets keyboard visitors jump past your header to the main content, and moves focus properly rather than only scrolling.
+* New: Enhanced focus outlines — a configurable ring around whichever element the keyboard is on, for themes that hide the browser default.
+* New: Visitors can open the toolbar with Alt+A, and a badge on the button shows how many settings are active.
+* New (Pro): Seven more visitor tools — reading guide, reading mask, text spacing, content zoom, a dyslexia-friendly typeface, a large cursor and saturation control.
+* New (Pro): Toolbar branding — button and icon colors, icon choice, size, stacking order and hide-on-mobile.
+* New (Pro): Accessibility Statement generator — creates an editable draft page describing your accessibility work and how visitors can report problems.
+* New (Pro): Alt Text Audit — lists images in your media library with no alternative text, with a link to fix each one.
+* Changed: Site-Wide Animations (beta) is now free for everyone. Scroll-Linked Effects and Motion Import/Export remain Pro.
+* Improved: Premium features now stay marked with a PRO badge across the whole dashboard, including on licensed sites, so you can see what your licence provides.
+* Fixed: Premium features stayed unlocked when the ExtenderX Pro plugin was deactivated. Premium now requires the Pro plugin to be active as well as a valid licence.
+* Fixed: With a valid licence but the Pro plugin deactivated, premium features ran on the front end while the dashboard showed them locked behind an upgrade prompt. Both now agree.
+* Fixed: Settings migrations could be skipped on sites whose recorded version was already current, leaving a pending update unapplied.
+
+= 1.8.1 – July 22, 2026 =
+* New: "New" badge on the Scroll to Bottom Button card in the dashboard.
+* Improved: Pro-only toggles (Scroll to Bottom, Skeleton Loader, Preloader, Scrollbar Styler, Smooth Scrolling, Scroll-Linked Effects, and the Seasonal Effects / Marketing / Site Access Modes cards) now link directly to the upgrade page when clicked, rather than appearing as non-interactive disabled controls.
+
+= 1.8.0 – July 14, 2026 =
+* New (Pro, Beta): Motion & Animations — Site-Wide Animations applies one reveal style across every page with block-type targeting, stagger delays, and per-page/per-block overrides in the editor. Scroll-Linked Effects adds parallax drift and scroll-progress scrub. Includes Import/Export for your motion configuration.
+* New: Seasonal Effects — 18 site-wide effects across Seasons, Holidays, Sales, and Ambient groups. Winter Snow, Autumn Leaves, and Falling Hearts are free; 15 additional effects are Pro.
+* New (Pro): Advanced seasonal controls — schedule effects by date range, target specific pages, and customize colors per effect.
+* New (Pro): Scroll to Bottom button with the same style presets, icon options, positions, and visibility targeting as Back to Top. Both buttons stack neatly when active simultaneously.
+* New (Pro): Custom Code power-ups — PHP snippets, conditional display logic, and snippet scheduling.
+* Improved: All seasonal effects automatically honor visitors' "prefers-reduced-motion" system preference.
+* Improved: Code snippets now use a dedicated database table for faster, more reliable storage. Existing snippets migrate automatically.
+* Improved: Back to Top settings panel now controls both scroll buttons to keep options in sync.
+* Performance: Settings storage split per module; no longer autoloads on every page request, reducing memory use site-wide.
+
+= 1.7.1 – June 21, 2026 =
+* Improved: Expanded plugin listing to make free site tools easier to discover.
+* Added: New FAQ entries for seasonal effects, maintenance mode, coming soon pages, announcement bars, and adding tracking scripts without editing theme files.
+* Fixed: Corrected free vs. Pro feature split — Smart Scroll and three seasonal effects are free; Smooth Scrolling (Lenis) is Pro.
+
+= 1.7.0 – June 20, 2026 =
+* New: Insert Headers & Footers + Custom Code Snippets — manage HTML, CSS, and JavaScript snippets with per-snippet toggles.
+* New: Site Access Modes — Maintenance Mode, Coming Soon Mode, Age Verification (Pro), Cookie Consent (Pro), GDPR Notice (Pro), Exit-Intent Popup (Pro).
+* New: Redesigned card-based admin dashboard.
+* Improved: Settings batch-save on rapid toggles with a clean non-duplicating notice.
+* Improved: Consistent notification styling across all dashboard screens.
+* Improved: License status reflected in the Upgrade button — Pro users see "Pro Active" badge.
+* Improved: ARIA labels on feature toggles and current-page indicator in sidebar navigation.
+* Performance: Removed unused code from the settings dashboard.
+
+= 1.6.6 – June 06, 2026 =
+* Improved: Animation-first plugin listing for better discoverability on WordPress.org.
+* Added: Quick Start checklist and editor deep-link in the dashboard.
+* Added: Review prompt and one-time block editor onboarding notice for new users.
+* Added: Documentation hub with block-library compatibility guides.
+* Removed: Scroll Effects "Coming Soon" placeholder — use Entrance Animations instead.
+
+= 1.6.5 – May 11, 2026 =
+* Improved: Floating animations block wrapper and editor panel.
+* Improved: Toggle control visuals and reset button styling in block extension panels.
+* Improved: Tooltip rendering behavior and shared extension helpers.
+
+= 1.6.4 – April 11, 2026 =
+* Improved: Compatibility with the latest WordPress and PHP versions.
+* Fixed: Several features not functioning correctly in certain environments.
+
+= 1.6.3 – April 08, 2026 =
+* Improved: Memory management and server resource optimization.
+* Improved: Settings page interface redesign.
+
 = 1.6.2 – February 24, 2026 =
-* Fixed: Resolved Sticky Header and Sticky Footer modules not functioning correctly on certain themes.
-* Fixed: Corrected gradient color rendering issues in Scrollbar Styler and Scroll Progress Bar modules.
-* Fixed: Addressed Hide Admin Bar on Frontend option not applying properly for logged-in users.
+* Fixed: Sticky Header and Sticky Footer not working correctly on certain themes.
+* Fixed: Gradient color rendering in the Scrollbar Styler and Scroll Progress Bar.
+* Fixed: Hide Admin Bar on Frontend not applying for logged-in users.
 
 = 1.6.1 – February 22, 2026 =
-* Tweaked: Dark Mode for admin dashboard.
-* Tweaked: Shortcodes for the dark mode.
-* Improved: unlock color settings for the dark mode.
-* Improved: top center and bottom center positions added for the back to top button.
-* Improved: Color settings added for the sticky header and footer.
-* Fixed: Scrollbar styler issues are resolved.
+* Improved: Dark mode admin dashboard styling.
+* Improved: Dark mode shortcode output and color settings.
+* Improved: Top center and bottom center positions for the Back to Top button.
+* Improved: Color settings for sticky header and footer.
+* Fixed: Scrollbar Styler rendering issues.
 
 = 1.6.0 – February 17, 2026 =
-* Added: Back to Top button module for enhanced site navigation and user convenience.
-* Added: Sticky Header module to keep headers visible while scrolling for better accessibility.
-* Added: Sticky Footer module for persistent footer visibility across all pages.
-* Added: Smooth Scroll module for seamless page navigation and improved browsing experience.
-* Added: Scrollspy module for automatic navigation highlighting based on scroll position.
-* Added: Scroll Progress Bar module to display reading progress indicator for visitors.
+* Added: Back to Top button.
+* Added: Sticky Header — navigation fixed at the top on scroll.
+* Added: Sticky Footer Bar — persistent footer strip.
+* Added: Smooth Scrolling (Pro) — Lenis-powered page scrolling.
+* Added: Scrollspy — active nav highlighting based on scroll position.
+* Added: Scroll Progress Bar — reading progress indicator.
 
-= 1.5.2 – February 09, 2026 =
-* Fixed: Resolved compatibility issues with WordPress 6.9 for improved stability.
-* Improved: Improved overall performance and system reliability.
-* Improved: Dark mode support for the website, providing a comfortable viewing experience in low-light environments.
-
-= 1.5.1 – January 23, 2026 =
-* Added: Freemius SDK integration for better plugin management and updates.
-
-= 1.5.0 – January 23, 2026 =
-* Added: Dark Mode support for the website, providing a comfortable viewing experience in low-light environments.
-* Added: Disable Right Click functionality to protect your website content from unauthorized copying.
-* Added: Disable Copy Paste feature to prevent text content theft and improve content security.
-* Added: Disable Inspect Element option to deter users from accessing browser developer tools on your site.
-* Added: Disable Image Drag protection to prevent images from being easily downloaded via drag-and-drop.
-* Added: Hide Admin Bar on Frontend option for a cleaner visitor experience without the WordPress admin bar.
-* Improved: Introduced a comprehensive Dashboard for centralized plugin settings and feature management.
-
-= 1.4.5 – December 12, 2025 =
-* Improved: WordPress 6.9 compatibility.
-
-= 1.4.4 – November 11, 2025 =
-* Improved: Enhanced overall performance and system reliability.
-
-= 1.4.3 – September 19, 2025 =
-* Fixed: Resolved compatibility issues with WordPress 6.8.2 for improved stability.
-* Improved: Enhanced overall performance and system reliability.
-* Fixed: Corrected preview rendering issues for floating animations in the block editor.
-* Fixed: Resolved preview display problems for tilt animations in the block editor.
-
-= 1.4.2 – August 17, 2025 =
-* Added: New animation presets for entrance effects.
-* Improved: Further optimized loading times for animation scripts.
-* Fixed: Compatibility issues with the latest WordPress 6.8.2.
-* Fixed: Edge case where animations wouldn't trigger on certain themes.
-
-= 1.4.1 – July 10, 2025 =
-* Improved: Enhanced tooltip styling and positioning for better user experience.
-* Improved: Optimized plugin assets for faster loading and improved performance.
-* Fixed: Resolved minor compatibility issues with WordPress 6.8.1.
-* Fixed: Addressed a bug where tooltips would not display correctly on some third-party blocks.
-
-= 1.4.0 – May 20, 2025 =
-* Added: Tooltips feature added.
-
-= 1.3.6 – May 01, 2025 =
-* Fixed: Compatibility issues with WordPress 6.8.1 have been resolved.
-
-= 1.3.5 – March 04, 2025 =
-* Added: Unlock all pro features, happy designing:)
-
-= 1.3.4 – February 17, 2025 =
-* Improved: General performance enhancements and code optimizations for a smoother user experience.
-
-= 1.3.3 – December 21, 2024 =
-* Fixed: Resolved minor bugs and stability issues.
-
-= 1.3.2 – December 21, 2024 =
-* Improved: System optimizations to enhance overall functionality.
-
-= 1.3.1 – November 29, 2024 =
-* Fixed: Ensured full compatibility with WordPress 6.7.1, addressing any related issues.
-
-= 1.3.0 – November 01, 2024 =
-* Added: Wrapper Link feature introduced, allowing users to wrap entire blocks with custom links for better interaction.
-* Fixed: Compatibility issues with WordPress 6.7 have been resolved.
-
-= 1.2.0 – October 18, 2024 =
-* Added: Floating Animations feature introduced, providing new motion effects to enhance visual appeal.
-* Fixed: Resolved compatibility conflicts with Essential Blocks, Ultimate Blocks, and Kadence Blocks.
-
-= 1.1.3 – October 10, 2024 =
-* Fixed: Compatibility fixes for Ghostkit and Otter Blocks to ensure seamless integration.
-* Fixed: Various minor bug fixes for improved stability.
-
-= 1.1.2 – October 08, 2024 =
-* Fixed: Addressed compatibility issues with Spectra and GutenKit block plugins.
-
-= 1.1.1 – October 04, 2024 =
-* Added: Easing Control added to Entrance Animations for smoother motion effects.
-* Added: Value Reset functionality implemented for Tilt Animation, allowing users to revert changes easily.
-* Improved: Enhanced Controls UI for a more intuitive user experience.
-
-= 1.1.0 – October 03, 2024 =
-* Added: Entrance Animations introduced, enabling blocks to animate on page load for better engagement.
-
-= 1.0.0 – October 02, 2024 =
-* Initial Release: First official release of the plugin with core functionalities.
+Older versions: see [changelog.txt](https://plugins.svn.wordpress.org/extenderx/trunk/changelog.txt).
 
 == Upgrade Notice ==
 
-= 1.6.2 =
-Fixed Sticky Header and Sticky Footer modules not functioning correctly on certain themes. Corrected gradient color rendering issues in Scrollbar Styler and Scroll Progress Bar modules. Addressed Hide Admin Bar on Frontend option not applying properly for logged-in users.
+= 1.11.2 =
+Fixes Sticky Header: a Scroll Offset of 0 now sticks from the first pixel, the Animation setting (None / Fade In / Slide Down) is honoured, and the header no longer flashes or makes the page jump when it sticks.
+
+= 1.11.1 =
+Fixes floating buttons hidden under the accessibility toolbar, block animations missing from the editor, and Particle Background blocking clicks; "Pause animations" now stops seasonal effects and copy protection no longer blocks form fields.
+
+= 1.11.0 =
+Adds a dashboard card that turns the free accessibility toolbar on in one click, with a link to preview it on your site. The plugin also has a new name; your settings are unchanged.
+
+= 1.10.0 =
+Adds Save & Go: a post-editor menu to save and jump straight to a new post, the list, the next/previous post, or the front end. Five actions are free; Save & Duplicate, Save & Return, Save & View in New Window and Bulk Add are Pro.
+
+= 1.9.0 =
+Adds a free Accessibility module: a visitor toolbar with 11 display controls, quick profiles, an Alt+A shortcut and remembered preferences, plus a skip-to-content link and enhanced focus outlines. Site-Wide Animations (beta) is now free. Premium features now require the ExtenderX Pro plugin to be active as well as a valid licence.
+
+= 1.8.0 =
+Major release: 18 seasonal effects, Motion & Animations with site-wide reveal and scroll-linked parallax (Pro, beta), Scroll to Bottom button (Pro), PHP snippets with conditional logic and scheduling (Pro), faster snippet storage, lighter settings loading. Recommended for all users.
 
 == License & Disclaimer ==
 

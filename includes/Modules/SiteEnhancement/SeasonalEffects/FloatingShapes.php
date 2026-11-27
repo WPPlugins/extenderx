@@ -21,11 +21,17 @@ class FloatingShapes {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('floating_shapes')) {
+            return;
+        }
         wp_enqueue_style('xero-floating-shapes');
         wp_enqueue_script('xero-floating-shapes');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('floating_shapes')) {
+            return;
+        }
         $type = $this->settings_cache->get_setting('global.seasonal_effects.floating_shapes.type', 'mixed');
         $count = $this->settings_cache->get_setting('global.seasonal_effects.floating_shapes.count', 20);
         $speed = $this->settings_cache->get_setting('global.seasonal_effects.floating_shapes.speed', 50);

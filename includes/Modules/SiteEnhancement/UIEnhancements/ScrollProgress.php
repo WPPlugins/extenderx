@@ -66,38 +66,9 @@ class ScrollProgress {
             }
         }
 
-        // 4. Page ID exclusions
-        $exclude_page_ids = $this->settings['exclude_page_ids'] ?? [];
-        if (is_array($exclude_page_ids) && !empty($exclude_page_ids)) {
-            $current_id = get_queried_object_id();
-            if (in_array((string)$current_id, $exclude_page_ids, true)) {
-                return false;
-            }
-        }
-
-        // 5. Post ID exclusions
-        $exclude_post_ids = $this->settings['exclude_post_ids'] ?? [];
-        if (is_array($exclude_post_ids) && !empty($exclude_post_ids)) {
-            $current_id = get_queried_object_id();
-            if (in_array((string)$current_id, $exclude_post_ids, true)) {
-                return false;
-            }
-        }
-
-        // 6. URL pattern exclusions
-        $exclude_url_patterns = $this->settings['exclude_url_patterns'] ?? [];
-        if (is_array($exclude_url_patterns) && !empty($exclude_url_patterns)) {
-            $current_url = $_SERVER['REQUEST_URI'] ?? '';
-            foreach ($exclude_url_patterns as $pattern) {
-                $pattern = trim($pattern);
-                if (empty($pattern)) continue;
-
-                // Convert wildcard pattern to regex
-                $regex_pattern = str_replace(['*', '/'], ['.*', '\/'], $pattern);
-                if (preg_match('/^' . $regex_pattern . '$/i', $current_url)) {
-                    return false;
-                }
-            }
+        // 4-6. Page rules (include/exclude list; see Core\PageFilter).
+        if (\WPXERO\ExtenderX\Core\PageFilter::blocks($this->settings)) {
+            return false;
         }
 
         return true;

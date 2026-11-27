@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",function(){document.addEventListener("contextmenu",function(e){return e.preventDefault(),!1})});
+document.addEventListener("DOMContentLoaded",function(){document.addEventListener("contextmenu",function(t){const e=t.target;e&&e.closest&&e.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])')||t.preventDefault()})});

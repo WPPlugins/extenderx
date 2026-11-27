@@ -17,7 +17,15 @@ if (!defined('ABSPATH')) {
 class Enqueue {
     use Singleton;
 
+    /**
+     * Shared Register instance — avoids creating new objects per hook call.
+     *
+     * @var Register
+     */
+    private $register;
+
     public function __construct() {
+        $this->register = new Register();
         add_action('enqueue_block_assets', array($this, 'enqueue_editor_assets'));
         add_action('enqueue_block_assets', array($this, 'enqueue_front_scripts'));
     }
@@ -32,14 +40,18 @@ class Enqueue {
 
         //library
         $asset_path = XERO_EXTENDERX_DIR_PATH . '/dist/library/index.asset.php';
+
+        if (!file_exists($asset_path)) {
+            return;
+        }
+
         $args = require $asset_path;
         wp_enqueue_script('@extenderx/library', XERO_EXTENDERX_DIST_URL . 'library/index.js', $args['dependencies'], $args['version'], true);
         wp_enqueue_style('@extenderx/library', XERO_EXTENDERX_DIST_URL . 'library/index.css', array(), $args['version']);
         wp_enqueue_style('style-extenderx', XERO_EXTENDERX_DIST_URL . 'library/style-index.css', array(), $args['version']);
         // Enqueue tippy
         wp_enqueue_style('tippy');
-        $extensions_dir =  new Register();
-        $extensions_dir->add_extensions();
+        $this->register->add_extensions();
     }
 
 
@@ -47,7 +59,6 @@ class Enqueue {
         if (is_admin()) {
             return;
         }
-        $extensions_dir =  new Register();
-        $extensions_dir->add_frontend_assets();
+        $this->register->add_frontend_assets();
     }
 }

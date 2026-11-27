@@ -1,3 +1,118 @@
+= 1.11.2 – November 27, 2026 =
+* Fix: Setting Sticky Header Scroll Offset to 0 px now makes the header stick from the first pixel of scroll. Before, it behaved like 100 px and the admin slider jumped back to 100.
+* Fix: The same 0 value is now respected by Floating CTA Scroll Offset, Scrollspy Offset, Back to Top and Scroll to Bottom Scroll Speed (0 jumps instantly), and Dark Mode Transition Speed (0 switches instantly).
+* Fix: Sticky Header's Animation setting now works. "None" pins the header without any animation, and "Fade In" fades instead of sliding. Before, every choice slid the header in.
+* Fix: Sticky Header no longer disappears and slides back in when it sticks while still on screen (for example with a small Scroll Offset). The entrance animation now plays only for a header that had scrolled out of view.
+* Fix: Page content no longer jumps up by the header's height when Sticky Header switches on.
+* Fix: Sticky Header's "Show on mobile" setting is now respected on small screens.
+* Improved: Sticky Header applies straight away when a page loads already scrolled down, without waiting for the next scroll.
+* Improved: Sticky Header's entrance animation is skipped for visitors who ask their device to reduce motion.
+
+= 1.11.1 – November 21, 2026 =
+* Fix: With the accessibility toolbar on, the Dark Mode switch, Back to Top, Scroll to Bottom, Floating CTA and WhatsApp buttons were hidden underneath its button. They now stack above it.
+* Fix: The toolbar's "Pause animations" option and the Seizure-safe profile now also stop the seasonal effects (snow, leaves, hearts and the rest), not only CSS animations.
+* Fix: Copy and right-click protection no longer blocks form fields — visitors can select, copy, paste and use spell-check in inputs and text areas again.
+* Fix: The Announcement Bar and Countdown Banner no longer hide behind the WordPress admin bar when you are logged in, and no longer run 40 px past the right edge.
+* Fix: Updated stylesheets now reach visitors right after a plugin update instead of being served from the browser or page cache.
+* Fix: Particle Background no longer blocks clicks — links, buttons and form fields under it work again.
+* Fix: Block animations (Entrance, Floating, Tilt), Tooltip, Visibility and Wrapper Link now appear in the block editor as soon as you turn on Gutenberg Blocks, instead of only after saving the Block Editor page.
+* Fix: Zoom content (Pro) no longer enlarges the accessibility toolbar off the screen, and the reading guide and mask stay on the pointer while zoomed.
+* Fix: The accessibility toolbar button moves above the Cookie Consent / GDPR bar while it is showing, so visitors can reach it straight away.
+* Improved: The Dyslexia font tool (Pro) now ships the OpenDyslexic typeface, so every visitor gets it — not only those who have it installed. It is served from your own site and downloaded only when a visitor turns the tool on.
+* Improved: A cleaner dashboard — every Site Enhancements section is visible at once, each page shows its title, the layout uses the full width on tablets and small laptops, settings buttons are easier to find, and keyboard focus is clearly visible.
+* Improved: PHP snippets (Pro) with a syntax error are refused on save with the line number, instead of saving as active and silently not running.
+* Improved: The Accessibility Statement (Pro) lists only the accessibility tools that are switched on.
+* Improved: Sticky WhatsApp and Countdown Banner cards say what to fill in when they are on but not yet showing; the Alt Text Audit tells you when the media library has no images.
+* Improved: While Maintenance or Coming Soon mode is on, administrators see a reminder in the admin bar that links to its settings.
+* Improved: The Dark Mode switch announces its on/off state to screen readers.
+* Improved: Updated the Freemius SDK to 2.13.5.
+
+= 1.11.0 – October 30, 2026 =
+* New: The dashboard now opens with an Accessibility toolbar card. Turn the toolbar on with one click, then preview it on your site.
+* Improved: The plugin is now named "ExtenderX – Accessibility Toolbar, Dark Mode & Site Tools". Nothing about your settings or the plugin's features changes.
+* Improved: The WordPress.org review reminder now also appears on sites using the accessibility toolbar, not only those using block animations.
+
+= 1.10.0 – September 19, 2026 =
+* New: Save & Go — adds a menu to the post editor (block and classic) that saves and then jumps straight to a new post, the post list, the next or previous post, or the front end. Five actions ship free.
+* New (Pro): Three more actions — Save & Duplicate, Save & Return, and Save & View in New Window — plus a choice of default action and control over where the button sits in each editor.
+* New (Pro): Bulk Add — paste a list of titles and create them as posts, pages or custom post types in one go, nested under each other where the post type supports it.
+* Improved: Removed a duplicate "Saved" indicator that appeared alongside the dashboard's toast notifications.
+
+= 1.9.0 – August 30, 2026 =
+* New: Accessibility — a new dashboard tab with tools that let visitors adjust how your site is displayed. Free, and off until you enable it.
+* New: Accessibility toolbar — a floating button opening a panel of display controls, grouped into Text, Color, Content and Motion. Covers text size, a readable font, left-aligned text, high contrast, inverted colors, grayscale, a light background, underlined links, highlighted headings, hidden images and paused motion.
+* New: Quick profiles — Low vision, Dyslexia, Focus and Seizure safe presets that switch on a matching set of tools in one click, using only the tools you have enabled.
+* New: Visitor preferences are remembered from page to page, stored in the visitor's own browser. No cookies, and nothing is sent to a server.
+* New: Skip to Content link — lets keyboard visitors jump past your header to the main content, and moves focus properly rather than only scrolling.
+* New: Enhanced focus outlines — a configurable ring around whichever element the keyboard is on, for themes that hide the browser default.
+* New: Visitors can open the toolbar with Alt+A, and a badge on the button shows how many settings are active.
+* New (Pro): Seven more visitor tools — reading guide, reading mask, text spacing, content zoom, a dyslexia-friendly typeface, a large cursor and saturation control.
+* New (Pro): Toolbar branding — button and icon colors, icon choice, size, stacking order and hide-on-mobile.
+* New (Pro): Accessibility Statement generator — creates an editable draft page describing your accessibility work and how visitors can report problems.
+* New (Pro): Alt Text Audit — lists images in your media library with no alternative text, with a link to fix each one.
+* Improved: Premium features now stay marked with a PRO badge across the whole dashboard, including on licensed sites, so you can see what your licence provides.
+* Fixed: Premium features stayed unlocked when the ExtenderX Pro plugin was deactivated. Premium now requires the Pro plugin to be active as well as a valid licence.
+* Fixed: With a valid licence but the Pro plugin deactivated, premium features ran on the front end while the dashboard showed them locked behind an upgrade prompt. Both now agree.
+* Fixed: Settings migrations could be skipped on sites whose recorded version was already current, leaving a pending update unapplied.
+
+= 1.8.1 – July 22, 2026 =
+* New: "New" badge on the Scroll to Bottom Button card in the dashboard, highlighting the recently added feature.
+* Improved: Pro-only toggles (Scroll to Bottom, Skeleton Loader, Preloader, Scrollbar Styler, Smooth Scrolling, Scroll-Linked Effects, and the Seasonal Effects / Marketing / Site Access Modes cards) now link straight to the upgrade page when clicked, instead of just appearing disabled.
+
+= 1.8.0 – July 14, 2026 =
+* New (Pro, Beta): Motion & Animations — a new dashboard tab with two site-wide engines. Site-Wide Animations applies one reveal style to your content across every page, with block-type targeting, stagger, and per-page / per-block overrides in the editor. Scroll-Linked Effects adds parallax, scroll-progress scrub, and sticky reveals. Includes import/export of your animation setup. This feature set is in beta — behavior and options may change in upcoming releases.
+* New: Seasonal Effects — 18 site-wide effects across Seasons, Holidays, Sales, and Ambient groups. Winter Snow, Autumn Leaves, and Falling Hearts are free; Spring Petals, Summer Bubbles, Christmas Lights, Fireworks, Halloween Bats, Ramadan Lanterns, Black Friday & Cyber Monday confetti, Weather, Particle Background, Fireflies, Twinkling Stars, Floating Emojis, Floating Shapes, Light Beams, and Mouse Trail are Pro.
+* New (Pro): Advanced seasonal controls — schedule effects by date range, target specific pages, and customize effect colors and themes.
+* New (Pro): Scroll to Bottom button — a one-click jump to the end of the page, with the same style presets, icons, positions, colors, behavior, and visibility targeting as the Back to Top button. Enable both and they stack neatly in the same corner without overlapping.
+* New (Pro): Custom Code power-ups — PHP snippets, conditional display logic, and snippet scheduling.
+* Improved: Every seasonal effect automatically honors visitors' "reduce motion" system preference.
+* Improved: Code snippets now live in a dedicated database table for faster, more reliable storage — existing snippets migrate automatically.
+* Improved: The Back to Top settings panel now powers both scroll buttons, so their customization options always stay in sync.
+* Performance: Settings storage is now split per module and no longer autoloads on every page, reducing memory use on the frontend and in the admin.
+
+= 1.7.1 – June 21, 2026 =
+* Improved: Expanded and clarified the plugin listing so the free site tools — dark mode, maintenance mode, coming soon page, announcement bar, insert headers & footers, and seasonal snow effects — are easier to discover.
+* Added: New FAQ entries covering falling snow effects, maintenance mode, coming soon pages, announcement bars, and adding Google Analytics / Tag Manager without editing theme files.
+* Fixed: Corrected the documented free vs Pro feature split — Smart Scroll and three seasonal effects (Winter Snow, Autumn Leaves, Falling Hearts) are free; Smooth Scrolling (Lenis) is Pro.
+
+= 1.7.0 – June 20, 2026 =
+* New: Insert Headers & Footers + Custom Code Snippets — add HTML, CSS & JavaScript to your site's header, body, or footer and manage reusable code snippets from one dashboard. Perfect for Google Analytics, Google Tag Manager, Meta Pixel, and site verification — no theme file editing.
+* New: Site Modes section in Site Enhancements — maintenance mode, coming soon page, age verification, cookie consent, GDPR notice, and exit intent, all toggleable from the dashboard.
+* New: Redesigned admin dashboard with a cleaner, faster card-based layout for browsing block animations and site enhancement features at a glance.
+* Improved: Settings now save in a single batched request when you toggle several options quickly, with a cleaner, non-duplicating "saved" notice.
+* Performance: Removed unused code from the settings dashboard for a lighter, faster admin interface.
+
+= 1.6.7 – June 19, 2026 =
+* Added: Custom Code — insert header & footer code and manage HTML, CSS & JavaScript snippets from the dashboard, with a Quick Action toggle on the Quick Start screen.
+* Added: Site Modes section in Site Enhancements (maintenance, coming soon, age verification, cookie consent, GDPR notice, exit intent).
+* Improved: Settings now save in a single batched request when you toggle several options quickly, with a cleaner, non-duplicating "saved" notice.
+* Improved: Consistent notification styling across every dashboard screen, including Custom Code snippets.
+* Improved: The "Upgrade to Pro" button now reflects your license — Pro users see a "Pro active" badge instead.
+* Improved: Admin dashboard accessibility — added ARIA labels to feature toggles and a current-page indicator in the sidebar navigation.
+* Improved: Cleaner Gutenberg Editor and Site Enhancements screens with friendlier wording for disabled states.
+* Performance: Removed unused code from the settings dashboard for a lighter, faster admin interface.
+
+= 1.6.6 – June 06, 2026 =
+* Improved: Animation-first WordPress.org listing, readme, and plugin metadata for Gutenberg block animation discoverability.
+* Added: Quick Start animation checklist and editor deep-link in the admin dashboard.
+* Added: Review prompt and one-time block editor onboarding notice for new users.
+* Added: Documentation hub with block-library compatibility guides.
+* Improved: Aligned free vs Pro feature messaging across readme and licensing.
+* Removed: Scroll Effects "Coming Soon" placeholder — use Entrance Animations for scroll-triggered block motion.
+
+= 1.6.5 – May 11, 2026 =
+* Improved: Floating animations block wrapper and editor panel for a clearer setup flow.
+* Improved: Toggle control visuals and reset button styling in block extension panels.
+* Improved: Tooltip behavior and shared extension helpers.
+
+= 1.6.4 – April 11, 2026 =
+* Improved: Compatibility with latest WordPress and PHP versions.
+* Fixed: Issues with some features not working properly.
+
+= 1.6.3 – April 08, 2026 =
+* Improved: Optimized memory management for enhanced plugin performance and reduced server resource consumption.
+* Improved: Redesigned settings page interface for a more intuitive and streamlined user experience.
+
 = 1.6.2 – February 24, 2026 =
 * Fixed: Resolved Sticky Header and Sticky Footer modules not functioning correctly on certain themes.
 * Fixed: Corrected gradient color rendering issues in Scrollbar Styler and Scroll Progress Bar modules.

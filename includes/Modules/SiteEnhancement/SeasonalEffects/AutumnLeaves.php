@@ -21,18 +21,28 @@ class AutumnLeaves {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('autumn_leaves')) {
+            return;
+        }
         wp_enqueue_style('xero-autumn-leaves');
         wp_enqueue_script('xero-autumn-leaves');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('autumn_leaves')) {
+            return;
+        }
         $intensity = $this->settings_cache->get_setting('global.seasonal_effects.autumn_leaves.intensity', 50);
+        $size  = $this->settings_cache->get_setting('global.seasonal_effects.autumn_leaves.size', 50);
         $speed = $this->settings_cache->get_setting('global.seasonal_effects.autumn_leaves.speed', 50);
+        $layer = $this->settings_cache->get_setting('global.seasonal_effects.autumn_leaves.layer', 'front');
+        $layer = ('behind' === $layer) ? 'behind' : 'front';
 ?>
         <canvas id="xero-autumn-leaves"
-            class="xero-seasonal-effect"
+            class="xero-seasonal-effect xero-layer-<?php echo esc_attr($layer); ?>"
             data-intensity="<?php echo esc_attr($intensity); ?>"
-            data-speed="<?php echo esc_attr($speed); ?>">
+            data-speed="<?php echo esc_attr($speed); ?>"
+            data-size="<?php echo esc_attr($size); ?>">
         </canvas>
 <?php
     }

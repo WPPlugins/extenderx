@@ -5,15 +5,13 @@ namespace WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements;
 use WPXERO\ExtenderX\Core\ModuleBase;
 use WPXERO\ExtenderX\Traits\Singleton;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\BackToTop;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\ScrollToBottom;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\StickyHeader;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\StickyFooter;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\ScrollProgress;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\SmartScroll;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\CustomCursor;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\CursorHoverEffects;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\CursorGrabMode;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\ScrollbarStyler;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\SmoothScrolling;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\UIEnhancements\Scrollspy;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -27,15 +25,13 @@ class UIEnhancements extends ModuleBase {
 
     private const UI_ENHANCEMENT_FEATURES = [
         'back_to_top.enabled'          => BackToTop::class,
+        'scroll_to_bottom.enabled'     => ScrollToBottom::class,
         'sticky_header.enabled'        => StickyHeader::class,
         'sticky_footer.enabled'        => StickyFooter::class,
         'scroll_progress.enabled'      => ScrollProgress::class,
-        'smart_scroll.enabled'         => SmartScroll::class,
-        'custom_cursor.enabled'        => CustomCursor::class,
-        'cursor_hover_effects.enabled' => CursorHoverEffects::class,
-        'cursor_grab_mode.enabled'     => CursorGrabMode::class,
         'scrollbar_styler.enabled'     => ScrollbarStyler::class,
         'smooth_scrolling.enabled'     => SmoothScrolling::class,
+        'scrollspy.enabled'            => Scrollspy::class,
     ];
 
 

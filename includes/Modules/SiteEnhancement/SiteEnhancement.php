@@ -10,6 +10,9 @@ use WPXERO\ExtenderX\Modules\SiteEnhancement\SeasonalEffects\SeasonalEffects;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\Appearance;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Animations\Animations;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Marketing\Marketing;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\CustomCode\CustomCode;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\Accessibility\Accessibility;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\SaveAndGo\SaveAndGo;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -62,5 +65,8 @@ class SiteEnhancement {
         Appearance::instance();
         Animations::instance();
         Marketing::instance();
+        CustomCode::instance();
+        Accessibility::instance();
+        SaveAndGo::instance();
     }
 }

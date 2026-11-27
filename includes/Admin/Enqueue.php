@@ -3,6 +3,8 @@
 namespace WPXERO\ExtenderX\Admin;
 
 use WPXERO\ExtenderX\Traits\Singleton;
+use WPXERO\ExtenderX\Core\SettingsCache;
+use WPXERO\ExtenderX\Core\ProFeatures;
 
 defined('ABSPATH') || exit;
 /**
@@ -30,6 +32,22 @@ class Enqueue {
             return;
         }
 
+        // Media library scripts so the admin SPA can open the WordPress media
+        // modal (wp.media) for logo / background image pickers in Site Modes.
+        if (function_exists('wp_enqueue_media')) {
+            wp_enqueue_media();
+        }
+
+        // CodeMirror assets for the Custom Code snippet editor. Each call is
+        // additive, so requesting several types loads every mode the editor
+        // needs (HTML/mixed, CSS, JavaScript and PHP) plus the editor styles.
+        if (function_exists('wp_enqueue_code_editor')) {
+            wp_enqueue_code_editor(['type' => 'text/html']);
+            wp_enqueue_code_editor(['type' => 'text/css']);
+            wp_enqueue_code_editor(['type' => 'text/javascript']);
+            wp_enqueue_code_editor(['type' => 'application/x-httpd-php']);
+        }
+
         $admin_assets = XERO_EXTENDERX_DIR_PATH . 'dist/admin/dependencies.php';
         if (file_exists($admin_assets)) {
             $admin_assets = require $admin_assets;
@@ -42,13 +60,20 @@ class Enqueue {
                 true
             );
 
-            // Get current settings
-            $settings = get_option('extenderx_settings', array());
+            // Get current settings via centralized cache
+            $complete_settings = SettingsCache::instance()->get_all_settings();
 
-            // Ensure we have the complete settings structure
-            $default_settings = [];
-
-            $complete_settings = array_merge($default_settings, $settings);
+            // Pro status, localized so the SPA has it on first paint instead
+            // of a background REST call — without this, every pro-gated
+            // switch briefly renders as "off" on each load until the async
+            // /pro-status request resolves (see audit/02-findings.md F-012).
+            // The REST route stays in place for a background refresh.
+            $pro_features = ProFeatures::instance();
+            $pro_status = [
+                'is_pro_active' => $pro_features->is_pro_active(),
+                'has_license'   => $pro_features->has_pro_license(),
+                'upgrade_url'   => $pro_features->get_upgrade_url('dashboard'),
+            ];
 
             global $wpdb;
             $theme = wp_get_theme();
@@ -93,19 +118,45 @@ class Enqueue {
                     'ajax_url' => admin_url('admin-ajax.php'),
                     'nonce' => wp_create_nonce('extenderx-admin-nonce'),
                     'rest_url' => rest_url('wpxero/extenderx/v1'),
+                    'adminUrl' => admin_url(),
                     'system_info' => $system_info,
-                    'site_data' => $this->get_site_data(),
+                    'site_data' => $this->get_cached_site_data(),
+                    'pro_status' => $pro_status,
                 ]
             );
+
+            // The asset hash only tracks admin.js, which doesn't change when a
+            // build only touches styles — so CSS fixes stayed cached. Add the
+            // stylesheet's own mtime.
+            $style_file = XERO_EXTENDERX_DIR_PATH . 'dist/admin/style-admin.css';
+            $style_ver  = $admin_assets['version'] . (file_exists($style_file) ? '.' . filemtime($style_file) : '');
 
             wp_enqueue_style(
                 'extenderx-admin',
                 XERO_EXTENDERX_DIST_URL . 'admin/style-admin.css',
                 [],
-                $admin_assets['version']
+                $style_ver
             );
         }
     }
+    /**
+     * Get site data with transient caching (1 hour).
+     * Avoids heavy queries (200 pages, 100 posts, roles) on every admin load.
+     *
+     * @return array
+     */
+    private function get_cached_site_data() {
+        $cached = get_transient('extenderx_site_data');
+
+        if (is_array($cached) && !empty($cached)) {
+            return $cached;
+        }
+
+        $data = $this->get_site_data();
+        set_transient('extenderx_site_data', $data, HOUR_IN_SECONDS);
+        return $data;
+    }
+
     /**
      * Get site data for admin UI (post types, pages, user roles, etc.)
      *

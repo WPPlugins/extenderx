@@ -21,11 +21,17 @@ class MouseTrail {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('mouse_trail')) {
+            return;
+        }
         wp_enqueue_style('xero-mouse-trail');
         wp_enqueue_script('xero-mouse-trail');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('mouse_trail')) {
+            return;
+        }
         $style = $this->settings_cache->get_setting('global.seasonal_effects.mouse_trail.style', 'glow');
         $size = $this->settings_cache->get_setting('global.seasonal_effects.mouse_trail.size', 50);
         $color = $this->settings_cache->get_setting('global.seasonal_effects.mouse_trail.color', 'rainbow');

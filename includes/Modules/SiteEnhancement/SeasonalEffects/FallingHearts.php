@@ -21,18 +21,28 @@ class FallingHearts {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('hearts_falling')) {
+            return;
+        }
         wp_enqueue_style('xero-falling-hearts');
         wp_enqueue_script('xero-falling-hearts');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('hearts_falling')) {
+            return;
+        }
         $intensity = $this->settings_cache->get_setting('global.seasonal_effects.hearts_falling.intensity', 50);
+        $size  = $this->settings_cache->get_setting('global.seasonal_effects.hearts_falling.size', 50);
         $speed = $this->settings_cache->get_setting('global.seasonal_effects.hearts_falling.speed', 50);
+        $layer = $this->settings_cache->get_setting('global.seasonal_effects.hearts_falling.layer', 'front');
+        $layer = ('behind' === $layer) ? 'behind' : 'front';
 ?>
         <canvas id="xero-falling-hearts"
-            class="xero-seasonal-effect"
+            class="xero-seasonal-effect xero-layer-<?php echo esc_attr($layer); ?>"
             data-intensity="<?php echo esc_attr($intensity); ?>"
-            data-speed="<?php echo esc_attr($speed); ?>">
+            data-speed="<?php echo esc_attr($speed); ?>"
+            data-size="<?php echo esc_attr($size); ?>">
         </canvas>
 <?php
     }

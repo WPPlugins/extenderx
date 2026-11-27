@@ -21,11 +21,17 @@ class WeatherEffects {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('weather')) {
+            return;
+        }
         wp_enqueue_style('xero-weather-effects');
         wp_enqueue_script('xero-weather-effects');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('weather')) {
+            return;
+        }
         $type = $this->settings_cache->get_setting('global.seasonal_effects.weather.type', 'rain');
         $intensity = $this->settings_cache->get_setting('global.seasonal_effects.weather.intensity', 50);
         $apply_to = $this->settings_cache->get_setting('global.seasonal_effects.weather.apply_to', 'entire');

@@ -4,21 +4,21 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0649a6012eb2cb82970563cd4674d3da
+class ComposerStaticInitbc99d3f1ce0c2a2344b9e6dd5dced9ff
 {
     public static $files = array (
         '8d50dc88e56bace65e1e72f6017983ed' => __DIR__ . '/..' . '/freemius/wordpress-sdk/start.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'W' => 
+        'W' =>
         array (
             'WPXERO\\ExtenderX\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WPXERO\\ExtenderX\\' => 
+        'WPXERO\\ExtenderX\\' =>
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),
@@ -26,14 +26,118 @@ class ComposerStaticInit0649a6012eb2cb82970563cd4674d3da
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'WPXERO\\ExtenderX\\Admin\\Dashboard' => __DIR__ . '/../..' . '/includes/Admin/Dashboard.php',
+        'WPXERO\\ExtenderX\\Admin\\EditorNotice' => __DIR__ . '/../..' . '/includes/Admin/EditorNotice.php',
+        'WPXERO\\ExtenderX\\Admin\\Enqueue' => __DIR__ . '/../..' . '/includes/Admin/Enqueue.php',
+        'WPXERO\\ExtenderX\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/Admin/Menu.php',
+        'WPXERO\\ExtenderX\\Admin\\ReviewPrompt' => __DIR__ . '/../..' . '/includes/Admin/ReviewPrompt.php',
+        'WPXERO\\ExtenderX\\Core\\ModuleBase' => __DIR__ . '/../..' . '/includes/Core/ModuleBase.php',
+        'WPXERO\\ExtenderX\\Core\\PageFilter' => __DIR__ . '/../..' . '/includes/Core/PageFilter.php',
+        'WPXERO\\ExtenderX\\Core\\ProFeatures' => __DIR__ . '/../..' . '/includes/Core/ProFeatures.php',
+        'WPXERO\\ExtenderX\\Core\\RegisterAssets' => __DIR__ . '/../..' . '/includes/Core/RegisterAssets.php',
+        'WPXERO\\ExtenderX\\Core\\Settings' => __DIR__ . '/../..' . '/includes/Core/Settings.php',
+        'WPXERO\\ExtenderX\\Core\\SettingsCache' => __DIR__ . '/../..' . '/includes/Core/SettingsCache.php',
+        'WPXERO\\ExtenderX\\Core\\Utils' => __DIR__ . '/../..' . '/includes/Core/Utils.php',
+        'WPXERO\\ExtenderX\\Modules\\Gutenberg\\Attributes' => __DIR__ . '/../..' . '/includes/Modules/Gutenberg/Attributes.php',
+        'WPXERO\\ExtenderX\\Modules\\Gutenberg\\Enqueue' => __DIR__ . '/../..' . '/includes/Modules/Gutenberg/Enqueue.php',
+        'WPXERO\\ExtenderX\\Modules\\Gutenberg\\Gutenberg' => __DIR__ . '/../..' . '/includes/Modules/Gutenberg/Gutenberg.php',
+        'WPXERO\\ExtenderX\\Modules\\Gutenberg\\Register' => __DIR__ . '/../..' . '/includes/Modules/Gutenberg/Register.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Accessibility\\Accessibility' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Accessibility/Accessibility.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Accessibility\\AccessibilityCatalog' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Accessibility/AccessibilityCatalog.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Accessibility\\AltTextAudit' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Accessibility/AltTextAudit.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Accessibility\\FocusOutlines' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Accessibility/FocusOutlines.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Accessibility\\SkipLink' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Accessibility/SkipLink.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Accessibility\\StatementGenerator' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Accessibility/StatementGenerator.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Accessibility\\Toolbar' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Accessibility/Toolbar.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Animations\\Animations' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Animations/Animations.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Animations\\AssetResolver' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Animations/AssetResolver.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Animations\\PageControl' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Animations/PageControl.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Animations\\ScrollEffects' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Animations/ScrollEffects.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Animations\\SiteWide\\SiteWide' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Animations/SiteWide/SiteWide.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Animations\\SiteWide\\SiteWideCatalog' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Animations/SiteWide/SiteWideCatalog.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Animations\\SiteWide\\SiteWideResolver' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Animations/SiteWide/SiteWideResolver.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Appearance\\Appearance' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Appearance/Appearance.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Appearance\\DarkMode' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Appearance/DarkMode.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Appearance\\Preloader' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Appearance/Preloader.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Appearance\\SkeletonLoader' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Appearance/SkeletonLoader.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\CustomCode\\ConditionalLogic' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/CustomCode/ConditionalLogic.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\CustomCode\\CustomCode' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/CustomCode/CustomCode.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\CustomCode\\SnippetEngine' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/CustomCode/SnippetEngine.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\CustomCode\\SnippetExecutor' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/CustomCode/SnippetExecutor.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\CustomCode\\SnippetPostType' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/CustomCode/SnippetPostType.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\CustomCode\\SnippetRestController' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/CustomCode/SnippetRestController.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\CustomCode\\SnippetTable' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/CustomCode/SnippetTable.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Marketing\\AnnouncementBar' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Marketing/AnnouncementBar.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Marketing\\CtaPulseAnimation' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Marketing/CtaPulseAnimation.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Marketing\\FloatingCtaButton' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Marketing/FloatingCtaButton.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Marketing\\GlobalCountdownBanner' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Marketing/GlobalCountdownBanner.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Marketing\\Marketing' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Marketing/Marketing.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Marketing\\MarketingVisibility' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Marketing/MarketingVisibility.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Marketing\\StickyWhatsAppButton' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Marketing/StickyWhatsAppButton.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\BulkAdd' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/BulkAdd.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\Duplicator' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/Duplicator.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\EditorClassic' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/EditorClassic.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\EditorGutenberg' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/EditorGutenberg.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\Navigator' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/Navigator.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\RestController' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/RestController.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\SaveAndGo' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/SaveAndGo.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SaveAndGo\\SaveAndGoCatalog' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SaveAndGo/SaveAndGoCatalog.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\AutumnLeaves' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/AutumnLeaves.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\BlackFriday' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/BlackFriday.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\ChristmasLights' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/ChristmasLights.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\CyberMonday' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/CyberMonday.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\EffectSchedule' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/EffectSchedule.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\EffectTargeting' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/EffectTargeting.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\FallingHearts' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/FallingHearts.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\Fireflies' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/Fireflies.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\Fireworks' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/Fireworks.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\FloatingEmojis' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/FloatingEmojis.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\FloatingShapes' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/FloatingShapes.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\HalloweenBats' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/HalloweenBats.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\LightBeams' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/LightBeams.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\MouseTrail' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/MouseTrail.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\ParticleBackground' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/ParticleBackground.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\RamadanLanterns' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/RamadanLanterns.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\SeasonalEffects' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/SeasonalEffects.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\SpringPetals' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/SpringPetals.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\StarsTwinkling' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/StarsTwinkling.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\Summer' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/Summer.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\WeatherEffects' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/WeatherEffects.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SeasonalEffects\\WinterSnow' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SeasonalEffects/WinterSnow.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteEnhancement' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteEnhancement.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\AgeVerification' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/AgeVerification.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\ComingSoonMode' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/ComingSoonMode.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\CookieConsent' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/CookieConsent.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\ExitIntent' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/ExitIntent.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\GDPRNotice' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/GDPRNotice.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\MaintenanceMode' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/MaintenanceMode.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\SiteModeFullPage' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/SiteModeFullPage.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\SiteModeTargeting' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/SiteModeTargeting.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\SiteModes\\SiteModes' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/SiteModes/SiteModes.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\BackToTop' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/BackToTop.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\ScrollProgress' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/ScrollProgress.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\ScrollToBottom' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/ScrollToBottom.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\ScrollbarStyler' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/ScrollbarStyler.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\Scrollspy' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/Scrollspy.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\SmoothScrolling' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/SmoothScrolling.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\StickyFooter' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/StickyFooter.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\StickyHeader' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/StickyHeader.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\UIEnhancements\\UIEnhancements' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/UIEnhancements/UIEnhancements.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Utilities\\DisableCopy' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Utilities/DisableCopy.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Utilities\\DisableImageDrag' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Utilities/DisableImageDrag.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Utilities\\DisableInspect' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Utilities/DisableInspect.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Utilities\\DisableRightClick' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Utilities/DisableRightClick.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Utilities\\HideAdminBar' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Utilities/HideAdminBar.php',
+        'WPXERO\\ExtenderX\\Modules\\SiteEnhancement\\Utilities\\Utilities' => __DIR__ . '/../..' . '/includes/Modules/SiteEnhancement/Utilities/Utilities.php',
+        'WPXERO\\ExtenderX\\Traits\\Singleton' => __DIR__ . '/../..' . '/includes/Traits/Singleton.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit0649a6012eb2cb82970563cd4674d3da::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit0649a6012eb2cb82970563cd4674d3da::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit0649a6012eb2cb82970563cd4674d3da::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbc99d3f1ce0c2a2344b9e6dd5dced9ff::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbc99d3f1ce0c2a2344b9e6dd5dced9ff::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitbc99d3f1ce0c2a2344b9e6dd5dced9ff::$classMap;
 
         }, null, ClassLoader::class);
     }

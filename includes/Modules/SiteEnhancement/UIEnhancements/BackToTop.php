@@ -71,38 +71,9 @@ class BackToTop {
             }
         }
 
-        // 4. Page ID exclusions
-        $exclude_page_ids = $this->settings['exclude_page_ids'] ?? [];
-        if (is_array($exclude_page_ids) && !empty($exclude_page_ids)) {
-            $current_id = get_queried_object_id();
-            if (in_array((string)$current_id, $exclude_page_ids, true)) {
-                return false;
-            }
-        }
-
-        // 5. Post ID exclusions
-        $exclude_post_ids = $this->settings['exclude_post_ids'] ?? [];
-        if (is_array($exclude_post_ids) && !empty($exclude_post_ids)) {
-            $current_id = get_queried_object_id();
-            if (in_array((string)$current_id, $exclude_post_ids, true)) {
-                return false;
-            }
-        }
-
-        // 6. URL pattern exclusions
-        $exclude_url_patterns = $this->settings['exclude_url_patterns'] ?? [];
-        if (is_array($exclude_url_patterns) && !empty($exclude_url_patterns)) {
-            $current_url = $_SERVER['REQUEST_URI'] ?? '';
-            foreach ($exclude_url_patterns as $pattern) {
-                $pattern = trim($pattern);
-                if (empty($pattern)) continue;
-
-                // Convert wildcard pattern to regex
-                $regex_pattern = str_replace(['*', '/'], ['.*', '\/'], $pattern);
-                if (preg_match('/^' . $regex_pattern . '$/i', $current_url)) {
-                    return false;
-                }
-            }
+        // 4-6. Page rules (include/exclude list; see Core\PageFilter).
+        if (\WPXERO\ExtenderX\Core\PageFilter::blocks($this->settings)) {
+            return false;
         }
 
         return true;
@@ -204,29 +175,7 @@ class BackToTop {
             $bg_hover_value = "linear-gradient(135deg, {$bg_hover}, {$bg_hover_gradient_end})";
         }
 
-        // Position mapping
-        $position_css = '';
-        switch ($position) {
-            case 'bottom-left':
-                $position_css = 'bottom: 30px; left: 30px; right: auto;';
-                break;
-            case 'top-right':
-                $position_css = 'top: 30px; right: 30px; bottom: auto;';
-                break;
-            case 'bottom-center':
-                $position_css = 'bottom: 30px; left: 50%; transform: translateX(-50%);';
-                break;
-            case 'top-center':
-                $position_css = 'top: 30px; left: 50%; transform: translateX(-50%);';
-                break;
-            case 'top-left':
-                $position_css = 'top: 30px; left: 30px; right: auto; bottom: auto;';
-                break;
-            case 'bottom-right':
-            default:
-                $position_css = 'bottom: 30px; right: 30px;';
-                break;
-        }
+        $position_css = $this->get_position_css($position, 30);
 
         $css = "#xero-back-to-top {
             {$position_css}
@@ -252,6 +201,32 @@ class BackToTop {
         }
 
         return $css;
+    }
+
+    /**
+     * Map a position setting to fixed-position CSS.
+     *
+     * @param string $position Position key (e.g. 'bottom-right').
+     * @param int    $edge_offset Distance in px from the anchoring edge —
+     *                            lets the scroll-to-bottom button stack.
+     */
+    private function get_position_css($position, $edge_offset) {
+        $offset = intval($edge_offset);
+        switch ($position) {
+            case 'bottom-left':
+                return "bottom: {$offset}px; left: 30px; right: auto;";
+            case 'top-right':
+                return "top: {$offset}px; right: 30px; bottom: auto;";
+            case 'bottom-center':
+                return "bottom: {$offset}px; left: 50%; transform: translateX(-50%);";
+            case 'top-center':
+                return "top: {$offset}px; left: 50%; transform: translateX(-50%);";
+            case 'top-left':
+                return "top: {$offset}px; left: 30px; right: auto; bottom: auto;";
+            case 'bottom-right':
+            default:
+                return "bottom: {$offset}px; right: 30px;";
+        }
     }
 
     public function render_button() {

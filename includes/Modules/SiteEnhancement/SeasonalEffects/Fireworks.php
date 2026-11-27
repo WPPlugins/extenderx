@@ -21,11 +21,17 @@ class Fireworks {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('fireworks')) {
+            return;
+        }
         wp_enqueue_style('xero-fireworks');
         wp_enqueue_script('xero-fireworks');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('fireworks')) {
+            return;
+        }
         $intensity = $this->settings_cache->get_setting('global.seasonal_effects.fireworks.intensity', 50);
         $frequency = $this->settings_cache->get_setting('global.seasonal_effects.fireworks.frequency', 50);
         $colors = $this->settings_cache->get_setting('global.seasonal_effects.fireworks.colors', 'multi');

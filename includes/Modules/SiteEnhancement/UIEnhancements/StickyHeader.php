@@ -60,27 +60,9 @@ class StickyHeader {
             }
         }
 
-        $current_id = get_queried_object_id();
-
-        $exclude_page_ids = $this->settings['exclude_page_ids'] ?? [];
-        if (is_array($exclude_page_ids) && !empty($exclude_page_ids) && in_array((string)$current_id, $exclude_page_ids, true)) {
+        // Page rules (include/exclude list; see Core\PageFilter).
+        if (\WPXERO\ExtenderX\Core\PageFilter::blocks($this->settings)) {
             return false;
-        }
-
-        $exclude_post_ids = $this->settings['exclude_post_ids'] ?? [];
-        if (is_array($exclude_post_ids) && !empty($exclude_post_ids) && in_array((string)$current_id, $exclude_post_ids, true)) {
-            return false;
-        }
-
-        $exclude_url_patterns = $this->settings['exclude_url_patterns'] ?? [];
-        if (is_array($exclude_url_patterns) && !empty($exclude_url_patterns)) {
-            $current_url = $_SERVER['REQUEST_URI'] ?? '';
-            foreach ($exclude_url_patterns as $pattern) {
-                $pattern = trim($pattern);
-                if (empty($pattern)) continue;
-                $regex = str_replace(['*', '/'], ['.*', '\/'], $pattern);
-                if (preg_match('/^' . $regex . '$/i', $current_url)) return false;
-            }
         }
 
         return true;
@@ -125,7 +107,9 @@ class StickyHeader {
             'scrollOffset'      => intval($this->settings['scroll_offset']),
             'hideOnScrollDown'  => (bool)$this->settings['hide_on_scroll_down'],
             'shrinkOnScroll'    => (bool)$this->settings['shrink_on_scroll'],
-            'animation'         => sanitize_text_field($this->settings['animation']),
+            'animation'         => in_array($this->settings['animation'], ['slide-down', 'fade', 'none'], true)
+                ? $this->settings['animation']
+                : 'slide-down',
             'showOnMobile'      => (bool)$this->settings['show_on_mobile'],
         ]);
     }

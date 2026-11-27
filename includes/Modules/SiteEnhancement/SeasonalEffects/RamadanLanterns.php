@@ -21,18 +21,28 @@ class RamadanLanterns {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('ramadan_lanterns')) {
+            return;
+        }
         wp_enqueue_style('xero-ramadan-lanterns');
         wp_enqueue_script('xero-ramadan-lanterns');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('ramadan_lanterns')) {
+            return;
+        }
         $intensity = $this->settings_cache->get_setting('global.seasonal_effects.ramadan_lanterns.intensity', 50);
+        $size  = $this->settings_cache->get_setting('global.seasonal_effects.ramadan_lanterns.size', 50);
         $speed = $this->settings_cache->get_setting('global.seasonal_effects.ramadan_lanterns.speed', 50);
+        $layer = $this->settings_cache->get_setting('global.seasonal_effects.ramadan_lanterns.layer', 'front');
+        $layer = ('behind' === $layer) ? 'behind' : 'front';
 ?>
         <div id="xero-ramadan-lanterns"
-            class="xero-seasonal-effect"
+            class="xero-seasonal-effect xero-layer-<?php echo esc_attr($layer); ?>"
             data-intensity="<?php echo esc_attr($intensity); ?>"
-            data-speed="<?php echo esc_attr($speed); ?>">
+            data-speed="<?php echo esc_attr($speed); ?>"
+            data-size="<?php echo esc_attr($size); ?>">
         </div>
 <?php
     }

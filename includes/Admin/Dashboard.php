@@ -13,12 +13,13 @@ class Dashboard {
 
 
     public function __construct() {
-        // add addmin body class
-        add_filter('admin_body_class', [$this, 'extenderx_editor_custom_body_class']);
-        add_action('admin_body_class', [$this, 'add_custom_body_class']);
+        // add admin body class (single consolidated hook)
+        add_filter('admin_body_class', [$this, 'add_custom_body_class']);
         add_action('admin_init', [$this, 'redirect_to_welcome_screen']);
         add_filter('plugin_action_links_extenderx/extenderx.php', [$this, 'extenderx_settings_link']);
         add_action('in_admin_header', [$this, 'disable_admin_notices'], PHP_INT_MAX);
+        ReviewPrompt::instance();
+        EditorNotice::instance();
         Enqueue::instance();
         Menu::instance();
     }
@@ -73,21 +74,10 @@ class Dashboard {
      * @param array $classes Existing body classes.
      * @return array Modified body classes.
      */
-    // add body class for extenderx
     public function add_custom_body_class($classes) {
         // Check if we are on editing screen in WordPress admin
         if (is_admin() && isset($_GET['action']) && $_GET['action'] === 'edit') { // phpcs:ignore
-            $classes .= ' extenderx-admin-page';
-        }
-        return $classes;
-    }
-
-
-    // add body class for extenderx
-    public function extenderx_editor_custom_body_class($classes) {
-        // Check if we are on editing screen in WordPress admin
-        if (is_admin() && isset($_GET['action']) && $_GET['action'] === 'edit') { // phpcs:ignore
-            $classes .= ' extenderx-editor';
+            $classes .= ' extenderx-admin-page extenderx-editor';
         }
         return $classes;
     }

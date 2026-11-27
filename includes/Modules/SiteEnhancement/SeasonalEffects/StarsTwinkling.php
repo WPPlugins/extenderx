@@ -21,11 +21,17 @@ class StarsTwinkling {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('stars_twinkling')) {
+            return;
+        }
         wp_enqueue_style('xero-stars-twinkling');
         wp_enqueue_script('xero-stars-twinkling');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('stars_twinkling')) {
+            return;
+        }
         $count = $this->settings_cache->get_setting('global.seasonal_effects.stars_twinkling.count', 100);
         $speed = $this->settings_cache->get_setting('global.seasonal_effects.stars_twinkling.speed', 50);
         $background = $this->settings_cache->get_setting('global.seasonal_effects.stars_twinkling.background', 'dark');

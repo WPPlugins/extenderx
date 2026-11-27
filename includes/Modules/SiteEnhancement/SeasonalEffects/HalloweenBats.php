@@ -21,18 +21,28 @@ class HalloweenBats {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('halloween_bats')) {
+            return;
+        }
         wp_enqueue_style('xero-halloween-bats');
         wp_enqueue_script('xero-halloween-bats');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('halloween_bats')) {
+            return;
+        }
         $intensity = $this->settings_cache->get_setting('global.seasonal_effects.halloween_bats.intensity', 50);
+        $size  = $this->settings_cache->get_setting('global.seasonal_effects.halloween_bats.size', 50);
         $speed = $this->settings_cache->get_setting('global.seasonal_effects.halloween_bats.speed', 50);
+        $layer = $this->settings_cache->get_setting('global.seasonal_effects.halloween_bats.layer', 'front');
+        $layer = ('behind' === $layer) ? 'behind' : 'front';
 ?>
         <canvas id="xero-halloween-bats"
-            class="xero-seasonal-effect"
+            class="xero-seasonal-effect xero-layer-<?php echo esc_attr($layer); ?>"
             data-intensity="<?php echo esc_attr($intensity); ?>"
-            data-speed="<?php echo esc_attr($speed); ?>">
+            data-speed="<?php echo esc_attr($speed); ?>"
+            data-size="<?php echo esc_attr($size); ?>">
         </canvas>
 <?php
     }

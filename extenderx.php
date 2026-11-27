@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Plugin Name:       ExtenderX – Block Animations & 60+ Site Enhancements
- * Plugin URI:        https://wpxero.com/extenderx
- * Description:       All-in-one WordPress plugin for block animations, dark mode, content protection, and website security.
- * Version:           1.6.2
+ * Plugin Name:       ExtenderX – Accessibility Toolbar, Dark Mode & Site Tools
+ * Plugin URI:        https://wpxero.com/plugins/extenderx
+ * Description:       Free accessibility toolbar with text size, contrast and dyslexia/low-vision profiles. No cookies, no external service. Plus dark mode, block animations, sticky header, maintenance mode and code snippets.
+ * Version:           1.11.2
  * Author:            WPXERO
  * Author URI:        https://wpxero.com
- * Requires at least: 6.0
+ * Requires at least: 6.2
  * Requires PHP:      7.4
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,7 @@ use WPXERO\ExtenderX\Core\ProFeatures;
 use WPXERO\ExtenderX\Admin\Dashboard;
 use WPXERO\ExtenderX\Modules\Gutenberg\Gutenberg;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\SiteEnhancement;
+use WPXERO\ExtenderX\Modules\SiteEnhancement\CustomCode\SnippetTable;
 use WPXERO\ExtenderX\Core\RegisterAssets;
 
 class XERO_EXTENDERX {
@@ -71,7 +72,7 @@ class XERO_EXTENDERX {
             define('XERO_EXTENDERX_SLUG', 'extenderx');
         }
         if (!defined('XERO_EXTENDERX_VERSION')) {
-            define('XERO_EXTENDERX_VERSION', '1.6.2');
+            define('XERO_EXTENDERX_VERSION', '1.11.2');
         }
         if (!defined('XERO_EXTENDERX_DIR_PATH')) {
             define('XERO_EXTENDERX_DIR_PATH', plugin_dir_path(__FILE__));
@@ -108,6 +109,14 @@ class XERO_EXTENDERX {
      */
     private function init_freemius() {
         if (!isset($this->freemius)) {
+
+            // Skip Freemius init during plugin upgrade/install to prevent memory exhaustion.
+            if (
+                (defined('WP_INSTALLING') && WP_INSTALLING) ||
+                (isset($_REQUEST['action']) && in_array($_REQUEST['action'], array('upload-plugin', 'update-plugin', 'delete-plugin'), true))
+            ) {
+                return $this->freemius;
+            }
             // Include Freemius SDK
             if (file_exists(dirname(__FILE__) . '/vendor/freemius/wordpress-sdk/start.php')) {
                 require_once dirname(__FILE__) . '/vendor/freemius/wordpress-sdk/start.php';
@@ -140,10 +149,8 @@ class XERO_EXTENDERX {
                     // Signal that Freemius SDK is initiated
                     do_action('xero_extenderx_fs_loaded');
                 } catch (Exception $e) {
-                    // Log error but don't break the plugin
-                    if (defined('WP_DEBUG') && WP_DEBUG) {
-                        error_log('ExtenderX Freemius Error: ' . $e->getMessage());
-                    }
+                    // Silently fail - Freemius is optional
+
                 }
             }
         }
@@ -161,6 +168,21 @@ class XERO_EXTENDERX {
     }
 
     public function xero_extenderx_activate() {
+        // Run migration and ensure defaults on activation
+        SettingsCache::instance()->maybe_migrate();
+        Settings::instance()->ensure_default_settings();
+
+        // Ensure the Custom Code snippets table exists.
+        SnippetTable::create();
+
+        update_option('extenderx_db_version', XERO_EXTENDERX_VERSION, true);
+
+        // Set welcome redirect transient
+        set_transient('_extenderx_welcome_screen_activation_redirect', true, 30);
+
+        // Track activation for review prompt timing
+        update_option('extenderx_activated_at', time(), false);
+        delete_option('extenderx_review_prompt_dismissed');
     }
 
     public function xero_extenderx_deactivate() {
@@ -188,7 +210,10 @@ function xero_extenderx_fs() {
     return $plugin ? $plugin->get_freemius() : null;
 }
 
-$plugin = xero_extenderx();
-// activate and deactivate
-register_activation_hook(__FILE__, array($plugin, 'xero_extenderx_activate'));
-register_deactivation_hook(__FILE__, array($plugin, 'xero_extenderx_deactivate'));
+// activate and deactivate — use class method references to avoid premature instantiation
+register_activation_hook(__FILE__, function () {
+    xero_extenderx()->xero_extenderx_activate();
+});
+register_deactivation_hook(__FILE__, function () {
+    xero_extenderx()->xero_extenderx_deactivate();
+});

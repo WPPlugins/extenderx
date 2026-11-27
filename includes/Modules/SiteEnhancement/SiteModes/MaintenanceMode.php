@@ -3,7 +3,8 @@
 namespace WPXERO\ExtenderX\Modules\SiteEnhancement\SiteModes;
 
 use WPXERO\ExtenderX\Traits\Singleton;
-use WPXERO\ExtenderX\Core\Utils;
+use WPXERO\ExtenderX\Core\SettingsCache;
+use WPXERO\ExtenderX\Core\ProFeatures;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -12,161 +13,128 @@ if (!defined('ABSPATH')) {
 /**
  * Maintenance Mode
  *
- * Display maintenance page to visitors while site is being updated
+ * Full-page 503 takeover rendered via wp_die (self-contained HTML — enqueued
+ * front-end assets do not load inside wp_die, so styles/scripts are inlined).
+ *
+ * Free: heading, message, icon, preset theme, colors, footer note.
+ * Pro (advanced): live countdown, logo + background image, notify form,
+ *                 social links, allowed roles + IP whitelist, custom CSS.
+ *
+ * @since 1.0.0
  */
 class MaintenanceMode {
     use Singleton;
 
-    protected Utils $utils;
+    private const SETTINGS_PATH   = 'global.site_modes.maintenance_mode';
+
+    /** @var SettingsCache */
+    private $settings_cache;
+
+    /** @var bool */
+    private $is_pro = false;
+
+    /** @var array<string, mixed> */
+    private $settings = [];
+
+    /** @var array<string, mixed> */
+    private $default_settings = [
+        // Free.
+        'preset'       => 'midnight-navy',
+        'icon'         => '🚧',
+        'heading'      => 'Under Maintenance',
+        'message'      => "We are currently performing scheduled maintenance to improve your experience. We'll be back soon!",
+        'footer_text'  => '',
+        'bg_start'     => '#0b1120',
+        'bg_end'       => '#1e3a8a',
+        'text_color'   => '#ffffff',
+        'accent_color' => '#22d3ee',
+        // Pro.
+        'show_countdown' => false,
+        'end_date'       => '',
+        'logo_url'       => '',
+        'bg_image_url'   => '',
+        'social_links'   => [],
+        'allowed_roles'  => [],
+        'allowed_ips'    => [],
+        'custom_css'     => '',
+    ];
 
     public function __construct() {
-        $this->utils = Utils::instance();
-        add_action('template_redirect', [$this, 'show_maintenance_page']);
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
+        $this->settings_cache = SettingsCache::instance();
+        $this->is_pro         = ProFeatures::instance()->has_pro_license();
+        $this->load_settings();
+
+        add_action('template_redirect', [$this, 'maybe_show_page']);
+        SiteModeFullPage::instance()->add_admin_bar_notice(__('Maintenance mode on', 'extenderx'));
     }
 
-    public function show_maintenance_page() {
+    private function load_settings() {
+        $stored = $this->settings_cache->get_setting(self::SETTINGS_PATH, []);
+        if (!is_array($stored)) {
+            $stored = [];
+        }
+        $this->settings = wp_parse_args($stored, $this->default_settings);
+    }
+
+    /**
+     * Visitors who may bypass the takeover (admins always; Pro: extra roles/IPs).
+     */
+    private function user_can_bypass(): bool {
         if (is_user_logged_in() && current_user_can('manage_options')) {
+            return true;
+        }
+
+        if (!$this->is_pro) {
+            return false;
+        }
+
+        $roles = $this->settings['allowed_roles'] ?? [];
+        if (is_array($roles) && !empty($roles) && is_user_logged_in()) {
+            foreach (wp_get_current_user()->roles as $role) {
+                if (in_array($role, $roles, true)) {
+                    return true;
+                }
+            }
+        }
+
+        $ips = $this->settings['allowed_ips'] ?? [];
+        if (is_array($ips) && !empty($ips)) {
+            $current_ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
+            if ($current_ip !== '' && in_array($current_ip, array_map('trim', $ips), true)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function maybe_show_page() {
+        if ($this->user_can_bypass()) {
             return;
         }
 
-        wp_die(
-            $this->get_maintenance_html(),
-            __('Maintenance Mode', 'extenderx'),
-            ['response' => 503]
-        );
+        SiteModeFullPage::instance()->render_and_exit($this->get_render_args(), 503);
     }
 
-    public function enqueue_assets() {
-        wp_enqueue_script('xero-maintenance-mode');
-        wp_enqueue_style('xero-maintenance-mode');
-    }
-
-    private function get_maintenance_html() {
-        ob_start();
-?>
-        <!DOCTYPE html>
-        <html>
-
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <style>
-                * {
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
-
-                body {
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    min-height: 100vh;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    overflow: hidden;
-                    position: relative;
-                }
-
-                .maintenance-container {
-                    text-align: center;
-                    color: white;
-                    padding: 3rem;
-                    max-width: 600px;
-                    animation: fadeInUp 0.8s ease-out;
-                }
-
-                .maintenance-icon {
-                    font-size: 6rem;
-                    margin-bottom: 2rem;
-                    animation: bounce 2s infinite;
-                    display: inline-block;
-                }
-
-                h1 {
-                    font-size: 3rem;
-                    font-weight: 700;
-                    margin-bottom: 1.5rem;
-                    letter-spacing: -0.5px;
-                }
-
-                p {
-                    font-size: 1.25rem;
-                    line-height: 1.7;
-                    opacity: 0.95;
-                    margin-bottom: 2rem;
-                }
-
-                .progress-bar {
-                    width: 100%;
-                    height: 4px;
-                    background: rgba(255, 255, 255, 0.2);
-                    border-radius: 10px;
-                    overflow: hidden;
-                    margin-top: 2rem;
-                }
-
-                .progress-fill {
-                    height: 100%;
-                    background: white;
-                    border-radius: 10px;
-                    animation: loading 2s ease-in-out infinite;
-                }
-
-                @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(30px);
-                    }
-
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                @keyframes bounce {
-
-                    0%,
-                    100% {
-                        transform: translateY(0);
-                    }
-
-                    50% {
-                        transform: translateY(-20px);
-                    }
-                }
-
-                @keyframes loading {
-                    0% {
-                        width: 0%;
-                    }
-
-                    50% {
-                        width: 70%;
-                    }
-
-                    100% {
-                        width: 100%;
-                    }
-                }
-            </style>
-        </head>
-
-        <body>
-            <div class="maintenance-container">
-                <div class="maintenance-icon">🚧</div>
-                <h1><?php echo __('Under Maintenance', 'extenderx'); ?></h1>
-                <p><?php echo __('We are currently performing scheduled maintenance to improve your experience. We\'ll be back soon!', 'extenderx'); ?></p>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-            </div>
-        </body>
-
-        </html>
-<?php
-        return ob_get_clean();
+    private function get_render_args(): array {
+        return [
+            'body_class'   => 'xero-fullpage-maintenance',
+            'preset'       => sanitize_html_class((string) $this->settings['preset']) ?: 'midnight-navy',
+            'icon'         => (string) $this->settings['icon'],
+            'heading'      => (string) $this->settings['heading'],
+            'message'      => (string) $this->settings['message'],
+            'footer_text'  => (string) $this->settings['footer_text'],
+            'bg_start'     => sanitize_hex_color((string) $this->settings['bg_start']) ?: '#0b1120',
+            'bg_end'       => sanitize_hex_color((string) $this->settings['bg_end']) ?: '#1e3a8a',
+            'text_color'   => sanitize_hex_color((string) $this->settings['text_color']) ?: '#ffffff',
+            'accent_color' => sanitize_hex_color((string) $this->settings['accent_color']) ?: '#22d3ee',
+            'is_pro'       => $this->is_pro,
+            'logo_url'     => $this->is_pro ? trim((string) $this->settings['logo_url']) : '',
+            'bg_image_url' => $this->is_pro ? trim((string) $this->settings['bg_image_url']) : '',
+            'countdown'    => $this->is_pro && !empty($this->settings['show_countdown']) ? (string) $this->settings['end_date'] : '',
+            'social_links' => $this->is_pro && is_array($this->settings['social_links']) ? $this->settings['social_links'] : [],
+            'custom_css'   => $this->is_pro ? (string) $this->settings['custom_css'] : '',
+            'show_progress' => true,
+        ];
     }
 }

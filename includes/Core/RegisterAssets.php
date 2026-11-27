@@ -15,6 +15,19 @@ class RegisterAssets {
         add_action('admin_enqueue_scripts', [$this, 'register_admin_assets']);
     }
 
+    /**
+     * Cache-busting version for a dist asset: plugin version + file mtime, so
+     * every rebuild produces a new URL and browsers can't serve stale copies.
+     *
+     * @param string $relative Path relative to the dist directory.
+     * @return string
+     */
+    private function dist_version(string $relative): string {
+        $file = XERO_EXTENDERX_DIR_PATH . 'dist/' . $relative;
+        $mtime = file_exists($file) ? (string) filemtime($file) : '';
+        return $mtime ? XERO_EXTENDERX_VERSION . '.' . $mtime : XERO_EXTENDERX_VERSION;
+    }
+
     public function register_admin_assets() {
         wp_register_script('darkreader', XERO_EXTENDERX_ASSETS_URL . 'vendor/darkreader/darkreader.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-dark-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dark-mode/index.js', array('darkreader'), XERO_EXTENDERX_VERSION, true);
@@ -36,16 +49,18 @@ class RegisterAssets {
 
         // UI enhancement scripts
         wp_register_script('xero-back-to-top', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/back-to-top/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-scroll-to-bottom', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/scroll-to-bottom/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-sticky-header', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/sticky-header/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-sticky-footer', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/sticky-footer/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-scroll-progress', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/scroll-progress/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-smart-scroll', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/smart-scroll/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-custom-cursor', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/custom-cursor/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-cursor-hover-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/cursor-hover-effects/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-cursor-grab-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/cursor-grab-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-smooth-scrolling', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/smooth-scrolling/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-scrollspy', XERO_EXTENDERX_DIST_URL . 'modules/global/ui-enhancements/scrollspy/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
         // Seasonal effects scripts
+        wp_register_script('xero-winter-snow', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/winter-snow/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-spring-petals', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/spring-petals/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-summer-sun', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/summer-sun/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        wp_register_script('xero-sales-confetti', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/sales-confetti/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-christmas-lights', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/christmas-lights/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-fireworks', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/fireworks/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-autumn-leaves', XERO_EXTENDERX_DIST_URL . 'modules/global/seasonal/autumn-leaves/index.js', array(), XERO_EXTENDERX_VERSION, true);
@@ -63,23 +78,23 @@ class RegisterAssets {
 
         // Appearance scripts
         wp_register_script('xero-dark-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dark-mode/index.js', array('darkreader'), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-light-mode-toggle', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/light-mode-toggle/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-auto-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/auto-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-high-contrast-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/high-contrast-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-reading-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/reading-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-night-shift-mode', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/night-shift-mode/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-fade-in-load', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/fade-in-load/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-smooth-transitions', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/smooth-transitions/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-skeleton-loader', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/skeleton-loader/index.js', array(), XERO_EXTENDERX_VERSION, true);
         wp_register_script('xero-preloader', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/preloader/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-glassmorphism', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/glassmorphism/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-blur-background-on-scroll', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/blur-background-on-scroll/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-dim-background-on-idle', XERO_EXTENDERX_DIST_URL . 'modules/global/appearance/dim-background-on-idle/index.js', array(), XERO_EXTENDERX_VERSION, true);
 
-        // Animation scripts
-        wp_register_script('xero-entrance-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/entrance-effects/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-parallax-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/parallax-effects/index.js', array(), XERO_EXTENDERX_VERSION, true);
-        wp_register_script('xero-floating-elements', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/floating-elements/index.js', array(), XERO_EXTENDERX_VERSION, true);
+        // Animation scripts. Versioned by file mtime — the static plugin
+        // version left browsers holding stale cached runtimes across updates
+        // (the animation engines change often and a stale copy breaks the
+        // reveal contract with the PHP-injected critical CSS/bootstrap).
+        wp_register_script('xero-scroll-effects', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/scroll-effects/index.js', array(), $this->dist_version('modules/global/animations/scroll-effects/index.js'), true);
+        wp_register_script('xero-site-wide', XERO_EXTENDERX_DIST_URL . 'modules/global/animations/site-wide/index.js', array(), $this->dist_version('modules/global/animations/site-wide/index.js'), true);
+
+        // Accessibility scripts. Versioned by file mtime — the toolbar's JS
+        // and its PHP-rendered markup share an ARIA contract, so a stale
+        // cached bundle would leave the widget half-wired.
+        wp_register_script('xero-a11y-toolbar', XERO_EXTENDERX_DIST_URL . 'modules/global/accessibility/toolbar/index.js', array(), $this->dist_version('modules/global/accessibility/toolbar/index.js'), true);
+        wp_register_script('xero-a11y-toolbar-pro', XERO_EXTENDERX_DIST_URL . 'modules/global/accessibility/toolbar-pro/index.js', array('xero-a11y-toolbar'), $this->dist_version('modules/global/accessibility/toolbar-pro/index.js'), true);
+        wp_register_script('xero-a11y-skip-link', XERO_EXTENDERX_DIST_URL . 'modules/global/accessibility/skip-link/index.js', array(), $this->dist_version('modules/global/accessibility/skip-link/index.js'), true);
 
         // Marketing scripts
         wp_register_script('xero-announcement-bar', XERO_EXTENDERX_DIST_URL . 'modules/global/marketing/announcement-bar/index.js', array(), XERO_EXTENDERX_VERSION, true);
@@ -99,17 +114,19 @@ class RegisterAssets {
 
         // UI enhancement styles with RTL support
         $this->register_style_with_rtl('xero-back-to-top', 'modules/global/ui-enhancements/back-to-top/style-style.css');
+        $this->register_style_with_rtl('xero-scroll-to-bottom', 'modules/global/ui-enhancements/scroll-to-bottom/style-style.css');
         $this->register_style_with_rtl('xero-sticky-header', 'modules/global/ui-enhancements/sticky-header/style-style.css');
         $this->register_style_with_rtl('xero-sticky-footer', 'modules/global/ui-enhancements/sticky-footer/style-style.css');
         $this->register_style_with_rtl('xero-scroll-progress', 'modules/global/ui-enhancements/scroll-progress/style-style.css');
-        $this->register_style_with_rtl('xero-smart-scroll', 'modules/global/ui-enhancements/smart-scroll/style-style.css');
-        $this->register_style_with_rtl('xero-custom-cursor', 'modules/global/ui-enhancements/custom-cursor/style-style.css');
-        $this->register_style_with_rtl('xero-cursor-hover-effects', 'modules/global/ui-enhancements/cursor-hover-effects/style-style.css');
-        $this->register_style_with_rtl('xero-cursor-grab-mode', 'modules/global/ui-enhancements/cursor-grab-mode/style-style.css');
         $this->register_style_with_rtl('xero-scrollbar-styler', 'modules/global/ui-enhancements/scrollbar-styler/style-style.css');
         $this->register_style_with_rtl('xero-smooth-scrolling', 'modules/global/ui-enhancements/smooth-scrolling/style-style.css');
+        $this->register_style_with_rtl('xero-scrollspy', 'modules/global/ui-enhancements/scrollspy/style-style.css');
 
         // Seasonal effects styles with RTL support
+        $this->register_style_with_rtl('xero-winter-snow', 'modules/global/seasonal/winter-snow/style-style.css');
+        $this->register_style_with_rtl('xero-spring-petals', 'modules/global/seasonal/spring-petals/style-style.css');
+        $this->register_style_with_rtl('xero-summer-sun', 'modules/global/seasonal/summer-sun/style-style.css');
+        $this->register_style_with_rtl('xero-sales-confetti', 'modules/global/seasonal/sales-confetti/style-style.css');
         $this->register_style_with_rtl('xero-christmas-lights', 'modules/global/seasonal/christmas-lights/style-style.css');
         $this->register_style_with_rtl('xero-fireworks', 'modules/global/seasonal/fireworks/style-style.css');
         $this->register_style_with_rtl('xero-autumn-leaves', 'modules/global/seasonal/autumn-leaves/style-style.css');
@@ -127,23 +144,19 @@ class RegisterAssets {
 
         // Appearance styles with RTL support
         $this->register_style_with_rtl('xero-dark-mode', 'modules/global/appearance/dark-mode/style-style.css');
-        $this->register_style_with_rtl('xero-light-mode-toggle', 'modules/global/appearance/light-mode-toggle/style-style.css');
         $this->register_style_with_rtl('xero-auto-mode', 'modules/global/appearance/auto-mode/style-style.css');
-        $this->register_style_with_rtl('xero-high-contrast-mode', 'modules/global/appearance/high-contrast-mode/style-style.css');
-        $this->register_style_with_rtl('xero-reading-mode', 'modules/global/appearance/reading-mode/style-style.css');
-        $this->register_style_with_rtl('xero-night-shift-mode', 'modules/global/appearance/night-shift-mode/style-style.css');
-        $this->register_style_with_rtl('xero-fade-in-load', 'modules/global/appearance/fade-in-load/style-style.css');
-        $this->register_style_with_rtl('xero-smooth-transitions', 'modules/global/appearance/smooth-transitions/style-style.css');
         $this->register_style_with_rtl('xero-skeleton-loader', 'modules/global/appearance/skeleton-loader/style-style.css');
         $this->register_style_with_rtl('xero-preloader', 'modules/global/appearance/preloader/style-style.css');
-        $this->register_style_with_rtl('xero-glassmorphism', 'modules/global/appearance/glassmorphism/style-style.css');
-        $this->register_style_with_rtl('xero-blur-background-on-scroll', 'modules/global/appearance/blur-background-on-scroll/style-style.css');
-        $this->register_style_with_rtl('xero-dim-background-on-idle', 'modules/global/appearance/dim-background-on-idle/style-style.css');
 
         // Animation styles with RTL support
-        $this->register_style_with_rtl('xero-entrance-effects', 'modules/global/animations/entrance-effects/style-style.css');
-        $this->register_style_with_rtl('xero-parallax-effects', 'modules/global/animations/parallax-effects/style-style.css');
-        $this->register_style_with_rtl('xero-floating-elements', 'modules/global/animations/floating-elements/style-style.css');
+        $this->register_style_with_rtl('xero-scroll-effects', 'modules/global/animations/scroll-effects/style-style.css');
+        $this->register_style_with_rtl('xero-site-wide', 'modules/global/animations/site-wide/style-style.css');
+
+        // Accessibility styles with RTL support
+        $this->register_style_with_rtl('xero-a11y-toolbar', 'modules/global/accessibility/toolbar/style-style.css');
+        $this->register_style_with_rtl('xero-a11y-toolbar-pro', 'modules/global/accessibility/toolbar-pro/style-style.css');
+        $this->register_style_with_rtl('xero-a11y-skip-link', 'modules/global/accessibility/skip-link/style-style.css');
+        $this->register_style_with_rtl('xero-a11y-focus', 'modules/global/accessibility/focus-outlines/style-style.css');
 
         // Marketing styles with RTL support
         $this->register_style_with_rtl('xero-announcement-bar', 'modules/global/marketing/announcement-bar/style-style.css');
@@ -164,6 +177,12 @@ class RegisterAssets {
      */
     private function register_style_with_rtl($handle, $src_path, $deps = array(), $ver = null, $media = 'all') {
         $src = XERO_EXTENDERX_DIST_URL . $src_path;
+
+        // A null version printed no ?ver at all, so browsers and page caches
+        // kept serving a module's old CSS after a plugin update.
+        if (null === $ver) {
+            $ver = $this->dist_version($src_path);
+        }
 
         wp_register_style($handle, $src, $deps, $ver, $media);
 

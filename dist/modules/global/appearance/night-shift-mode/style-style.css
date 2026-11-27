@@ -1,1 +1,0 @@
-#xero-night-shift-mode .xero-night-shift-overlay{background-color:orange;height:100%;left:0;mix-blend-mode:multiply;pointer-events:none;position:fixed;top:0;transition:opacity .3s ease;width:100%;z-index:9997}html:has(#xero-night-shift-mode){filter:sepia(.2)}

@@ -5,17 +5,8 @@ namespace WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance;
 use WPXERO\ExtenderX\Traits\Singleton;
 use WPXERO\ExtenderX\Core\ModuleBase;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\DarkMode;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\LightModeToggle;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\HighContrastMode;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\ReadingMode;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\NightShiftMode;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\FadeInLoad;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\SmoothTransitions;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\SkeletonLoader;
 use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\Preloader;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\Glassmorphism;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\BlurBackgroundOnScroll;
-use WPXERO\ExtenderX\Modules\SiteEnhancement\Appearance\DimBackgroundOnIdle;
 
 defined('ABSPATH') || exit;
 
@@ -27,17 +18,8 @@ class Appearance extends ModuleBase {
 
     private const APPEARANCE_FEATURES = [
         'dark_mode.enabled' => DarkMode::class,
-        'light_mode_toggle.enabled' => LightModeToggle::class,
-        'high_contrast_mode.enabled' => HighContrastMode::class,
-        'reading_mode.enabled' => ReadingMode::class,
-        'night_shift_mode.enabled' => NightShiftMode::class,
-        'fade_in_load.enabled' => FadeInLoad::class,
-        'smooth_transitions.enabled' => SmoothTransitions::class,
         'skeleton_loader.enabled' => SkeletonLoader::class,
         'preloader.enabled' => Preloader::class,
-        'glassmorphism.enabled' => Glassmorphism::class,
-        'blur_background_on_scroll.enabled' => BlurBackgroundOnScroll::class,
-        'dim_background_on_idle.enabled' => DimBackgroundOnIdle::class,
     ];
 
     /**

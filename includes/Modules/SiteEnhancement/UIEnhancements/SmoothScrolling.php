@@ -15,21 +15,27 @@ class SmoothScrolling {
     private $settings = [];
     private $settings_cache;
     private $default_settings = [
-        'speed'                 => 800,
-        'easing'                => 'ease',
-        'header_offset'         => 80,
-        'anchor_links'          => true,
-        'back_forward'          => true,
-        'global_smooth'         => true,
+        'lerp'                   => 0.1,
+        'duration'               => 1.2,
+        'easing'                 => 'default',
+        'orientation'            => 'vertical',
+        'gesture_orientation'    => 'vertical',
+        'smooth_wheel'           => true,
+        'sync_touch'             => false,
+        'wheel_multiplier'       => 1,
+        'touch_multiplier'       => 2,
+        'infinite'               => false,
+        'anchor_links'           => true,
+        'anchor_offset'          => 0,
         'respect_reduced_motion' => true,
-        'show_on_mobile'        => true,
-        'show_on_tablet'        => true,
-        'show_on_desktop'       => true,
-        'show_on_post_types'    => [],
-        'exclude_page_ids'      => [],
-        'exclude_post_ids'      => [],
-        'exclude_url_patterns'  => [],
-        'visible_to_roles'      => [],
+        'show_on_mobile'         => true,
+        'show_on_tablet'         => true,
+        'show_on_desktop'        => true,
+        'show_on_post_types'     => [],
+        'exclude_page_ids'       => [],
+        'exclude_post_ids'       => [],
+        'exclude_url_patterns'   => [],
+        'visible_to_roles'       => [],
     ];
 
     public function __construct() {
@@ -55,27 +61,9 @@ class SmoothScrolling {
             }
         }
 
-        $current_id = get_queried_object_id();
-
-        $exclude_page_ids = $this->settings['exclude_page_ids'] ?? [];
-        if (is_array($exclude_page_ids) && !empty($exclude_page_ids) && in_array((string)$current_id, $exclude_page_ids, true)) {
+        // Page rules (include/exclude list; see Core\PageFilter).
+        if (\WPXERO\ExtenderX\Core\PageFilter::blocks($this->settings)) {
             return false;
-        }
-
-        $exclude_post_ids = $this->settings['exclude_post_ids'] ?? [];
-        if (is_array($exclude_post_ids) && !empty($exclude_post_ids) && in_array((string)$current_id, $exclude_post_ids, true)) {
-            return false;
-        }
-
-        $exclude_url_patterns = $this->settings['exclude_url_patterns'] ?? [];
-        if (is_array($exclude_url_patterns) && !empty($exclude_url_patterns)) {
-            $current_url = $_SERVER['REQUEST_URI'] ?? '';
-            foreach ($exclude_url_patterns as $pattern) {
-                $pattern = trim($pattern);
-                if (empty($pattern)) continue;
-                $regex = str_replace(['*', '/'], ['.*', '\/'], $pattern);
-                if (preg_match('/^' . $regex . '$/i', $current_url)) return false;
-            }
         }
 
         return true;
@@ -106,38 +94,20 @@ class SmoothScrolling {
         wp_enqueue_script('xero-smooth-scrolling');
         wp_enqueue_style('xero-smooth-scrolling');
 
-        $inline_css = $this->generate_inline_css();
-        if (!empty($inline_css)) {
-            wp_add_inline_style('xero-smooth-scrolling', $inline_css);
-        }
-
         wp_localize_script('xero-smooth-scrolling', 'extenderxSmoothScrollingSettings', [
-            'speed'         => intval($this->settings['speed']),
-            'easing'        => sanitize_text_field($this->settings['easing']),
-            'headerOffset'  => intval($this->settings['header_offset']),
-            'anchorLinks'   => (bool)$this->settings['anchor_links'],
-            'backForward'   => (bool)$this->settings['back_forward'],
-            'globalSmooth'  => (bool)$this->settings['global_smooth'],
+            'lerp'                 => floatval($this->settings['lerp']),
+            'duration'             => floatval($this->settings['duration']),
+            'easing'               => sanitize_text_field($this->settings['easing']),
+            'orientation'          => sanitize_text_field($this->settings['orientation']),
+            'gestureOrientation'   => sanitize_text_field($this->settings['gesture_orientation']),
+            'smoothWheel'          => (bool)$this->settings['smooth_wheel'],
+            'syncTouch'            => (bool)$this->settings['sync_touch'],
+            'wheelMultiplier'      => floatval($this->settings['wheel_multiplier']),
+            'touchMultiplier'      => floatval($this->settings['touch_multiplier']),
+            'infinite'             => (bool)$this->settings['infinite'],
+            'anchorLinks'          => (bool)$this->settings['anchor_links'],
+            'anchorOffset'         => intval($this->settings['anchor_offset']),
+            'respectReducedMotion' => (bool)$this->settings['respect_reduced_motion'],
         ]);
-    }
-
-    private function generate_inline_css() {
-        $global_smooth = (bool)$this->settings['global_smooth'];
-        $respect_motion = (bool)$this->settings['respect_reduced_motion'];
-
-        $css = '';
-
-        if ($global_smooth) {
-            $css .= "html { scroll-behavior: smooth; }
-            * { scroll-behavior: smooth; }";
-        }
-
-        if ($respect_motion) {
-            $css .= "@media (prefers-reduced-motion: reduce) {
-                html, * { scroll-behavior: auto; }
-            }";
-        }
-
-        return $css;
     }
 }

@@ -21,11 +21,17 @@ class LightBeams {
     }
 
     public function enqueue_assets() {
+        if (!EffectTargeting::passes('light_beams')) {
+            return;
+        }
         wp_enqueue_style('xero-light-beams');
         wp_enqueue_script('xero-light-beams');
     }
 
     public function render_effect() {
+        if (!EffectTargeting::passes('light_beams')) {
+            return;
+        }
         $style = $this->settings_cache->get_setting('global.seasonal_effects.light_beams.style', 'spotlight');
         $intensity = $this->settings_cache->get_setting('global.seasonal_effects.light_beams.intensity', 50);
         $color = $this->settings_cache->get_setting('global.seasonal_effects.light_beams.color', 'white');
